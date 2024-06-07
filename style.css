@@ -183,6 +183,9 @@ html .hidden {
     margin-top: 5px;
     font-size: 14px;
 }
+.noteInfo .noteID{
+    display: none;
+}
 #examineNote{
     display: block;
     margin: auto;
