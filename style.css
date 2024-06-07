@@ -256,7 +256,7 @@ html .hidden {
     "usernameSearchField usernameSearchField searchUserButton"
     "foundUsers foundUsers addUser"
     ". . removeUser"
-    "createText createText ."
+    "createText createText saveText"
     "deleteText deleteText .";
 }
 #noteTools .container div{
@@ -285,6 +285,8 @@ html .hidden {
   .searchUserButton { grid-area: searchUserButton; }
   
   .createText { grid-area: createText; }
+
+  .saveText { grid-area: saveText; }
   
   .foundUsers { grid-area: foundUsers; }
   
