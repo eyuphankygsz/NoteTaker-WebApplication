@@ -148,7 +148,7 @@ function tryLogin() {
       document.querySelector(".showroom").classList.toggle("hidden");
       document.querySelector(".mainContent").classList.toggle("hidden");
       document.querySelector(".welcome").textContent =
-        "Welcome, " + usernameInput.value;
+        "Welcome, " + usernameInput.value + "!";
       userFound = true;
       username = usernameInput.value;
 
@@ -158,26 +158,33 @@ function tryLogin() {
   }
   if (!userFound) alert("Wrong credentials!");
 }
+document.querySelector("#loginButton").addEventListener("click", tryLogin);
 
 function checkEmptyFields() {
   if (usernameInput.value.length == 0 || passwordInput.value.length == 0) {
     alert("Username and Password cannot be empty!");
   }
 }
-function onFocusOutField(element) {
-  if (element.value.length == 0) element.style.outline = "2px solid red";
-  else element.style.outline = "none";
-}
-document.querySelector("#loginButton").addEventListener("click", tryLogin);
+
+
 
 const usernameInput = document.querySelector("#usernameField");
-usernameInput.addEventListener("focusout", () =>
-  onFocusOutField(usernameInput)
-);
 const passwordInput = document.querySelector("#passwordField");
-passwordInput.addEventListener("focusout", () =>
-  onFocusOutField(passwordInput)
-);
+
+function onFocusOutField(element) {
+  if (element.value.length == 0) element.style.outline = "2px solid red";
+  else element.style.outline = "";
+}
+usernameInput.addEventListener("focusout", () => onFocusOutField(usernameInput));
+passwordInput.addEventListener("focusout", () => onFocusOutField(passwordInput));
+
+
+function onTypeInput(element) {
+  console.log(element.value.length);
+  if (element.value.length != 0) element.style.outline = "2px solid green";
+}
+usernameInput.addEventListener("input", () => onTypeInput(usernameInput));
+passwordInput.addEventListener("input", () => onTypeInput(passwordInput));
 
 //-----------------------
 usernameInput.value = "eyup";
