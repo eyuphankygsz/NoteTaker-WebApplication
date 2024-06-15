@@ -1,0 +1,27 @@
+﻿body {
+    background-color: #9272d5 !important;
+}
+
+.posts-content {
+    margin: auto;
+    max-width: 600px;
+    height: auto;
+}
+
+    .posts-content .card-header {
+        text-align: left;
+    }
+
+        .posts-content .card-header img {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .posts-content .card-header a {
+            color: #9272d5;
+            text-decoration: none;
+        }
+
+    .posts-content .card-footer {
+        text-align: right;
+    }

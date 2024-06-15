@@ -1,0 +1,23 @@
+﻿@model PostsViewModel
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/posts.css" />
+}
+@{
+	Layout = "_LoggedLayout";
+}
+@section SideExtension {
+	@await Html.PartialAsync("_sidebar", Model.User)
+}
+<div class="container">
+
+	<div class="posts-content">
+		@{
+			foreach (var note in Model.Notes)
+				for (int i = 0; i < 10; i++)
+					@await Html.PartialAsync("_post", note)
+		}
+	</div>
+
+
+</div>

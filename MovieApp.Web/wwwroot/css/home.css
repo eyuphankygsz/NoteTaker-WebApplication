@@ -1,0 +1,98 @@
+﻿* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #9272d5 !important;
+    background-size: cover;
+}
+
+
+.login-extension {
+    width: 70% !important;
+    height: 40% !important;
+}
+
+.main {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card1 {
+    background-color: #7E30E1 !important;
+}
+
+.card2 {
+    background-color: #864AF9 !important;
+    margin-bottom: 50px !important;
+}
+
+.card3 {
+    background-color: #711DB0 !important;
+}
+
+.step-container {
+    height: auto !important;
+}
+.step-container .active {
+    color: #9272d5 !important;
+    font-weight: 600 !important;
+}
+.step-container li button:hover {
+}
+
+.step-container-color {
+    background-color: #7E30E1 !important;
+}
+
+.how-works .col {
+    margin: auto !important;
+}
+
+    .how-works .col div {
+        margin: auto !important;
+    }
+
+.cardImage {
+    margin: auto;
+    margin-top: 10px;
+    height: 6rem !important;
+    width: 6rem !important;
+}
+
+.welcome {
+    width: 50% !important;
+    line-height: 1.2rem;
+}
+
+.login-section {
+    width: 50% !important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-extension .logbtn {
+    background-color: #9272d5;
+    border-color: #711DB0;
+}
+
+    .login-extension .logbtn:hover {
+        background-color: #711DB0;
+        border-color: #9272d5;
+    }
+
+.signother-buttons {
+    width: 100%;
+}
+
+    .signother-buttons button {
+        width: 100%;
+        margin: auto !important;
+    }
+.welcome{
+    height:700px !important;
+}

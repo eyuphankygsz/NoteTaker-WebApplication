@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\AmiralSincap\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\AmiralSincap\\.nuget\\packages"
+    ]
+  }
+}

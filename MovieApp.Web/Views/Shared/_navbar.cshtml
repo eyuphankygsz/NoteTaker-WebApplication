@@ -1,0 +1,36 @@
+﻿<nav class="navbar navbar-expand-lg nav-background fixed-top">
+	<div class="container-fluid nav-background">
+		<a class="navbar-brand logo" href="http://localhost:39939/">MemoMate</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="@Url.Action("Index","About")">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="@Url.Action("Index","Future")">Future</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Plans
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Free</a></li>
+						<li><a class="dropdown-item" href="#">Premium</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#">Expert</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div id="guestNav">
+				<button class="btn logbtn" id="nav-signInButton" type="button">Sign In</button>
+				<button class="btn logbtn ms-2" id="nav-signUpButton" type="button">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</nav>
