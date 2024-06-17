@@ -1,18 +1,18 @@
-﻿@model Note
+﻿@model PostDetailModel
 
 <div class="card text-center mb-3">
 	<div class="card-header">
-		<a href="@Url.Action("Details", "User", new { id = Model.Creator.ID })">
-			<img src="/img/user/profile/@Model.Creator.Photo" alt="Alternate Text" />
-			@Model.Creator.Username
+		<a href="@Url.Action("Details", "User", new { id = Model.Username })">
+			<img src="/img/user/profile/@Model.UserPhoto" alt="Alternate Text" />
+			@Model.Username
 		</a>
 	</div>
 	<div class="card-body">
-		<h5 class="card-title">@Model.Title</h5>
-		<p class="card-text">@Model.Content</p>
+		<h5 class="card-title">@Model.NoteTitle</h5>
+		<p class="card-text">@Model.NoteContent</p>
 	</div>
 	<div class="card-footer text-body-secondary">
-		@GetTimeAgo(Model.Date)
+		@GetTimeAgo(Model.PostDate)
 	</div>
 </div>
 

@@ -14,11 +14,5 @@ namespace MemoMate.Web.Models
 		
 		[Column("note_content")]
 		public string Content { get; private set; }
-		[Column("note_creator")]
-		public int CreatorId { get; private set; }
-		[Column("note_date")]
-		public DateTime Date {  get; private set; }
-
-		public User Creator { get; private set; }
 	}
 }

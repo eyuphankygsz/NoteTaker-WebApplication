@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8InVaTdHINQ=",
+  "dgSpecHash": "TMk0puM4dgG28t9QLj9jv3hI4LgaYeVzs86947jPbRCrV+wP2F3l8IPp3qrVgdLhUzltkAeLRc6+kfNqYD9wPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\MemoMate.Web.csproj",
+  "projectFilePath": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\MemoMate.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AmiralSincap\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\AmiralSincap\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

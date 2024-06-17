@@ -12,22 +12,30 @@ namespace MemoMate.Data
 
 		public DbSet<Note> Notes { get; set; }
 		public DbSet<User> Users { get; set; }
+		public DbSet<Post> Posts { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Note>()
-				.HasOne(n => n.Creator)         // Note has 1 Creator
-				.WithMany(u => u.Notes)         // Note has many 
-				.HasForeignKey(n => n.CreatorId);  // Specifies the foreign key property
+			modelBuilder.Entity<Note>();
 
 			modelBuilder.Entity<User>()
-	            .HasMany(u => u.Notes)          // Bir User'ın birden çok Note'u olabilir
-				.WithOne(n => n.Creator)        // Bir Note'un yalnızca bir Creator'u olabilir
-				.HasForeignKey(n => n.CreatorId);  // ForeignKey olarak CreatorId kullanır
+				.HasMany(u => u.Posts)
+				.WithOne(p => p.UserEntity)
+				.HasForeignKey(u => u.UserID);
 
 
+			modelBuilder.Entity<Post>(post =>
+			{
+				post.HasOne(p => p.NoteEntity)
+				    .WithOne()
+					.HasForeignKey<Post>(p => p.NoteID);
+
+				post.HasOne(p => p.UserEntity)
+				    .WithMany(u => u.Posts)
+					.HasForeignKey(p => p.UserID);
+			});
 			base.OnModelCreating(modelBuilder);
 		}
 
-	}
+	}	
 }

@@ -7,13 +7,13 @@
 	Layout = "_LoggedLayout";
 }
 @section SideExtension {
-	@await Html.PartialAsync("_sidebar", Model.User)
+	@await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
 }
 <div class="container">
 
 	<div class="posts-content">
 		@{
-			foreach (var note in Model.Notes)
+			foreach (var note in Model.PostsDetails)
 				for (int i = 0; i < 10; i++)
 					@await Html.PartialAsync("_post", note)
 		}

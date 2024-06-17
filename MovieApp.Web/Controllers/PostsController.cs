@@ -22,10 +22,24 @@ namespace MemoMate.Web.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			var notes = await _context.Notes.Include(u => u.Creator).OrderByDescending(n => n.Date).Take(10).ToListAsync();
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId")));
 
-			PostsViewModel model = new PostsViewModel(){ User = user, Notes = notes };
+			var posts = await _context.Posts
+				                  .Include(p => p.UserEntity)
+								  .Include(p => p.NoteEntity)
+								  .Select( p => new PostDetailModel
+								  {
+									  PostID = p.ID,
+									  PostDate = p.Date,
+									  NoteContent = p.NoteEntity.Content,
+									  NoteTitle = p.NoteEntity.Title,
+									  Username = p.UserEntity.Username,
+									  UserPhoto = p.UserEntity.Photo
+									  
+								  })
+								  .OrderByDescending(p => p.PostDate).Take(10).ToListAsync();
+
+			PostsViewModel model = new PostsViewModel() { LoggedUserEntity = user, PostsDetails = posts };
 
 			return View(model); // Pass List<Note> to the view
 		}
