@@ -1,7 +1,7 @@
 ﻿@model PostsViewModel
 
 @section Styles {
-	<link rel="stylesheet" href="~/css/posts.css" />
+			<link rel="stylesheet" href="~/css/posts.css" />
 }
 @{
 	Layout = "_LoggedLayout";
@@ -9,15 +9,30 @@
 @section SideExtension {
 	@await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
 }
-<div class="container">
 
-	<div class="posts-content">
-		@{
-			foreach (var note in Model.PostsDetails)
-				for (int i = 0; i < 10; i++)
-					@await Html.PartialAsync("_post", note)
-		}
+<div class="posts-main">
+	<div class="posts-container">
+		<div class="posts-bg">
+			<div class="posts-content">
+				<div id="posts-title" class="text-white mb-3" >TOP POSTS</div>
+				@{
+					foreach (var note in Model.PostsToday)
+						@await Html.PartialAsync("_post", note)
+				}
+			</div>
+		</div>
+	</div>
+	<div class="posts-interests">
+	   <div class="posts-content">
+				<div id="posts-title" class="text-white mb-3" style="font-size:2rem;">Yesterday's TOP 3</div>
+				@{
+					foreach (var note in Model.PostsYesterday)
+						@await Html.PartialAsync("_post", note)
+				}
+			</div>
+	   </div>
 	</div>
 
-
-</div>
+@section Scripts {
+	<script src="./js/posts-index.js"></script>
+}

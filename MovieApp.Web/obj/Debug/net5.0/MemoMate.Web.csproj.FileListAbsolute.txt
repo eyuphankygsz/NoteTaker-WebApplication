@@ -140,7 +140,6 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.RazorCoreGenerate.cache
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_LoggedLayout.cshtml.g.cs
@@ -156,3 +155,4 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.csproj.CopyComplete
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.genruntimeconfig.cache
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\ref\MemoMate.Web.dll
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Rates.cshtml.g.cs

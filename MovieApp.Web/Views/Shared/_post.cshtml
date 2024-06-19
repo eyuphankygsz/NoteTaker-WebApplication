@@ -12,7 +12,9 @@
 		<p class="card-text">@Model.NoteContent</p>
 	</div>
 	<div class="card-footer text-body-secondary">
-		@GetTimeAgo(Model.PostDate)
+		<span class="rate">★ @Model.PostRate.ToString("0.00")</span>
+		<span class="date">@GetTimeAgo(Model.PostDate)</span>
+
 	</div>
 </div>
 

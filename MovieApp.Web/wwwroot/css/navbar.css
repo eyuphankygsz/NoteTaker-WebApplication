@@ -1,32 +1,17 @@
-﻿nav .logo {
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-}
-
-.logbtn {
-    outline: solid white 1px !important;
-    color: white !important;
-}
-
-    .logbtn:hover {
-        background-color: white !important;
-        color: #9F70FD !important;
-        font-weight: 500;
-    }
-    .logbtn:focus {
-        outline: solid white 1px !important;
-        color: white !important;
-    }
-
-nav form {
-    align-items: center;
-}
-
-nav {
+﻿nav {
     border-bottom: 8px solid #8961d9;
-    z-index:2 !important;
-    padding-left:80px !important;
+    z-index: 2 !important;
+    padding-left: 80px !important;
 }
+
+    nav .logo {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+    }
+
+    nav form {
+        align-items: center;
+    }
 
 .nav-background {
     background-color: #9F70FD !important;
@@ -40,6 +25,25 @@ nav {
             color: black !important;
         }
 
+.logbtn {
+    outline: solid white 1px !important;
+    color: white !important;
+}
+
+    .logbtn:hover {
+        background-color: white !important;
+        color: #9F70FD !important;
+        font-weight: 500;
+    }
+
+    .logbtn:focus {
+        outline: solid white 1px !important;
+        color: white !important;
+    }
+
+
+
+
 .main-content {
     display: flex;
 }
@@ -47,13 +51,13 @@ nav {
 .afterlayout {
     display: flex;
     width: 100%;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
 .custom-sidebar {
-    padding-top:80px;
-    z-index:1 !important;
-    height:100vh !important;
+    padding-top: 10px;
+    z-index: 1 !important;
+    height: 100vh !important;
     background-color: #f5f5f5;
     border-right: 3px solid #d5d5d5;
 }

@@ -1,4 +1,4 @@
-﻿@model UserLoginViewModel
+﻿@model UserLoginModel
 
 @section Styles {
 	<link rel="stylesheet" href="~/css/home.css" />
@@ -15,6 +15,58 @@
 				<p class="card-text text-left"><strong>MemoMate</strong> is a unique platform where users can <strong>share, read, and rate short notes</strong> on a variety of topics. Whether you're passionate about <em>science</em>, <em>comedy</em>, or anything in between, <strong>MemoMate</strong> is the perfect place to share your thoughts and insights. Here's how it works:</p>
 
 				<!--nav-->
+
+
+<div class="step-container">
+
+  <div class="card choice expand text-white mx-2 card1">
+	  <div class=combiner>
+		  <div class="card-step">1</div>
+		  <div class="card-body">
+
+			  <div class="card-header">Account</div>
+			  <img class="card-img-top cardImage ci1" src="/img/home/icons/sign-up.png" alt="Card image cap">
+			  <div class="card-body">
+				  <h5 class="card-title">Have An Account?</h5>
+				  <p class="card-text">If you already have an account, sign in to start sharing your notes! If you don't have one yet, sign up now and start sharing your notes with the world!</p>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+  <div class="card choice small text-white mx-2 card2">
+	  <div class=combiner>
+		  <div class="card-step">2</div>
+		  <div class="card-body">
+			  <div class="card-header">Create Note</div>
+			  <img class="card-img-top cardImage" src="/img/home/icons/notes.png" alt="Card image cap">
+			  <div class="card-body">
+				  <h5 class="card-title">Create a Note</h5>
+				  <p class="card-text">Write a short note about science, comedy, or any topic you want and share it with the world! It's time to share something new you've learned or want to share!</p>
+			  </div>
+		  </div>
+      </div>
+  </div>
+
+	<div class="card choice small text-white mx-2 card3">
+	  <div class=combiner>
+		  <div class="card-step">3</div>
+		  <div class="card-body">
+			  <div class="card-header">Rate</div>
+			  <img class="card-img-top cardImage ci3" src="/img/home/icons/rate.png" alt="Card image cap">
+			  <div class="card-body">
+				  <h5 class="card-title">Rate the Notes</h5>
+				  <p class="card-text">Read and rate notes from randomly selected online users! Contribute to the process of sharing knowledge by selecting the best notes and helping other users discover them!</p>
+			  </div>
+
+		  </div>
+	  </div>
+  </div>
+
+
+</div>
+
+<!--
+
 				<div class="card text-center step-container">
 					<div class="card-header step-container-color">
 						<ul class="nav nav-tabs steps" id="myTab" role="tablist">
@@ -41,7 +93,7 @@
 
 								<div class="card-body">
 									<h5 class="card-title text-white">Don't Have An Account?</h5>
-									<a href="@Url.Action("Index", "Register")" class="btn btn-primary">Sign Up</a>
+									<a href="Url.Action("Index", "Register")" class="btn btn-primary">Sign Up</a>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
@@ -69,6 +121,7 @@
 						</div>
 					</div>
 				</div>
+-->
 				<!--eonav-->
 			</div>
 		</div>
@@ -120,5 +173,5 @@
 	</div>
 </div>
 @section Scripts {
-	<script src="/js/homeindex.js"></script>
+								<script src="/js/homeindex.js"></script>
 }

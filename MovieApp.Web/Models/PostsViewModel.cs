@@ -6,6 +6,7 @@ namespace MemoMate.Web.Models
 	public class PostsViewModel
 	{
 		public User LoggedUserEntity { get; set; }
-		public List<PostDetailModel> PostsDetails { get; set; }
+		public List<PostDetailModel> PostsToday { get; set; }
+		public List<PostDetailModel> PostsYesterday { get; set; }
 	}
 }

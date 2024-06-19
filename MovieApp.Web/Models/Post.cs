@@ -21,6 +21,12 @@ namespace MemoMate.Web.Models
 		[Column("post_date")]
 		public DateTime Date { get; private set; }
 
+		[Column("rate_ups")]
+		public int RateUps { get; set; }
+
+		[Column("rate_count")]
+		public int RateCount { get; set; }
+
 
 		public Note NoteEntity { get; private set; }
 		public User UserEntity { get; private set; }

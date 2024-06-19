@@ -13,6 +13,7 @@ namespace MemoMate.Data
 		public DbSet<Note> Notes { get; set; }
 		public DbSet<User> Users { get; set; }
 		public DbSet<Post> Posts { get; set; }
+		public DbSet<Rate> Rates { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -27,13 +28,25 @@ namespace MemoMate.Data
 			modelBuilder.Entity<Post>(post =>
 			{
 				post.HasOne(p => p.NoteEntity)
-				    .WithOne()
+					.WithOne()
 					.HasForeignKey<Post>(p => p.NoteID);
 
 				post.HasOne(p => p.UserEntity)
-				    .WithMany(u => u.Posts)
+					.WithMany(u => u.Posts)
 					.HasForeignKey(p => p.UserID);
 			});
+
+			modelBuilder.Entity<Rate>(rate =>
+			{
+				rate.HasOne(p => p.NoteEntity)
+					.WithMany()
+					.HasForeignKey(p => p.PostID);
+
+				rate.HasOne(p => p.UserEntity)
+					.WithMany()
+					.HasForeignKey(p => p.UserID);
+			});
+
 			base.OnModelCreating(modelBuilder);
 		}
 

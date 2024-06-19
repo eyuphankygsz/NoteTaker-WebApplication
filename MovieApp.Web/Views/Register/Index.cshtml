@@ -1,4 +1,5 @@
-﻿@*Register*@
+﻿@model UserRegisterModel
+
 @section Styles {
 	<link rel="stylesheet" href="~/css/register.css" />
 }
@@ -6,30 +7,30 @@
 	Layout = "_MainLayout";
 }
 <div class="main">
-	<div class="register-container">
+	<form class="register-container" asp-action="Index" method="post" runat="server">
 		<h2 class="text-center mb-4">Register</h2>
 		<div class="input-group mb-3">
 			<span class="input-group-text" id="basic-addon1">@@</span>
-			<input type="text" class="form-control username" placeholder="JohnDoe" aria-label="Username" aria-describedby="basic-addon1">
+			<input type="text" asp-for="Username" name="Username" class="form-control username" placeholder="JohnDoe" aria-label="Username" aria-describedby="basic-addon1">
 		</div>
 
 		<div class="input-group mb-3">
-			<input type="text" class="form-control mail" id="mail1" placeholder="Mail Adress" aria-label="Mail Adress" aria-describedby="basic-addon2">
+			<input type="text" asp-for="Mail" name="Mail" class="form-control mail" id="mail1" placeholder="Mail Adress" aria-label="Mail Adress" aria-describedby="basic-addon2">
 		</div>
 		<div class="input-group mb-3">
 			<input type="text" class="form-control mail" id="mail2" placeholder="Mail Adress Confirm" aria-label="Mail Adress" aria-describedby="basic-addon2">
 		</div>
 		<div class="input-group mb-3">
-			<input type="password" class="form-control password" id="password1" placeholder="Password" aria-describedby="basic-addon3">
+			<input type="password" asp-for="Password" name="Password" class="form-control password" id="password1" placeholder="Password" aria-describedby="basic-addon3">
 		</div>
 		<div class="input-group mb-3">
 			<input type="password" class="form-control password" id="password2" placeholder="Password Confirm" aria-describedby="basic-addon3">
 		</div>
 		<div class="input-group mb-3">
-			<button class="btn btn-danger m-auto w-75">Register</button>
+			<button class="btn btn-danger m-auto w-75" id="submitButton">Register</button>
 		</div>
 
-	</div>
+	</form>
 
 </div>
 

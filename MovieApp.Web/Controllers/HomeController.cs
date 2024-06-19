@@ -23,11 +23,11 @@ namespace MemoMate.Web.Controllers
 		{
 			if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
 				return RedirectToAction("Index","Posts");
-			return View(new UserLoginViewModel());
+			return View(new UserLoginModel());
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Index(UserLoginViewModel model)
+		public async Task<IActionResult> Index(UserLoginModel model)
 		{
 			if (ModelState.IsValid)
 			{
@@ -58,7 +58,7 @@ namespace MemoMate.Web.Controllers
 				}
 			}
 
-			return View(model);
+			return View();
 		}
 
 

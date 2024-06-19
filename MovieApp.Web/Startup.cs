@@ -6,9 +6,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 
 using MemoMate.Data;
+using MemoMate.Web.CustomMiddlewares;
+
 namespace MovieApp.Web
 {
-    public class Startup
+	public class Startup
 	{
 		public IConfiguration Configuration { get; }
 
@@ -25,26 +27,29 @@ namespace MovieApp.Web
 		options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 			services.AddControllersWithViews();
-        }
+		}
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		{
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
 
-            app.UseStaticFiles();
+			app.UseStaticFiles();
 			app.UseSession();
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action}/{id?}",
-                    defaults: new { controller = "Home", action = "Index" }
-                    );
-            });
-        }
-    }
+			app.UseRouting();
+
+			app.UseMiddleware<IndexRedirectMiddleware>();
+
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllerRoute(
+					name: "default",
+					pattern: "{controller}/{action}/{id?}",
+					defaults: new { controller = "Home", action = "Index" }
+					);
+			});
+		}
+	}
 }

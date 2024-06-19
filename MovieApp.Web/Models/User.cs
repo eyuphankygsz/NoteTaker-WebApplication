@@ -7,31 +7,31 @@ namespace MemoMate.Web.Models
 	public class User
 	{
 		[Column("user_id")]
-		public int ID { get; private set; }
+		public int ID { get; set; }
 
 
 		[Column("user_name")]
-		public string Username { get; private set; }
+		public string Username { get; set; }
 
 
 		[Column("user_pass")]
-		public string Password { get; private set; }
+		public string Password { get; set; }
 
 
 		[Column("user_mail")]
-		public string Mail { get; private set; }
+		public string Mail { get; set; }
 
 
 		[Column("user_photo")]
-		public string Photo { get; private set; }
+		public string Photo { get; set; }
 
 
 		[Column("user_permissions")]
-		public string Permissions { get; private set; }
+		public string Permissions { get; set; }
 
 
 		[Column("user_create_date")]
-		public DateTime CreateDate { get; private set; }
+		public DateTime CreateDate { get; set; }
 
 		public List<Post> Posts { get; private set; }
 	}
