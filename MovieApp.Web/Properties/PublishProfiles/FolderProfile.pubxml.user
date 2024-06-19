@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\bin\Release\net5.0\publish\</_PublishTargetUrl>
-    <History>True|2024-06-19T12:50:45.6525937Z;</History>
+    <History>True|2024-06-19T14:00:03.0048042Z;True|2024-06-19T15:50:45.6525937+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
