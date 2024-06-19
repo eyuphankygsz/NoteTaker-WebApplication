@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MovieApp.Web\\Controllers",
+    "\\MovieApp.Web\\Models"
   ],
   "SelectedNode": "\\MemoMate App.sln",
   "PreviewInSolutionExplorer": false

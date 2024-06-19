@@ -35,7 +35,9 @@
 	</div>
 
 </div>
-
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
 @section Scripts {
 				<script src="./js/posts-rate.js"></script>
 }

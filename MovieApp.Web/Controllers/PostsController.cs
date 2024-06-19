@@ -71,7 +71,6 @@ namespace MemoMate.Web.Controllers
 			return View(model); // Pass List<Note> to the view
 		}
 
-		[HttpGet]
 		public async Task<IActionResult> Rates()
 		{
 

@@ -7,11 +7,11 @@
 	Layout = "_MainLayout";
 }
 <div class="main">
-	<div class="d-flex container  justify-content-center">
+	<div class="d-flex container main-content justify-content-center">
 		<div class="card text-white welcome bg-transparent border-0 ps-5">
 			<div class="card-body ps-5">
-				<h1 class="card-title text-left m-0" style="font-size: 1.4rem">Welcome to</h1>
-				<h1 class="card-title text-left" style="font-size: 4.2rem">MemoMate</h1>
+				<h1 class="card-title text-left m-0" id="welcome-text" style="font-size: 1.4rem">Welcome to</h1>
+				<h1 class="card-title text-left" id="name-text" style="font-size: 4.2rem">MemoMate</h1>
 				<p class="card-text text-left"><strong>MemoMate</strong> is a unique platform where users can <strong>share, read, and rate short notes</strong> on a variety of topics. Whether you're passionate about <em>science</em>, <em>comedy</em>, or anything in between, <strong>MemoMate</strong> is the perfect place to share your thoughts and insights. Here's how it works:</p>
 
 				<!--nav-->
@@ -144,6 +144,8 @@
 								</div>
 
 								<button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block logbtn" type="submit">Login to your Account</button>
+								<p class="mb-1" style="line-height:2rem;">or</p>
+								<a href="@Url.Action("Index","Register")"><button class="btn btn-primary btn-lg btn-block logbtn" type="button">Sign Up</button></a>
 							</div>
 						</div>
 					</div>

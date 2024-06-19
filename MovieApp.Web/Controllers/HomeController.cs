@@ -35,26 +35,23 @@ namespace MemoMate.Web.Controllers
 
 				if (user != null)
 				{
-					// Oturum bilgilerini ayarlayın
 					HttpContext.Session.SetString("UserId", user.ID.ToString());
 					HttpContext.Session.SetString("Username", user.Username);
 
 					Debug.WriteLine(user.Username);
-					return RedirectToAction("Index", "Posts"); // Başarılı giriş durumunda yönlendirme
+					return RedirectToAction("Index", "Posts");
 				}
 				else
 				{
-					ModelState.AddModelError(string.Empty, "Invalid login attempt."); // Geçersiz giriş denemesi hatası ekle
+					ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 				}
 			}
 
-			// Eğer buraya geldiyse, model geçersizdir veya giriş bilgileri hatalıdır
-			// Hata mesajlarını kontrol edin
 			foreach (var modelState in ModelState.Values)
 			{
 				foreach (var error in modelState.Errors)
 				{
-					Console.WriteLine(error.ErrorMessage); // Hata mesajlarını konsola yazdır
+					Console.WriteLine(error.ErrorMessage);
 				}
 			}
 

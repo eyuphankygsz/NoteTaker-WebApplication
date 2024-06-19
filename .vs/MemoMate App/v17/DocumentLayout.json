@@ -1,38 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\",
+  "WorkspaceRootPath": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_loggedlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_loggedlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\views\\posts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\posts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\posts\\rates.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\posts\\rates.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\views\\shared\\_post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\mega\\source\\repos\\movieapptutorial\\movieapp.web\\views\\shared\\_loggedlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_loggedlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\posts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\posts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_bottombar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_bottombar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\css\\posts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\css\\posts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\css\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\css\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,104 +54,150 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "navbar.css",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\wwwroot\\css\\navbar.css",
-              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\css\\navbar.css",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\wwwroot\\css\\navbar.css",
-              "RelativeToolTip": "MovieApp.Web\\wwwroot\\css\\navbar.css",
-              "ViewState": "AQIAADgAAAAAAAAAAAAAAEEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-06-15T19:18:34.136Z"
+              "DocumentIndex": 1,
+              "Title": "Rates.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Posts\\Rates.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Posts\\Rates.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Posts\\Rates.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Posts\\Rates.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAnwCcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T22:08:18.6Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_sidebar.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "DocumentIndex": 2,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "MovieApp.Web\\Controllers\\AboutController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-19T22:08:08.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_bottombar.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T16:37:13.696Z"
+              "WhenOpened": "2024-06-19T19:26:03.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_sidebar.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-15T16:37:13.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "navbar.css",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\navbar.css",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\css\\navbar.css",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\navbar.css",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\css\\navbar.css",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAAAGMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-15T19:18:34.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "register.css",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\register.css",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\css\\register.css",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\register.css",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\css\\register.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-19T20:44:24.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Posts\\Index.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Posts\\Index.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Posts\\Index.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Posts\\Index.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAADwvyMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-15T18:54:00.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "posts.css",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\posts.css",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\css\\posts.css",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\posts.css",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\css\\posts.css",
+              "ViewState": "AQIAADQAAAAAAAAAAAAuwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-19T21:03:06.666Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "_post.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_post.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_post.cshtml",
               "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_post.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_post.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_post.cshtml",
               "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_post.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T19:10:51.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\RegisterController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\RegisterController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\RegisterController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T18:59:23.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T18:58:29.097Z",
+              "WhenOpened": "2024-06-15T19:10:51.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Posts\\Index.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Posts\\Index.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Posts\\Index.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Posts\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T18:54:00.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_LoggedLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
+              "DocumentIndex": 3,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "MovieApp.Web\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T16:37:27.251Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T18:59:23.507Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PostsController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\PostsController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\PostsController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\MEGA\\source\\repos\\MovieAppTutorial\\MovieApp.Web\\Controllers\\PostsController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\PostsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T15:39:34.456Z"
+              "DocumentIndex": 0,
+              "Title": "_LoggedLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_LoggedLayout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-15T16:37:27.251Z",
+              "EditorCaption": ""
             }
           ]
         }
