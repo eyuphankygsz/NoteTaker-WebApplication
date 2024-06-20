@@ -89,7 +89,10 @@
     .afterlayout{
         margin-top: 10px !important;
     }
-
+    .fixed-bottom {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
 }
 @media (max-width: 576px) {
     .navbar-expand-sm .navbar-nav {
