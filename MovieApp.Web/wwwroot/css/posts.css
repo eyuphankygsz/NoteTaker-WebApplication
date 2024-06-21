@@ -69,6 +69,7 @@
 @media (max-width: 992px) {
     .posts-main {
         display: flex !important;
+<<<<<<< HEAD
         flex-direction: column-reverse;
     }
 
@@ -77,5 +78,16 @@
     }
     .posts-bg{
         margin-bottom:100px;
+=======
+        flex-direction:column-reverse !important;
+    }
+
+    .posts-interests {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .posts-container {
+        margin-bottom: 100px !important;
+>>>>>>> 86211ef1167d5ab6053237bb4d22cd42a03f9338
     }
 }

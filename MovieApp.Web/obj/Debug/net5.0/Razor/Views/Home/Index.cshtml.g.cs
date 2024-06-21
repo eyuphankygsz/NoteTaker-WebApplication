@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Home_Index), @"mvc.1.0.view", @"/Views/Home/Index.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,11 +16,15 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -29,8 +33,8 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"866ff071f70deceb62dbf0f2aaa8a8f8c19dadcef0e575871cf0b3de5de748a5", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"866ff071f70deceb62dbf0f2aaa8a8f8c19dadcef0e575871cf0b3de5de748a5", @"/Views/Home/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserLoginModel>
     #nullable disable
@@ -64,7 +68,7 @@ using MemoMate.Web.Models;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "866ff071f70deceb62dbf0f2aaa8a8f8c19dadcef0e575871cf0b3de5de748a54301", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "866ff071f70deceb62dbf0f2aaa8a8f8c19dadcef0e575871cf0b3de5de748a54358", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -89,7 +93,6 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral(@"<div class=""main"">
 	<div class=""d-flex container main-content justify-content-center"">
 		<div class=""card text-white welcome bg-transparent border-0 ps-5"">
@@ -237,15 +240,13 @@ using MemoMate.Web.Models;
 								<p class=""mb-1"" style=""line-height:2rem;"">or</p>
 								<a");
             BeginWriteAttribute("href", " href=\"", 7141, "\"", 7179, 1);
-            WriteAttributeValue("", 7148, 
 #nullable restore
 #line 148 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Home\Index.cshtml"
-                  Url.Action("Index","Register")
+WriteAttributeValue("", 7148, Url.Action("Index","Register"), 7148, 31, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 7148, 31, false);
             EndWriteAttribute();
             WriteLiteral(@"><button class=""btn btn-primary btn-lg btn-block logbtn"" type=""button"">Sign Up</button></a>
 							</div>

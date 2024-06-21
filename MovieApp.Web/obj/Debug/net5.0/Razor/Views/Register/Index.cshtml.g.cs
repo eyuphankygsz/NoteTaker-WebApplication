@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Register_Index), @"mvc.1.0.view", @"/Views/Register/Index.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,11 +16,15 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -29,8 +33,8 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"85d6e56b77ebaa4685ab2dc67a87c77336bbc5c2e363ea2d0095ac5139f00b62", @"/Views/Register/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"85d6e56b77ebaa4685ab2dc67a87c77336bbc5c2e363ea2d0095ac5139f00b62", @"/Views/Register/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Register_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserRegisterModel>
     #nullable disable
@@ -64,7 +68,7 @@ using MemoMate.Web.Models;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "85d6e56b77ebaa4685ab2dc67a87c77336bbc5c2e363ea2d0095ac5139f00b624328", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "85d6e56b77ebaa4685ab2dc67a87c77336bbc5c2e363ea2d0095ac5139f00b624385", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -89,7 +93,6 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("<div class=\"main\">\r\n\t<form class=\"register-container\" asp-action=\"Index\" method=\"post\" runat=\"server\">\r\n\t\t<h2 class=\"text-center mb-4\">Register</h2>\r\n\t\t<div class=\"input-group mb-3\">\r\n\t\t\t<span class=\"input-group-text\" id=\"basic-addon1\">");
             WriteLiteral(@"@</span>
 			<input type=""text"" asp-for=""Username"" name=""Username"" class=""form-control username"" placeholder=""JohnDoe"" aria-label=""Username"" aria-describedby=""basic-addon1"">
