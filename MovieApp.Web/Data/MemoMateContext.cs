@@ -49,6 +49,13 @@ namespace MemoMate.Data
 
 			base.OnModelCreating(modelBuilder);
 		}
-
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlServer("YourConnectionStringHere",
+					sqlServerOptions => sqlServerOptions.EnableRetryOnFailure());
+			}
+		}
 	}	
 }

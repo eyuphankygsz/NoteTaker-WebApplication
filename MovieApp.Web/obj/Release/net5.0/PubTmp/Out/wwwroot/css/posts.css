@@ -62,3 +62,20 @@
     height: 800px;
     background-color: #B08AFA;
 }
+.navbar-expand-sm .navbar-nav {
+    justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+    .posts-main {
+        display: flex !important;
+        flex-direction: column-reverse;
+    }
+
+    .posts-interests {
+        margin-bottom: 10px;
+    }
+    .posts-bg{
+        margin-bottom:100px;
+    }
+}

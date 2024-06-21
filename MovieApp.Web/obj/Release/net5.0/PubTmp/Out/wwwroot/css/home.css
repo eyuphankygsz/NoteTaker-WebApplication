@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    transition: ease 1ms;
 }
 
 body {
@@ -190,4 +191,38 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+    .main .main-content {
+        display: block !important;
+    }
+
+    .main-content .welcome {
+        width: 100% !important;
+        padding-left: 15px !important;
+    }
+
+        .main-content .welcome .card-body {
+            padding-left: 0 !important;
+        }
+
+    .main-content .login-section {
+        width: 100% !important;
+    }
+
+    .login-extension {
+        width: 100% !important;
+        max-width:500px !important;
+    }
+    #signupbuttonlink {
+        display: none;
+    }
+
+    #name-text {
+        font-size: 3rem !important;
+    }
+    .step-container{
+        height: 100% !important;
+    }
 }
