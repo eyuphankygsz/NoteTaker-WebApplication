@@ -1,0 +1,67 @@
+﻿@model UserProfileViewModel
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/posts.css" />
+}
+@{
+	ViewData["Title"] = Model.Username + "'s Profile";
+	Layout = "_LoggedLayout";
+}
+@section SideExtension {
+	@await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="/img/user/profile/@Model.Photo" class="card-img-top rounded-circle mt-4" alt="User Photo">
+                <div class="card-body text-center">
+                    <h4 class="card-title">@Model.Username</h4>
+                    <p class="card-text">@Model.Username</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>User Details</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Email:</strong> @Model.Mail</p>
+                    <p><strong>Full Name:</strong> @Model.Username</p>
+                    <p><strong>Creation Date:</strong> @Model.CreationDate.ToShortDateString()</p>
+                    <!-- Add other user details as needed -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5>@Model.Username's Posts</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        @foreach (var post in Model.Posts)
+                        {
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">@post.NoteTitle</h5>
+                                    <small>@post.PostDate.ToShortDateString()</small>
+                                </div>
+                                <p class="mb-1">@post.NoteContent</p>
+                                <small>Rating: @post.PostRate</small>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+@section Scripts {
+	<script src="./js/Posts/posts.js"></script>
+	<script src="./js/Posts/posts-index.js"></script>
+}

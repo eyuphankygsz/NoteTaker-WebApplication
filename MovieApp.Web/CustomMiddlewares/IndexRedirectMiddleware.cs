@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MemoMate.Web.CustomMiddlewares
@@ -7,7 +8,13 @@ namespace MemoMate.Web.CustomMiddlewares
 	public class IndexRedirectMiddleware
 	{
 		private readonly RequestDelegate _next;
-		
+		private readonly string[] paths = new string[]
+		{
+			"/",
+			"/home",
+			"/home/index",
+			"/home/about"
+		};
 		public IndexRedirectMiddleware(RequestDelegate next)
 		{
 			_next = next;
@@ -15,12 +22,9 @@ namespace MemoMate.Web.CustomMiddlewares
 
 		public async Task InvokeAsync(HttpContext context)
 		{
-			if (context.Request.Path.HasValue && context.Request.Path.Value.ToLower().EndsWith("/index"))
+            if (string.IsNullOrEmpty(context.Session.GetString("UserId")) && !paths.Contains(context.Request.Path.Value.ToLower()))
 			{
-				var newPath = context.Request.Path.Value.Substring(0, context.Request.Path.Value.Length - 6);
-				if(string.IsNullOrEmpty(newPath)) 
-					newPath = "/";
-				context.Response.Redirect(newPath);
+				context.Response.Redirect("/");
 				return;
 			}
 

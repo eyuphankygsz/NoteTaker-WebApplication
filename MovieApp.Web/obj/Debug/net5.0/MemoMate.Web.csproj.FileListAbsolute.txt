@@ -159,3 +159,4 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Create.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.sourcelink.json
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.371DA5FD.Up2Date
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs

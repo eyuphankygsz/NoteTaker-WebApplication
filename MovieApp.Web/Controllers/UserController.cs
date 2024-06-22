@@ -1,48 +1,70 @@
 ﻿using MemoMate.Data;
+using MemoMate.Web.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MemoMate.Web.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class UserController : Controller
-	{
-		private readonly MemoMateContext _context;
+    public class UserController : Controller
+    {
+        private readonly MemoMateContext _context;
 
-		public UserController(MemoMateContext context)
-		{
-			_context = context;
-		}
-		public IActionResult Logout()
-		{
-			HttpContext.Session.Clear();
-			return RedirectToAction("Index","");
-		}
+        public UserController(MemoMateContext context)
+        {
+            _context = context;
+        }
 
+        [HttpGet("User/Details/{username}")]
+        public async Task<IActionResult> Details(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+                return RedirectToAction("Index", "Home");
 
-		[HttpGet("validate-username")]
-		public async Task<IActionResult> ValidateUsername(string username)
-		{
-			var user = await _context.Users
-							 .Where(u => u.Username == username)
-							 .AnyAsync();
+            var profile = await GetProfileAsync(username);
 
+            if (profile == null)
+                return NotFound();
 
-			return Ok(new { isValid = user });
-		}
+            return View(profile);
+        }
 
-		[HttpGet("validate-mail")]
-		public async Task<IActionResult> ValidateMail(string mail)
-		{
-			var user = await _context.Users
-							 .Where(u => u.Mail == mail)
-							 .AnyAsync();
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
 
+        private async Task<UserProfileViewModel> GetProfileAsync(string username)
+        {
+			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId")));
 
-			return Ok(new { isValid = user });
-		}
-	}
+            var profile = await _context.Users
+                .Where(u => u.Username == username)
+                .Select(u => new UserProfileViewModel
+                {
+                    LoggedUserEntity = loggedUser,
+                    Username = u.Username,
+                    CreationDate = u.CreateDate,
+                    Mail = u.Mail,
+                    Photo = u.Photo,
+                    Posts = u.Posts.Select(p => new PostDetailModel
+                    {
+                        PostID = p.ID,
+                        NoteTitle = p.NoteEntity.Title,
+                        NoteContent = p.NoteEntity.Content,
+                        PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
+                        PostDate = p.Date,
+                        Username = u.Username,
+                        UserPhoto = u.Photo
+                    }).ToList()
+                })
+                .FirstOrDefaultAsync();
+
+            return profile;
+        }
+    }
 }
