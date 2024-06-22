@@ -1,0 +1,1 @@
+﻿sidebarActive(1); bottombarActive(0);

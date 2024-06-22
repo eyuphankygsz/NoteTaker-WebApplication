@@ -1,7 +1,7 @@
 ﻿@model RateViewModel
 
 @section Styles {
-						<link rel="stylesheet" href="~/css/posts.css" />
+	<link rel="stylesheet" href="~/css/posts.css" />
 }
 @{
 	Layout = "_LoggedLayout";
@@ -14,22 +14,22 @@
 	<div class="posts-container">
 		<div class="posts-bg">
 			<div class="posts-content">
-				<div id="posts-title" class="text-white mb-3" >TOP POSTS</div>
+				<div id="posts-title" class="text-white mb-3">TOP POSTS</div>
 				@await Html.PartialAsync("_post", Model.RatePost)
 
-                <form method="post" action="@Url.Action("RatePost", "Posts")">
-                	@Html.AntiForgeryToken()
-                	<input type="hidden" name="RatePost.PostID" value="@Model.RatePost.PostID" />
-                	<input type="hidden" name="like" value="true" />
-                	<button type="submit">Like</button>
-                </form>
+				<form method="post" action="@Url.Action("RatePost", "Posts")">
+					@Html.AntiForgeryToken()
+					<input type="hidden" name="RatePost.PostID" value="@Model.RatePost.PostID" />
+					<input type="hidden" name="like" value="true" />
+					<button type="submit">Like</button>
+				</form>
 				<form method="post" runat="server" action="@Url.Action("RatePost", "Posts")">
-                	@Html.AntiForgeryToken()
-                	<input type="hidden" name="RatePost.PostID" value="@Model.RatePost.PostID" />
-                	<input type="hidden" name="like" value="false" />
-                	<button type="submit">Dislike</button>
-                </form>
-		
+					@Html.AntiForgeryToken()
+					<input type="hidden" name="RatePost.PostID" value="@Model.RatePost.PostID" />
+					<input type="hidden" name="like" value="false" />
+					<button type="submit">Dislike</button>
+				</form>
+
 			</div>
 		</div>
 	</div>
@@ -39,5 +39,6 @@
 	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
-				<script src="./js/posts-rate.js"></script>
+	<script src="./js/Posts/posts.js"></script>
+	<script src="./js/Posts/posts-rate.js"></script>
 }

@@ -9,9 +9,12 @@ links2.forEach((link) => {
     link.classList.remove("active");
 })
 
-console.log(links);
-console.log(links2);
-links[0].classList.add("active");
-links2[1].classList.add("active");
 
+function sidebarActive(pos) {
+
+    links[pos].classList.add("active");
+}
+function bottombarActive(pos) {
+    links2[pos].classList.add("active");
+}
 
