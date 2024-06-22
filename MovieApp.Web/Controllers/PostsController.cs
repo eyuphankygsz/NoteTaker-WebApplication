@@ -38,7 +38,7 @@ namespace MemoMate.Web.Controllers
 								  {
 									  PostID = p.ID,
 									  PostDate = p.Date,
-									  PostRate = p.RateUps * 5 / (float)p.RateCount,
+                                      PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
 									  NoteContent = p.NoteEntity.Content,
 									  NoteTitle = p.NoteEntity.Title,
 									  Username = p.UserEntity.Username,
@@ -91,7 +91,7 @@ namespace MemoMate.Web.Controllers
 									{
 										PostID = p.ID,
 										PostDate = p.Date,
-										PostRate = p.RateUps * 5 / (float)p.RateCount,
+										PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
 										NoteContent = p.NoteEntity.Content,
 										NoteTitle = p.NoteEntity.Title,
 										Username = p.UserEntity.Username,
@@ -139,5 +139,41 @@ namespace MemoMate.Web.Controllers
 
 			return RedirectToAction("Rates");
 		}
-	}
+
+		[HttpGet]
+		public async Task<IActionResult> Create()
+		{
+			CreateViewModel model = new CreateViewModel();
+			model.LoggedUserEntity = await _context.Users.Where(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId"))).FirstOrDefaultAsync();
+			model.NewNote = new Note();
+			return View(model);
+		}
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Note newNote)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Model geçersizse, hata işleme veya uygun bir işlem yapma
+                return View(new CreateViewModel());
+            }
+
+            _context.Notes.Add(newNote);
+            await _context.SaveChangesAsync();
+
+            Post post = new Post()
+            {
+                UserID = int.Parse(HttpContext.Session.GetString("UserId")),
+                NoteID = newNote.Id,
+                Date = TimeHelpers.GetCurrentDate(),
+                RateCount = 0,
+                RateUps = 0
+            };
+            _context.Posts.Add(post);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Posts");
+        }
+
+    }
 }

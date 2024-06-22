@@ -38,7 +38,7 @@ namespace MemoMate.Data
 
 			modelBuilder.Entity<Rate>(rate =>
 			{
-				rate.HasOne(p => p.NoteEntity)
+				rate.HasOne(p => p.PostEntity)
 					.WithMany()
 					.HasForeignKey(p => p.PostID);
 

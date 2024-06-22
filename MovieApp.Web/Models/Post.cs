@@ -11,15 +11,15 @@ namespace MemoMate.Web.Models
 
 
 		[Column("note_id")]
-		public int NoteID{ get; private set; }
+		public int NoteID{ get; set; }
 
 
 		[Column("user_id")]
-		public int UserID { get; private set; }
+		public int UserID { get; set; }
 
 
 		[Column("post_date")]
-		public DateTime Date { get; private set; }
+		public DateTime Date { get; set; }
 
 		[Column("rate_ups")]
 		public int RateUps { get; set; }

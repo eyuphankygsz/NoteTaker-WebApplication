@@ -1,0 +1,44 @@
+﻿@model CreateViewModel
+
+@section Styles {
+        <link rel="stylesheet" href="~/css/posts.css" />
+}
+@{
+    Layout = "_LoggedLayout";
+}
+@section SideExtension {
+    @await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
+}
+
+<div class="posts-main">
+    <div class="posts-container">
+        <div class="posts-bg">
+            <div class="posts-content">
+                <div id="posts-title" class="text-white mb-3">TOP POSTS</div>
+
+                <div class="card text-center mb-3">
+                    <form asp-action="Create" method="post">
+                        <div class="card-header">
+                            <input type="text" name="Title" class="form-control" placeholder="Note Title" required />
+                            </div>
+                            <div class="card-body">
+                                <textarea name="Content" class="form-control" placeholder="Note Content" required></textarea>
+                            </div>
+                            <div class="card-footer text-body-secondary">
+                                <button type="submit" class="btn btn-primary">Create Note</button>
+                            </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section BottomExtension {
+    @await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+@section Scripts {
+        <script src="~/js/posts-rate.js"></script>
+}

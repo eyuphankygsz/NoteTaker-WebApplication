@@ -10,9 +10,9 @@ namespace MemoMate.Web.Models
 		public int Id { get; private set; }
 		
 		[Column("note_title")]
-		public string Title { get; private set; }
+		public string Title { get; set; }
 		
 		[Column("note_content")]
-		public string Content { get; private set; }
+		public string Content { get; set; }
 	}
 }
