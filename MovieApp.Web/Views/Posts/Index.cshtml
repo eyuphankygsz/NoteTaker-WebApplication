@@ -22,21 +22,46 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="posts-interests">
 		<div class="posts-content">
-			<div id="posts-title" class="text-white mb-3" style="font-size:2rem;">Yesterday's TOP 3</div>
-			@{
-				foreach (var note in Model.PostsYesterday)
-					@await Html.PartialAsync("_post", note)
+			<div id="posts-title" class="text-white mb-3" style="font-size:2rem;">Yesterday's TOPS</div>
+
+			@if (Model.PostsYesterday.Count != 0)
+			{
+				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+					<div class="carousel-inner">
+						@{
+							int i = 0;
+							foreach (var note in Model.PostsYesterday)
+							{
+								<div class="carousel-item @(i == 0 ? "active" : "")">
+									@await Html.PartialAsync("_post", note)
+								</div>
+								i++;
+							}
+						}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+						<span aria-hidden="true"><i class="fa-solid fa-angle-left fa-2xl" style="color: #B197FC;"></i></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+						<span aria-hidden="true"><i class="fa-solid fa-angle-right fa-2xl" style="color: #B197FC;"></i></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 			}
 		</div>
 	</div>
+
+
 </div>
 
 @{
 	if (MessageHelpers.PostBack)
 	{
-		@await Html.PartialAsync("_message",MessageHelpers.TryGetMessageModel())
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
 	}
 }
 
@@ -46,4 +71,5 @@
 @section Scripts {
 	<script src="./js/Posts/posts.js"></script>
 	<script src="./js/Posts/posts-index.js"></script>
+
 }

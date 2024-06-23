@@ -14,7 +14,7 @@
 	<div class="posts-container">
 		<div class="posts-bg">
 			<div class="posts-content">
-				<div id="posts-title" class="text-white mb-3">TOP POSTS</div>
+				<div id="posts-title" class="text-white mb-3">RATE</div>
 				@await Html.PartialAsync("_post", Model.RatePost)
 
 				<form method="post" action="@Url.Action("RatePost", "Posts")">
