@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__MainLayout), @"mvc.1.0.view", @"/Views/Shared/_MainLayout.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,22 +16,16 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -40,8 +34,8 @@ using MemoMate.Web.GeneralHelpers;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f6", @"/Views/Shared/_MainLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f6", @"/Views/Shared/_MainLayout.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__MainLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -72,7 +66,7 @@ using MemoMate.Web.GeneralHelpers;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f63973", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f63887", async() => {
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
 	<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
@@ -85,13 +79,15 @@ using MemoMate.Web.GeneralHelpers;
 	<link href=""https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"" rel=""stylesheet"" />
 	<link href=""/css/navbar.css"" rel=""stylesheet"" />
 	");
+                Write(
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_MainLayout.cshtml"
-Write(RenderSection("Styles", required: false));
+  RenderSection("Styles", required: false)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n\t<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">\r\n\r\n\r\n");
             }
             );
@@ -105,23 +101,27 @@ Write(RenderSection("Styles", required: false));
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f66282", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f66234", async() => {
                 WriteLiteral("\r\n\t\t");
+                Write(
 #nullable restore
 #line 20 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_MainLayout.cshtml"
-   Write(await Html.PartialAsync("_navbar"));
+   await Html.PartialAsync("_navbar")
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(";\r\n\t<div class=\"main-content\">\r\n\t\t<div class=\"afterlayout\">\r\n\t\t\t");
+                Write(
 #nullable restore
 #line 23 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_MainLayout.cshtml"
-       Write(RenderBody());
+    RenderBody()
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(@"
 		</div>
 	</div>
@@ -129,13 +129,15 @@ Write(RenderSection("Styles", required: false));
 	<script src=""https://kit.fontawesome.com/46dac6df79.js"" crossorigin=""anonymous""></script>
 	<script src=""https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"" integrity=""sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"" crossorigin=""anonymous""></script>
 	");
+                Write(
 #nullable restore
 #line 29 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_MainLayout.cshtml"
-Write(RenderSection("Scripts", required: false));
+  RenderSection("Scripts", required: false)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(";\r\n");
             }
             );

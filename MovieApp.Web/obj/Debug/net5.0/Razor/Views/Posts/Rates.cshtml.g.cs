@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Posts_Rates), @"mvc.1.0.view", @"/Views/Posts/Rates.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,22 +16,16 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -40,8 +34,8 @@ using MemoMate.Web.GeneralHelpers;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"2309dbd68bc701ad8cb4c0846d43aaef21934fa554130cffaf6938d982c7b3b2", @"/Views/Posts/Rates.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"2309dbd68bc701ad8cb4c0846d43aaef21934fa554130cffaf6938d982c7b3b2", @"/Views/Posts/Rates.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Posts_Rates : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<RateViewModel>
     #nullable disable
@@ -75,7 +69,7 @@ using MemoMate.Web.GeneralHelpers;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2309dbd68bc701ad8cb4c0846d43aaef21934fa554130cffaf6938d982c7b3b24582", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2309dbd68bc701ad8cb4c0846d43aaef21934fa554130cffaf6938d982c7b3b24496", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -100,92 +94,111 @@ using MemoMate.Web.GeneralHelpers;
 #line default
 #line hidden
 #nullable disable
+
             DefineSection("SideExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 10 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-Write(await Html.PartialAsync("_sidebar", Model.LoggedUserEntity));
+  await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
             WriteLiteral("\r\n<div class=\"posts-main\">\r\n\t<div class=\"posts-container\">\r\n\t\t<div class=\"posts-bg\">\r\n\t\t\t<div class=\"posts-content\">\r\n\t\t\t\t<div id=\"posts-title\" class=\"text-white mb-3\">TOP POSTS</div>\r\n\t\t\t\t");
+            Write(
 #nullable restore
 #line 18 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-           Write(await Html.PartialAsync("_post", Model.RatePost));
+     await Html.PartialAsync("_post", Model.RatePost)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\r\n\t\t\t\t<form method=\"post\"");
             BeginWriteAttribute("action", " action=\"", 489, "\"", 530, 1);
+            WriteAttributeValue("", 498, 
 #nullable restore
 #line 20 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-WriteAttributeValue("", 498, Url.Action("RatePost", "Posts"), 498, 32, false);
+                                 Url.Action("RatePost", "Posts")
 
 #line default
 #line hidden
 #nullable disable
+            , 498, 32, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-               Write(Html.AntiForgeryToken());
+      Html.AntiForgeryToken()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t<input type=\"hidden\" name=\"RatePost.PostID\"");
             BeginWriteAttribute("value", " value=\"", 613, "\"", 643, 1);
+            WriteAttributeValue("", 621, 
 #nullable restore
 #line 22 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-WriteAttributeValue("", 621, Model.RatePost.PostID, 621, 22, false);
+                                                         Model.RatePost.PostID
 
 #line default
 #line hidden
 #nullable disable
+            , 621, 22, false);
             EndWriteAttribute();
             WriteLiteral(" />\r\n\t\t\t\t\t<input type=\"hidden\" name=\"like\" value=\"true\" />\r\n\t\t\t\t\t<button type=\"submit\">Like</button>\r\n\t\t\t\t</form>\r\n\t\t\t\t<form method=\"post\" runat=\"server\"");
             BeginWriteAttribute("action", " action=\"", 797, "\"", 838, 1);
+            WriteAttributeValue("", 806, 
 #nullable restore
 #line 26 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-WriteAttributeValue("", 806, Url.Action("RatePost", "Posts"), 806, 32, false);
+                                                Url.Action("RatePost", "Posts")
 
 #line default
 #line hidden
 #nullable disable
+            , 806, 32, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 27 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-               Write(Html.AntiForgeryToken());
+      Html.AntiForgeryToken()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t<input type=\"hidden\" name=\"RatePost.PostID\"");
             BeginWriteAttribute("value", " value=\"", 921, "\"", 951, 1);
+            WriteAttributeValue("", 929, 
 #nullable restore
 #line 28 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-WriteAttributeValue("", 929, Model.RatePost.PostID, 929, 22, false);
+                                                         Model.RatePost.PostID
 
 #line default
 #line hidden
 #nullable disable
+            , 929, 22, false);
             EndWriteAttribute();
             WriteLiteral(" />\r\n\t\t\t\t\t<input type=\"hidden\" name=\"like\" value=\"false\" />\r\n\t\t\t\t\t<button type=\"submit\">Dislike</button>\r\n\t\t\t\t</form>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n</div>\r\n");
             DefineSection("BottomExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 39 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Rates.cshtml"
-Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
+  await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
