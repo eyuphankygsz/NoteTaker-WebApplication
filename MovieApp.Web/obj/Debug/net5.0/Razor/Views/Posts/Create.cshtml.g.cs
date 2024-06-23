@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Posts_Create), @"mvc.1.0.view", @"/Views/Posts/Create.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,11 +16,15 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -29,8 +33,15 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e", @"/Views/Posts/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
+#nullable restore
+#line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.GeneralHelpers;
+
+#line default
+#line hidden
+#nullable disable
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e", @"/Views/Posts/Create.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Posts_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CreateViewModel>
     #nullable disable
@@ -66,7 +77,7 @@ using MemoMate.Web.Models;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e5040", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e5316", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -91,18 +102,15 @@ using MemoMate.Web.Models;
 #line default
 #line hidden
 #nullable disable
-
             DefineSection("SideExtension", async() => {
                 WriteLiteral("\r\n    ");
-                Write(
 #nullable restore
 #line 10 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Create.cshtml"
-     await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
+Write(await Html.PartialAsync("_sidebar", Model.LoggedUserEntity));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n");
             }
             );
@@ -132,21 +140,19 @@ using MemoMate.Web.Models;
             WriteLiteral("          </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
             DefineSection("BottomExtension", async() => {
                 WriteLiteral("\r\n    ");
-                Write(
 #nullable restore
 #line 40 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Create.cshtml"
-     await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n");
             }
             );
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e8710", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e8902", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -160,7 +166,7 @@ using MemoMate.Web.Models;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e9833", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64ecaac33b3657679c28a6efea86748ce7ae84609638ce49a41b4463a641976e10025", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

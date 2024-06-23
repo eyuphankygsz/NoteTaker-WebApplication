@@ -106,7 +106,8 @@ namespace MemoMate.Web.Controllers
 			}
 			else
 			{
-				return RedirectToAction("Index", "Posts");
+				MessageHelpers.SetInfo("Sorry, there is no new post found :(");
+                return RedirectToAction("Index", "Posts");
 			}
 
 		}

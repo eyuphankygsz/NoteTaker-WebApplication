@@ -33,6 +33,13 @@
 	</div>
 </div>
 
+@{
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message",MessageHelpers.TryGetMessageModel())
+	}
+}
+
 @section BottomExtension {
 	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
