@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__sidebar), @"mvc.1.0.view", @"/Views/Shared/_sidebar.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,29 +16,21 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -47,8 +39,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"d7fec65393496cc6f5a1c103afeb879502dcc85617b6da63d2a5c686bf4da979", @"/Views/Shared/_sidebar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"d7fec65393496cc6f5a1c103afeb879502dcc85617b6da63d2a5c686bf4da979", @"/Views/Shared/_sidebar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__sidebar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SidebarModel>
     #nullable disable
@@ -58,26 +50,30 @@ using MemoMate.Web.Interfaces;
         {
             WriteLiteral("\r\n<div class=\"d-flex flex-column flex-shrink-0 custom-sidebar sticky-top\" style=\"width: 4.5rem;\">\r\n\t<img src=\"/img/logo.png\"/>\r\n\t<ul class=\"nav nav-pills nav-flush flex-column mb-auto text-center\">\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 250, "\"", 285, 1);
+            WriteAttributeValue("", 257, 
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 257, Url.Action("Index","Posts"), 257, 28, false);
+             Url.Action("Index","Posts")
 
 #line default
 #line hidden
 #nullable disable
+            , 257, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link active py-3 border-bottom\" id=\"side-home\" aria-current=\"page\"");
             BeginWriteAttribute("title", " title=\"", 364, "\"", 372, 0);
             EndWriteAttribute();
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Home\">\r\n\t\t\t\t<i class=\"fa-solid fa-house fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 550, "\"", 585, 1);
+            WriteAttributeValue("", 557, 
 #nullable restore
 #line 12 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 557, Url.Action("Rates","Posts"), 557, 28, false);
+             Url.Action("Rates","Posts")
 
 #line default
 #line hidden
 #nullable disable
+            , 557, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link py-3 border-bottom position-relative\" id=\"side-rate\"");
             BeginWriteAttribute("title", " title=\"", 655, "\"", 663, 0);
@@ -85,7 +81,7 @@ WriteAttributeValue("", 557, Url.Action("Rates","Posts"), 557, 28, false);
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Dashboard\">\r\n\t\t\t\t<i class=\"fa-solid fa-star-half-stroke fa-xl\"></i>\r\n");
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                  
+      
 					string count = GetNewPostCount();
 					if (!string.IsNullOrEmpty(count))
 					{
@@ -93,14 +89,17 @@ WriteAttributeValue("", 557, Url.Action("Rates","Posts"), 557, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t<span class=\"position-absolute badge rounded-pill bg-danger\" style=\"top:10%; left: 65%; font-size: 0.6rem;\">\r\n\t\t\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 19 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                       Write(count);
+        count
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t\t</span>\t\t\r\n");
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
@@ -110,15 +109,18 @@ WriteAttributeValue("", 557, Url.Action("Rates","Posts"), 557, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 1128, "\"", 1164, 1);
+            WriteAttributeValue("", 1135, 
 #nullable restore
 #line 28 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 1135, Url.Action("Create","Posts"), 1135, 29, false);
+             Url.Action("Create","Posts")
 
 #line default
 #line hidden
 #nullable disable
+            , 1135, 29, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link py-3 border-bottom\" id=\"side-create\"");
             BeginWriteAttribute("title", " title=\"", 1218, "\"", 1226, 0);
@@ -133,51 +135,61 @@ WriteAttributeValue("", 1135, Url.Action("Create","Posts"), 1135, 29, false);
 			<img");
             BeginWriteAttribute("src", " src=\"", 1624, "\"", 1677, 2);
             WriteAttributeValue("", 1630, "/img/user/profile/", 1630, 18, true);
+            WriteAttributeValue("", 1648, 
 #nullable restore
 #line 35 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 1648, Model.LoggedUserEntity.Photo, 1648, 29, false);
+                                Model.LoggedUserEntity.Photo
 
 #line default
 #line hidden
 #nullable disable
+            , 1648, 29, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"mdo\" width=\"24\" height=\"24\" class=\"rounded-circle\">\r\n\t\t</a>\r\n\t\t<ul class=\"dropdown-menu text-small shadow\" aria-labelledby=\"dropdownUser3\">\r\n\t\t\t<li><a class=\"dropdown-item\"");
             BeginWriteAttribute("href", " href=\"", 1856, "\"", 1940, 1);
+            WriteAttributeValue("", 1863, 
 #nullable restore
 #line 38 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 1863, Url.Action("Settings", "User", new { id = Model.LoggedUserEntity.Username }), 1863, 77, false);
+                                       Url.Action("Settings", "User", new { id = Model.LoggedUserEntity.Username })
 
 #line default
 #line hidden
 #nullable disable
+            , 1863, 77, false);
             EndWriteAttribute();
             WriteLiteral(">Settings</a></li>\r\n\t\t\t<li><a class=\"dropdown-item\"");
             BeginWriteAttribute("href", " href=\"", 1992, "\"", 2075, 1);
+            WriteAttributeValue("", 1999, 
 #nullable restore
 #line 39 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 1999, Url.Action("Details", "User", new { id = Model.LoggedUserEntity.Username }), 1999, 76, false);
+                                       Url.Action("Details", "User", new { id = Model.LoggedUserEntity.Username })
 
 #line default
 #line hidden
 #nullable disable
+            , 1999, 76, false);
             EndWriteAttribute();
             WriteLiteral(">Profile - ");
+            Write(
 #nullable restore
 #line 39 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                                                                                                                  Write(Model.LoggedUserEntity.Username);
+                                                                                                                               Model.LoggedUserEntity.Username
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</a></li>\r\n\t\t\t<li><hr class=\"dropdown-divider\"></li>\r\n\t\t\t<li><a class=\"dropdown-item\" id=\"signout\"");
             BeginWriteAttribute("href", " href=\"", 2217, "\"", 2253, 1);
+            WriteAttributeValue("", 2224, 
 #nullable restore
 #line 41 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 2224, Url.Action("Logout", "User"), 2224, 29, false);
+                                                    Url.Action("Logout", "User")
 
 #line default
 #line hidden
 #nullable disable
+            , 2224, 29, false);
             EndWriteAttribute();
             WriteLiteral(">Sign out</a></li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>\r\n\r\n\t\t<script src=\"/js/sidebar.js\"></script>\r\n\r\n\r\n");
 #nullable restore
@@ -193,6 +205,7 @@ WriteAttributeValue("", 2224, Url.Action("Logout", "User"), 2224, 29, false);
 #line default
 #line hidden
 #nullable disable
+
         }
         #pragma warning restore 1998
         #nullable restore

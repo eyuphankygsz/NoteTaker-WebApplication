@@ -34,6 +34,15 @@
 
 </div>
 
+@{
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+	}
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 			@section Scripts{
 				<script src="/js/register.js"></script>
 			}

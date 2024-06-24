@@ -37,6 +37,7 @@ namespace MemoMate.Web.GeneralHelpers
 				if (string.IsNullOrEmpty(_errorMessage)) return WarningMessage;
 				string message = _errorMessage;
 				_errorMessage = null;
+				_postBack = false;
 				return GetMessageModel(message, "danger");
 			}
 		}
@@ -50,6 +51,7 @@ namespace MemoMate.Web.GeneralHelpers
 
 				string message = _warningMessage;
 				_warningMessage = null;
+				_postBack = false; 
 				return GetMessageModel(message, "warning");
 			}
 		}
@@ -62,6 +64,7 @@ namespace MemoMate.Web.GeneralHelpers
 				if (string.IsNullOrEmpty(_infoMessage)) return null;
 				string message = _infoMessage;
 				_infoMessage = null;
+				_postBack = false;
 				return GetMessageModel(message, "info");
 			}
 		}
@@ -71,9 +74,7 @@ namespace MemoMate.Web.GeneralHelpers
 		{
 			get
 			{
-				bool postback = _postBack;
-				_postBack = false;
-				return postback;
+				return _postBack;
 			}
 			set => _postBack = value;
 		}

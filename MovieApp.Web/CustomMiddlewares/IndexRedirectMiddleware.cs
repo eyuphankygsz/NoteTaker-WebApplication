@@ -13,7 +13,11 @@ namespace MemoMate.Web.CustomMiddlewares
 			"/",
 			"/home",
 			"/home/index",
-			"/home/about"
+			"/home/about",
+			"/register",
+			"/register/index",
+			"/user/usermailvalidation",
+			"/user/usernamevalidation",
 		};
 		public IndexRedirectMiddleware(RequestDelegate next)
 		{
@@ -22,8 +26,10 @@ namespace MemoMate.Web.CustomMiddlewares
 
 		public async Task InvokeAsync(HttpContext context)
 		{
+			Debug.WriteLine(context.Request.Path.Value.ToLower());
             if (string.IsNullOrEmpty(context.Session.GetString("UserId")) && !paths.Contains(context.Request.Path.Value.ToLower()))
 			{
+				Debug.WriteLine("ROUTING TO...");
 				context.Response.Redirect("/");
 				return;
 			}

@@ -26,7 +26,7 @@ namespace MemoMate.Web.Controllers
 				return RedirectToAction("Index", "Home");
 
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId")));
-			DateTime now = TimeHelpers.GetCurrentDate();
+			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
 			var postsToday = await _context.Posts
@@ -77,7 +77,7 @@ namespace MemoMate.Web.Controllers
 				return RedirectToAction("Index", "Home");
 
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId")));
-			DateTime now = TimeHelpers.GetCurrentDate();
+			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
 			var randomPostToRate = await _context.Posts
@@ -153,11 +153,8 @@ namespace MemoMate.Web.Controllers
         public async Task<IActionResult> Create(Note newNote)
         {
             if (!ModelState.IsValid)
-            {
-                // Model geçersizse, hata işleme veya uygun bir işlem yapma
                 return View(new CreateViewModel());
-            }
-
+  
             _context.Notes.Add(newNote);
             await _context.SaveChangesAsync();
 
@@ -165,7 +162,7 @@ namespace MemoMate.Web.Controllers
             {
                 UserID = int.Parse(HttpContext.Session.GetString("UserId")),
                 NoteID = newNote.Id,
-                Date = TimeHelpers.GetCurrentDate(),
+                Date = TimeHelpers.GetLocalDate(),
                 RateCount = 0,
                 RateUps = 0
             };

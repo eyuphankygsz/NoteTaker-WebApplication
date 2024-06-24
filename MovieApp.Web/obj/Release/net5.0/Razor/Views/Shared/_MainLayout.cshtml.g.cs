@@ -26,11 +26,21 @@ using MemoMate.Web.Controllers;
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.GeneralHelpers;
+
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Interfaces;
+
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f6", @"/Views/Shared/_MainLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"df36c760b636adba1a95ca388a2562bed9818eb52a1c53ef12e60a1a4dbf5f10", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__MainLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -61,7 +71,7 @@ using MemoMate.Web.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f63697", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f64073", async() => {
                 WriteLiteral(@"
 	<meta charset=""UTF-8"">
 	<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
@@ -96,7 +106,7 @@ using MemoMate.Web.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f66044", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1031e5e8ace38a083782ac30b7c91e8b0dd27a8f5635102c9aa650d3f588b1f66420", async() => {
                 WriteLiteral("\r\n\t\t");
                 Write(
 #nullable restore

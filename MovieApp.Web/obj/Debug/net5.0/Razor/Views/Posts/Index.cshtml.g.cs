@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Posts_Index), @"mvc.1.0.view", @"/Views/Posts/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,29 +16,21 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -47,8 +39,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"51b2d57767d6bbc3d912453c1ea1521d26bcea611e5d6482b3a57d2a5ab4330a", @"/Views/Posts/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"51b2d57767d6bbc3d912453c1ea1521d26bcea611e5d6482b3a57d2a5ab4330a", @"/Views/Posts/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Posts_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PostsViewModel>
     #nullable disable
@@ -82,7 +74,7 @@ using MemoMate.Web.Interfaces;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "51b2d57767d6bbc3d912453c1ea1521d26bcea611e5d6482b3a57d2a5ab4330a4798", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "51b2d57767d6bbc3d912453c1ea1521d26bcea611e5d6482b3a57d2a5ab4330a4683", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -107,61 +99,71 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
+
             DefineSection("SideExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity)));
+  await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
             WriteLiteral("\r\n<div class=\"posts-main\">\r\n\t<div class=\"posts-container\">\r\n\t\t<div class=\"posts-bg\">\r\n\t\t\t<div class=\"posts-content\">\r\n\t\t\t\t<div id=\"posts-title\" class=\"text-white mb-3\">TOP POSTS</div>\r\n");
 #nullable restore
 #line 19 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                  
+      
 					foreach (var note in Model.PostsToday)
 						
 
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                   Write(await Html.PartialAsync("_post", note));
+       await Html.PartialAsync("_post", note)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"posts-interests\">\r\n\t\t<div class=\"posts-content\">\r\n\t\t\t<div id=\"posts-title\" class=\"text-white mb-3\" style=\"font-size:2rem;\">Yesterday\'s TOPS</div>\r\n\r\n");
 #nullable restore
 #line 31 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-             if (Model.PostsYesterday.Count != 0)
+    if (Model.PostsYesterday.Count != 0)
 			{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t<div id=\"carouselExampleCaptions\" class=\"carousel slide\" data-bs-ride=\"false\">\r\n\t\t\t\t\t<div class=\"carousel-inner\">\r\n");
 #nullable restore
 #line 35 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                         foreach (var note in Model.PostsYesterday)
+       foreach (var note in Model.PostsYesterday)
 							{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t\t\t<div class=\"carousel-item\">\r\n\t\t\t\t\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 38 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                               Write(await Html.PartialAsync("_post", note));
+          await Html.PartialAsync("_post", note)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t\t\t\t</div>\r\n");
 #nullable restore
 #line 40 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
@@ -170,6 +172,7 @@ Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAs
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"					</div>
 					<button class=""carousel-control-prev"" type=""button"" data-bs-target=""#carouselExampleCaptions"" data-bs-slide=""prev"">
 						<span aria-hidden=""true""><i class=""fa-solid fa-angle-left fa-2xl"" style=""color: #B197FC;""></i></span>
@@ -188,6 +191,7 @@ Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAs
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t</div>\r\n\t</div>\r\n\r\n\r\n</div>\r\n\r\n");
 #nullable restore
 #line 58 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
@@ -199,31 +203,37 @@ Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAs
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 61 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-   Write(await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel()));
+   await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 61 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                                                                 
+                                                                           
 	}
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n");
             DefineSection("BottomExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 66 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
+  await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
@@ -233,10 +243,25 @@ Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
             );
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public ISidebarService SidebarService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
+        ISidebarService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
+                        SidebarService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

@@ -6,98 +6,120 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MemoMate.Web.Controllers
 {
-    public class RegisterController : Controller
-    {
-        private readonly MemoMateContext _context;
+	public class RegisterController : Controller
+	{
+		private readonly MemoMateContext _context;
 
-        public RegisterController(MemoMateContext context)
-        {
-            _context = context;
-        }
+		public RegisterController(MemoMateContext context)
+		{
+			_context = context;
+		}
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
-                return RedirectToAction("Index", "Posts");
-            return View(new UserRegisterModel());
-        }
+		[HttpGet]
+		public IActionResult Index()
+		{
+			if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
+				return RedirectToAction("Index", "Posts");
+			return View(new UserRegisterModel());
+		}
 
-        [HttpPost]
-        public async Task<IActionResult> Index(UserRegisterModel model)
-        {
-            Debug.WriteLine("Take Action");
-            if (ModelState.IsValid)
-            {
-                Debug.WriteLine("Username Control");
-                // Username control
-                var existingUserByUsername = await _context.Users.FirstOrDefaultAsync(u => u.Username == model.Username);
-                if (existingUserByUsername != null)
-                {
-                    ModelState.AddModelError("Username", "This username is already taken.");
-                }
+		[HttpPost]
+		public async Task<IActionResult> Index(UserRegisterModel model)
+		{
+			Debug.WriteLine("Take Action");
+			if (ModelState.IsValid)
+			{
+				Debug.WriteLine("Username Control");
+				// Username control
 
-                Debug.WriteLine("--COMPLETE");
-				var existingUserByMail = await _context.Users.FirstOrDefaultAsync(u => u.Mail == model.Mail);
-				if (existingUserByMail != null)
+				if (!await IsUsernameValid(model.Username) || !await IsMailValid(model.Mail) || !IsPasswordValid(model.Password))
+					return View("Index");
+
+
+				// New User
+				var user = new User
 				{
-					ModelState.AddModelError("Username", "This username is already taken.");
-				}
-				Debug.WriteLine("Mail Control");
+					Username = model.Username,
+					Mail = model.Mail,
+					Password = model.Password,
+					Permissions = "g",
+					Photo = "def.jpg",
+					CreateDate = TimeHelpers.GetLocalDate(),
+				};
 
-                // Mail Control
-                var existingUserByEmail = await _context.Users.FirstOrDefaultAsync(u => u.Mail == model.Mail);
-                if (existingUserByEmail != null)
-                {
-                    ModelState.AddModelError("Mail", "This email is already registered.");
-                }
-                if (existingUserByUsername == null && existingUserByEmail == null)
-                {
-                    // New User
-                    var user = new User
-                    {
-                        Username = model.Username,
-                        Mail = model.Mail,
-                        Password = model.Password,
-                        Permissions = "g",
-                        Photo = "def.jpg",
-                        CreateDate = TimeHelpers.GetCurrentDate(),
-                    };
-                    Debug.WriteLine("----COMPLETE");
 
-                    Debug.WriteLine("Add to database");
+				// Kullanıcıyı veritabanına ekle
+				_context.Users.Add(user);
+				await _context.SaveChangesAsync();
 
-                    // Kullanıcıyı veritabanına ekle
-                    _context.Users.Add(user);
-                    Debug.WriteLine("----COMPLETE");
+				// Oturum bilgilerini ayarla
+				HttpContext.Session.SetString("UserId", user.ID.ToString());
+				HttpContext.Session.SetString("Username", user.Username);
 
-                    Debug.WriteLine("Save database");
+				return RedirectToAction("Index", "Posts"); // Başarılı kayıt durumunda yönlendirme
+			}
+			MessageHelpers.SetError("You have to fill everything correctly!");
+			return View();
+		}
+		private async Task<bool> IsUsernameValid(string username)
+		{
+			if (username.Length > 20)
+				MessageHelpers.SetWarning("Username cannot be more than 20 characters.");
 
-                    await _context.SaveChangesAsync();
-                    Debug.WriteLine("----COMPLETE");
+			if (username.Length < 5)
+				MessageHelpers.SetWarning("Username must be at least 5 characters long.");
 
-                    // Oturum bilgilerini ayarla
-                    HttpContext.Session.SetString("UserId", user.ID.ToString());
-                    HttpContext.Session.SetString("Username", user.Username);
-                    Debug.WriteLine("--COMPLETE");
+			if (!Regex.IsMatch(username, @"^[a-zA-Z0-9]+$"))
+				MessageHelpers.SetWarning("Username can only contain alphanumeric characters.");
 
-                    return RedirectToAction("Index", "Posts"); // Başarılı kayıt durumunda yönlendirme
-                }
-            }
+			if (await _context.Users.AnyAsync(u => u.Username == username))
+				MessageHelpers.SetWarning("This username is already taken.");
 
-            foreach (var modelState in ModelState.Values)
-            {
-                foreach (var error in modelState.Errors)
-                {
-                    Console.WriteLine(error.ErrorMessage); // Hata mesajlarını konsola yazdır
-                }
-            }
+			if (MessageHelpers.PostBack) return false;
 
-            return View("Index", model);
-        }
-    }
+			return true;
+		}
+		private async Task<bool> IsMailValid(string mail)
+		{
+			if (mail.Length > 50)
+				MessageHelpers.SetWarning("Mail cannot be more than 50 characters.");
+
+			if (mail.Length < 5)
+				MessageHelpers.SetWarning("Mail must be at least 5 characters long.");
+
+			if (!Regex.IsMatch(mail, @"^(([^<>()[\]\\.,;:\s@\""]+(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"))
+				MessageHelpers.SetWarning("Mail is not valid.");
+
+			if (await _context.Users.AnyAsync(u => u.Mail == mail))
+				MessageHelpers.SetWarning("This username is already taken.");
+
+			if (MessageHelpers.PostBack) return false;
+
+			return true;
+		}
+		private bool IsPasswordValid(string password)
+		{
+			if (password.Length > 50)
+				MessageHelpers.SetWarning("Mail cannot be more than 50 characters.");
+
+			if (password.Length < 8)
+				MessageHelpers.SetWarning("Mail must be at least 8 characters long.");
+
+			if (MessageHelpers.PostBack) return false;
+
+			return true;
+		}
+	}
+
+
+
+
 }
+
+
+

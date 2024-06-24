@@ -3,6 +3,7 @@ using MemoMate.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -66,5 +67,38 @@ namespace MemoMate.Web.Controllers
 
             return profile;
         }
-    }
+
+
+		[HttpPost]
+		public async Task<IActionResult> UsernameValidation(string username)
+		{
+			try
+			{
+				var isUsernameTaken = await _context.Users.AnyAsync(u => u.Username == username);
+				return Json(new { isValid = !isUsernameTaken });
+			}
+			catch (Exception ex)
+			{
+				// Loglama için hata mesajı yazdırılabilir
+				Console.WriteLine(ex.Message);
+				return Json(new { isValid = false });
+			}
+		}
+		[HttpPost]
+		public async Task<IActionResult> UserMailValidation(string mail)
+		{
+			try
+			{
+				var isMailTaken = await _context.Users.AnyAsync(u => u.Mail == mail);
+				return Json(new { isValid = !isMailTaken });
+			}
+			catch (Exception ex)
+			{
+				// Loglama için hata mesajı yazdırılabilir
+				Console.WriteLine(ex.Message);
+				return Json(new { isValid = false });
+			}
+		}
+
+	}
 }
