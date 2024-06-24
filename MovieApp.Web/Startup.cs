@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using MemoMate.Data;
 using MemoMate.Web.CustomMiddlewares;
 using Microsoft.Extensions.Options;
+using MemoMate.Web.Interfaces;
+using MemoMate.Web.Services;
 
 namespace MovieApp.Web
 {
@@ -27,6 +29,9 @@ namespace MovieApp.Web
 			services.AddDbContext<MemoMateContext>(options =>
 		options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
 		sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()));
+
+
+			services.AddScoped<ISidebarService, SidebarServices>();
 
 			services.AddControllersWithViews();
 		}

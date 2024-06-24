@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__LoggedLayout), @"mvc.1.0.view", @"/Views/Shared/_LoggedLayout.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,16 +16,22 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -34,8 +40,15 @@ using MemoMate.Web.GeneralHelpers;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab", @"/Views/Shared/_LoggedLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"ef0be5e0b2e3ec04143093e60bc9ee7a0fc87056b5aec266a22b87e01be55967", @"/Views/_ViewImports.cshtml")]
+#nullable restore
+#line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab", @"/Views/Shared/_LoggedLayout.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__LoggedLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -66,7 +79,7 @@ using MemoMate.Web.GeneralHelpers;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab3897", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab4198", async() => {
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
     <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
@@ -79,15 +92,13 @@ using MemoMate.Web.GeneralHelpers;
     <link href=""https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap"" rel=""stylesheet"">
     <link href=""/css/navbar.css"" rel=""stylesheet"">
     ");
-                Write(
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_LoggedLayout.cshtml"
-     RenderSection("Styles", required: false)
+Write(RenderSection("Styles", required: false));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">\r\n");
             }
             );
@@ -101,37 +112,31 @@ using MemoMate.Web.GeneralHelpers;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab6262", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "971c923f70ebf1afa47da1c92d88e9adffae3c991deab64f401e622e9fb14dab6522", async() => {
                 WriteLiteral("\r\n    <div class=\"main-content\">\r\n        ");
-                Write(
 #nullable restore
 #line 19 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_LoggedLayout.cshtml"
-         RenderSection("SideExtension", required:false)
+   Write(RenderSection("SideExtension", required:false));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n        <div class=\"afterlayout\">\r\n            ");
-                Write(
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_LoggedLayout.cshtml"
-             RenderBody()
+       Write(RenderBody());
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n        </div>\r\n    </div>\r\n    ");
-                Write(
 #nullable restore
 #line 24 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_LoggedLayout.cshtml"
-     RenderSection("BottomExtension", required: false)
+Write(RenderSection("BottomExtension", required: false));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral(@"
 
     <script src=""https://kit.fontawesome.com/46dac6df79.js"" crossorigin=""anonymous""></script>
@@ -139,15 +144,13 @@ using MemoMate.Web.GeneralHelpers;
 <script src=""https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"" integrity=""sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"" crossorigin=""anonymous"" defer></script>
 
     ");
-                Write(
 #nullable restore
 #line 30 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_LoggedLayout.cshtml"
-     RenderSection("Scripts", required: false)
+Write(RenderSection("Scripts", required: false));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n");
             }
             );

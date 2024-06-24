@@ -1,4 +1,5 @@
 ﻿@model PostsViewModel
+@inject ISidebarService SidebarService
 
 @section Styles {
 	<link rel="stylesheet" href="~/css/posts.css" />
@@ -7,7 +8,7 @@
 	Layout = "_LoggedLayout";
 }
 @section SideExtension {
-	@await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
 
 <div class="posts-main">
@@ -31,16 +32,12 @@
 			{
 				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 					<div class="carousel-inner">
-						@{
-							int i = 0;
-							foreach (var note in Model.PostsYesterday)
+						@foreach (var note in Model.PostsYesterday)
 							{
-								<div class="carousel-item @(i == 0 ? "active" : "")">
+								<div class="carousel-item">
 									@await Html.PartialAsync("_post", note)
 								</div>
-								i++;
 							}
-						}
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 						<span aria-hidden="true"><i class="fa-solid fa-angle-left fa-2xl" style="color: #B197FC;"></i></span>
@@ -69,7 +66,7 @@
 	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
-	<script src="./js/Posts/posts.js"></script>
-	<script src="./js/Posts/posts-index.js"></script>
+	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/Posts/posts-index.js"></script>
 
 }

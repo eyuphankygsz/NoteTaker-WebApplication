@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model SidebarModel
 
 <div class="d-flex flex-column flex-shrink-0 custom-sidebar sticky-top" style="width: 4.5rem;">
 	<img src="/img/logo.png"/>
@@ -9,8 +9,19 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a href="@Url.Action("Rates","Posts")" class="nav-link py-3 border-bottom" id="side-rate" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+			<a href="@Url.Action("Rates","Posts")" class="nav-link py-3 border-bottom position-relative" id="side-rate" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 				<i class="fa-solid fa-star-half-stroke fa-xl"></i>
+				@{
+					string count = GetNewPostCount();
+					if (!string.IsNullOrEmpty(count))
+					{
+						<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
+							@count
+						</span>		
+					}
+				}
+				
+				
 			</a>
 		</li>
 		<li class="nav-item">
@@ -21,15 +32,25 @@
 	</ul>
 	<div class="dropdown border-top">
 		<a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-			<img src="/img/user/profile/@Model.Photo" alt="mdo" width="24" height="24" class="rounded-circle">
+			<img src="/img/user/profile/@Model.LoggedUserEntity.Photo" alt="mdo" width="24" height="24" class="rounded-circle">
 		</a>
 		<ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-			<li><a class="dropdown-item" href="@Url.Action("Settings", "User", new { id = Model.Username })">Settings</a></li>
-			<li><a class="dropdown-item" href="@Url.Action("Details", "User", new { id = Model.Username })">Profile - @Model.Username</a></li>
+			<li><a class="dropdown-item" href="@Url.Action("Settings", "User", new { id = Model.LoggedUserEntity.Username })">Settings</a></li>
+			<li><a class="dropdown-item" href="@Url.Action("Details", "User", new { id = Model.LoggedUserEntity.Username })">Profile - @Model.LoggedUserEntity.Username</a></li>
 			<li><hr class="dropdown-divider"></li>
 			<li><a class="dropdown-item" id="signout" href="@Url.Action("Logout", "User")">Sign out</a></li>
 		</ul>
 	</div>
 </div>
 
-		<script src="./js/sidebar.js"></script>
+		<script src="/js/sidebar.js"></script>
+
+
+@{
+	string GetNewPostCount()
+	{
+		return Model.NewPostCount > 99 ? "99+" :
+						Model.NewPostCount == 0 ? null :
+						Model.NewPostCount.ToString();
+	}
+}

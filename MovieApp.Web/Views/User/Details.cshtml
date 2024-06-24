@@ -1,4 +1,5 @@
 ﻿@model UserProfileViewModel
+@inject ISidebarService SidebarService
 
 @section Styles {
 	<link rel="stylesheet" href="~/css/posts.css" />
@@ -7,8 +8,9 @@
 	ViewData["Title"] = Model.Username + "'s Profile";
 	Layout = "_LoggedLayout";
 }
+
 @section SideExtension {
-	@await Html.PartialAsync("_sidebar", Model.LoggedUserEntity)
+    @await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
 
 <div class="container mt-5">
@@ -62,6 +64,6 @@
 	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
-	<script src="./js/Posts/posts.js"></script>
-	<script src="./js/Posts/posts-index.js"></script>
+	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/Posts/posts-index.js"></script>
 }
