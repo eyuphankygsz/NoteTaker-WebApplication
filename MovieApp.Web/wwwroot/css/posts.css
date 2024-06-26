@@ -9,8 +9,26 @@
     width: 100%;
 }
 
-#posts-title {
-    font-size: 2.5rem;
+#today-posts-title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#today-posts-theme {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#yesterday-posts-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+#yesterday-posts-theme {
+    font-size: 1.1rem;
     font-weight: 500;
     text-align: center;
 }
@@ -66,10 +84,12 @@
 .navbar-expand-sm .navbar-nav {
     justify-content: space-between;
 }
-#profile-photo{
-    width:100%;
-    height:100%;
+
+#profile-photo {
+    width: 100%;
+    height: 100%;
 }
+
 @media (max-width: 992px) {
     .posts-main {
         display: flex !important;

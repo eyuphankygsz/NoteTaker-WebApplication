@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__navbar), @"mvc.1.0.view", @"/Views/Shared/_navbar.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,21 +16,29 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -39,8 +47,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"6cfaacdbf45e4ccaf39f27ea605063e09b96e9c90e2a436cbb9a8b4bc0c968cf", @"/Views/Shared/_navbar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"6cfaacdbf45e4ccaf39f27ea605063e09b96e9c90e2a436cbb9a8b4bc0c968cf", @"/Views/Shared/_navbar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__navbar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -59,39 +67,33 @@ using MemoMate.Web.Interfaces;
 				<li class=""nav-item"">
 					<a class=""nav-link active"" aria-current=""page""");
             BeginWriteAttribute("href", " href=\"", 651, "\"", 685, 1);
-            WriteAttributeValue("", 658, 
 #nullable restore
 #line 10 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_navbar.cshtml"
-                                                           Url.Action("Index","Home")
+WriteAttributeValue("", 658, Url.Action("Index","Home"), 658, 27, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 658, 27, false);
             EndWriteAttribute();
             WriteLiteral(">Home</a>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"nav-item\">\r\n\t\t\t\t\t<a class=\"nav-link\"");
             BeginWriteAttribute("href", " href=\"", 759, "\"", 794, 1);
-            WriteAttributeValue("", 766, 
 #nullable restore
 #line 13 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_navbar.cshtml"
-                                Url.Action("Index","About")
+WriteAttributeValue("", 766, Url.Action("Index","About"), 766, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 766, 28, false);
             EndWriteAttribute();
             WriteLiteral(">About</a>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t\t<div id=\"guestNav\">\r\n\t\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 858, "\"", 896, 1);
-            WriteAttributeValue("", 865, 
 #nullable restore
 #line 17 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_navbar.cshtml"
-              Url.Action("Index","Register")
+WriteAttributeValue("", 865, Url.Action("Index","Register"), 865, 31, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 865, 31, false);
             EndWriteAttribute();
             WriteLiteral(" id=\"signupbuttonlink\"> <button class=\"btn logbtn ms-2\" id=\"nav-signUpButton\" type=\"button\">Sign Up</button> </a>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</nav>\r\n\r\n<script src=\"/js/navbar.js\"></script>");
         }

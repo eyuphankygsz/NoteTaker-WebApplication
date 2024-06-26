@@ -15,7 +15,8 @@
 	<div class="posts-container">
 		<div class="posts-bg">
 			<div class="posts-content">
-				<div id="posts-title" class="text-white mb-3">TOP POSTS</div>
+				<div id="today-posts-title" class="text-white mb-3">TOP POSTS</div>
+				<div id="today-posts-theme" class="text-white mb-3 text-align-center">Today's Theme: @Model.TodayThemeName</div>
 				@{
 					foreach (var note in Model.PostsToday)
 						@await Html.PartialAsync("_post", note)
@@ -26,7 +27,8 @@
 
 	<div class="posts-interests">
 		<div class="posts-content">
-			<div id="posts-title" class="text-white mb-3" style="font-size:2rem;">Yesterday's TOPS</div>
+			<div id="yesterday-posts-title" class="text-white">Yesterday's TOPS</div>
+			<div id="yesterday-posts-theme" class="text-white mb-3" style="font-size:1.2rem;">Yesterday's Theme was: @Model.YesterdayThemeName</div>
 
 			@if (Model.PostsYesterday.Count != 0)
 			{

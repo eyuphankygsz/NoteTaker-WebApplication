@@ -37,7 +37,7 @@ namespace MemoMate.Web.Controllers
 								  {
 									  PostID = p.ID,
 									  PostDate = p.Date,
-                                      PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
+									  PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
 									  NoteContent = p.NoteEntity.Content,
 									  NoteTitle = p.NoteEntity.Title,
 									  Username = p.UserEntity.Username,
@@ -65,7 +65,16 @@ namespace MemoMate.Web.Controllers
 									  .Take(3)
 									  .ToListAsync();
 
-			PostsViewModel model = new PostsViewModel() { LoggedUserEntity = user, PostsToday = postsToday, PostsYesterday = postsYesterday };
+			var themename = await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
+
+			PostsViewModel model = new PostsViewModel()
+			{
+				LoggedUserEntity = user,
+				PostsToday = postsToday,
+				PostsYesterday = postsYesterday,
+				TodayThemeName = themename[0].Name,
+				YesterdayThemeName = themename[1].Name
+			};
 
 			return View(model); // Pass List<Note> to the view
 		}
@@ -84,7 +93,8 @@ namespace MemoMate.Web.Controllers
 									.Include(p => p.UserEntity)
 									.Include(p => p.NoteEntity)
 									.Where(p => p.UserID != user.ID &&
-												!_context.Rates.Any(r => r.PostID == p.ID && r.UserID == user.ID))
+													p.Date >= today &&
+														!_context.Rates.Any(r => r.PostID == p.ID && r.UserID == user.ID))
 									.OrderBy(p => Guid.NewGuid()) //Random sıralama
 									.Select(p => new PostDetailModel
 									{
@@ -107,7 +117,7 @@ namespace MemoMate.Web.Controllers
 			else
 			{
 				MessageHelpers.SetInfo("Sorry, there is no new post found :(");
-                return RedirectToAction("Index", "Posts");
+				return RedirectToAction("Index", "Posts");
 			}
 
 		}
@@ -119,7 +129,7 @@ namespace MemoMate.Web.Controllers
 			int user_id = int.Parse(HttpContext.Session.GetString("UserId"));
 			int post_id = ratedPost.RatePost.PostID;
 
-			Rate rate = new Rate() { PostID = post_id, UserID = user_id  };
+			Rate rate = new Rate() { PostID = post_id, UserID = user_id };
 
 			_context.Rates.Add(rate);
 
@@ -149,28 +159,28 @@ namespace MemoMate.Web.Controllers
 			return View(model);
 		}
 
-        [HttpPost]
-        public async Task<IActionResult> Create(Note newNote)
-        {
-            if (!ModelState.IsValid)
-                return View(new CreateViewModel());
-  
-            _context.Notes.Add(newNote);
-            await _context.SaveChangesAsync();
+		[HttpPost]
+		public async Task<IActionResult> Create(Note newNote)
+		{
+			if (!ModelState.IsValid)
+				return View(new CreateViewModel());
 
-            Post post = new Post()
-            {
-                UserID = int.Parse(HttpContext.Session.GetString("UserId")),
-                NoteID = newNote.Id,
-                Date = TimeHelpers.GetLocalDate(),
-                RateCount = 0,
-                RateUps = 0
-            };
-            _context.Posts.Add(post);
-            await _context.SaveChangesAsync();
+			_context.Notes.Add(newNote);
+			await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", "Posts");
-        }
+			Post post = new Post()
+			{
+				UserID = int.Parse(HttpContext.Session.GetString("UserId")),
+				NoteID = newNote.Id,
+				Date = TimeHelpers.GetLocalDate(),
+				RateCount = 0,
+				RateUps = 0
+			};
+			_context.Posts.Add(post);
+			await _context.SaveChangesAsync();
 
-    }
+			return RedirectToAction("Index", "Posts");
+		}
+
+	}
 }
