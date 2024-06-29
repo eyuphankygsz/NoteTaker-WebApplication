@@ -1,8 +1,8 @@
 ﻿sidebarActive(0); bottombarActive(1);
 
 
-const carousel_items = document.querySelector(".carousel-item");
+const yesterdayPostsParent = document.getElementById("yesterdays-container");
+yesterdayPostsParent.querySelector(":scope .carousel-item").classList.add("active");
 
-if (carousel_items) {
-    carousel_items.classList.add("active");
-}
+const checkOutParent = document.getElementById("checkout-container");
+checkOutParent.querySelector(":scope .carousel-item").classList.add("active");

@@ -10,5 +10,6 @@ namespace MemoMate.Web.Models
 		public string YesterdayThemeName { get; set; }
 		public List<PostDetailModel> PostsToday { get; set; }
 		public List<PostDetailModel> PostsYesterday { get; set; }
-    }
+		public List<PostDetailModel> PostsCheckOut { get; set; }
+	}
 }

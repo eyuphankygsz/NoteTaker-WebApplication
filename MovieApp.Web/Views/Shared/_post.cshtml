@@ -1,9 +1,11 @@
 ﻿@model PostDetailModel
 
-<div class="card text-center mb-3">
-	<div class="card-header">
-		<a href="@Url.Action("Details", "User", new { id = Model.Username })">
-			<img src="/img/user/profile/@Model.UserPhoto" alt="Alternate Text" />
+<div class="posts-card card text-center mb-3 h-100 shadow">
+	<div class="card-header ">
+		<a class="d-flex align-items-center" href="@Url.Action("Details", "User", new { id = Model.Username })">
+			<div class="post-profile d-flex justify-content-center">
+				<img class="h-100" src="/img/user/profile/@Model.UserPhoto" alt="Alternate Text" />
+			</div>
 			@Model.Username
 		</a>
 	</div>
@@ -11,9 +13,9 @@
 		<h5 class="card-title">@Model.NoteTitle</h5>
 		<p class="card-text">@Model.NoteContent</p>
 	</div>
-	<div class="card-footer text-body-secondary">
-		<span class="rate">★ @Model.PostRate.ToString("0.00")</span>
-		<span class="date">@GetTimeAgo(Model.PostDate)</span>
+	<div class="card-footer d-flex justify-content-between text-body-secondary">
+		<span class="rate text-white fw-bold">★ @Model.PostRate.ToString("0.00")</span>
+		<span class="date text-white fw-bold">@GetTimeAgo(Model.PostDate)</span>
 
 	</div>
 </div>

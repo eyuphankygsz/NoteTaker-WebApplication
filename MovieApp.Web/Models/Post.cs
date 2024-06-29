@@ -7,7 +7,7 @@ namespace MemoMate.Web.Models
 	{
 
 		[Column("post_id")]
-		public int ID { get; private set; }
+		public int ID { get; set; }
 
 
 		[Column("note_id")]
@@ -27,8 +27,11 @@ namespace MemoMate.Web.Models
 		[Column("rate_count")]
 		public int RateCount { get; set; }
 
+		[Column("check_out")]
+		public bool CheckOut { get; set; }
 
-		public Note NoteEntity { get; private set; }
-		public User UserEntity { get; private set; }
+
+		public Note NoteEntity { get; set; }
+		public User UserEntity { get; set; }
 	}
 }

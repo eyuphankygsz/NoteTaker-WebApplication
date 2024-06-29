@@ -7,6 +7,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using System;
 using MemoMate.Web.GeneralHelpers;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace MemoMate.Web.Controllers
 {
@@ -29,41 +32,18 @@ namespace MemoMate.Web.Controllers
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
-			var postsToday = await _context.Posts
-								  .Include(p => p.UserEntity)
-								  .Include(p => p.NoteEntity)
-								  .Where(p => p.Date >= today && p.Date < today.AddDays(1))
-								  .Select(p => new PostDetailModel
-								  {
-									  PostID = p.ID,
-									  PostDate = p.Date,
-									  PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
-									  NoteContent = p.NoteEntity.Content,
-									  NoteTitle = p.NoteEntity.Title,
-									  Username = p.UserEntity.Username,
-									  UserPhoto = p.UserEntity.Photo
-								  })
-								  .OrderByDescending(p => p.PostRate)
-								  .Take(10)
-								  .ToListAsync();
+			var postsToday = await GetPostsDetails(p => p.Date >= today && p.Date < today.AddDays(1), 18);
+			if (postsToday.Count == 0)
+				postsToday.Add(NoFoundPost("No new posts found.", "There is no new posts found today :( WHY DON'T YOU SHARE YOUR THOUGHTS !? :(((("));
+			
+			var postsYesterday = await GetPostsDetails(p => p.Date >= today.AddDays(-1) && p.Date < today,3);
+			if (postsYesterday.Count == 0)
+				postsYesterday.Add(NoFoundPost("No posts found...", "We couldn't find any posts shared yesterday... why..."));
 
-			var postsYesterday = await _context.Posts
-									  .Include(p => p.UserEntity)
-									  .Include(p => p.NoteEntity)
-									  .Where(p => p.Date >= today.AddDays(-1) && p.Date < today)
-									  .Select(p => new PostDetailModel
-									  {
-										  PostID = p.ID,
-										  PostDate = p.Date,
-										  PostRate = p.RateCount == 0 ? 0 : p.RateUps * 5 / (float)p.RateCount,
-										  NoteContent = p.NoteEntity.Content,
-										  NoteTitle = p.NoteEntity.Title,
-										  Username = p.UserEntity.Username,
-										  UserPhoto = p.UserEntity.Photo
-									  })
-									  .OrderByDescending(p => p.PostRate)
-									  .Take(3)
-									  .ToListAsync();
+			var postsCheckOut = await GetPostsDetails(p => p.Date >= today && p.CheckOut, 3);
+
+			if (postsCheckOut.Count == 0)
+				postsCheckOut.Add(NoFoundPost("Nothing to check out.", "We tried to push our customers to give us money to show themselves up here but... we failed?"));
 
 			var themename = await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
 
@@ -73,7 +53,8 @@ namespace MemoMate.Web.Controllers
 				PostsToday = postsToday,
 				PostsYesterday = postsYesterday,
 				TodayThemeName = themename[0].Name,
-				YesterdayThemeName = themename[1].Name
+				YesterdayThemeName = themename[1].Name,
+				PostsCheckOut = postsCheckOut
 			};
 
 			return View(model); // Pass List<Note> to the view
@@ -180,6 +161,44 @@ namespace MemoMate.Web.Controllers
 			await _context.SaveChangesAsync();
 
 			return RedirectToAction("Index", "Posts");
+		}
+
+		public async Task<List<PostDetailModel>> GetPostsDetails( Expression<Func<Post, bool>> whereCondition, int? take = null, bool orderByRateDescending = true)
+		{
+			var query = _context.Posts
+					.Include(p => p.UserEntity)
+					.Include(p => p.NoteEntity)
+					.Where(whereCondition)
+					.Select(p => new PostDetailModel
+					{
+						PostID = p.ID,
+						PostDate = p.Date,
+						PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
+						NoteContent = p.NoteEntity.Content,
+						NoteTitle = p.NoteEntity.Title,
+						Username = p.UserEntity.Username,
+						UserPhoto = p.UserEntity.Photo
+					});
+
+			if (orderByRateDescending)
+				query = query.OrderByDescending(p => p.PostRate);
+
+			if (take.HasValue)
+				query = query.Take(take.Value);
+
+			return await query.ToListAsync();
+		}
+		private PostDetailModel NoFoundPost(string title, string message)
+		{
+			return new PostDetailModel
+			{
+				NoteTitle = title,
+				NoteContent = message,
+				PostDate = TimeHelpers.GetLocalDate(),
+				PostRate = 0,
+				Username = "admin",
+				UserPhoto = "admin.jpg"
+			};
 		}
 
 	}

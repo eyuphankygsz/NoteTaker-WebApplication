@@ -1,106 +1,292 @@
-﻿body {
+﻿* {
+    box-sizing: content-box;
+    font-family: 'Inter';
+}
+
+body {
     background-color: #9272d5 !important;
 }
 
 .posts-main {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: auto;
     width: 100%;
+    height: contain;
 }
 
-#today-posts-title {
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-#today-posts-theme {
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-#yesterday-posts-title {
-    font-size: 1.8rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-#yesterday-posts-theme {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-.posts-content {
-    margin: auto;
-    background-color: #A884E3;
-    padding: 20px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 900px;
+.welcome {
     height: auto;
 }
 
-    .posts-content .card-header {
-        text-align: left;
+    .welcome .welcome-nav {
+        height: 40px !important;
     }
 
-        .posts-content .card-header img {
-            width: 2rem;
-            height: 2rem;
+        .welcome .welcome-nav .user {
+            margin-left: 10px;
+            border-radius: 30px;
+            border: 2px solid black;
+            overflow: hidden;
         }
 
-        .posts-content .card-header a {
-            color: #9272d5;
-            text-decoration: none;
+        .welcome .welcome-nav .searchbar {
+            position: relative;
         }
 
-    .posts-content .card-footer {
-        display: flex;
+            .welcome .welcome-nav .searchbar input {
+                width: 300px;
+                height: 40px;
+            }
+
+            .welcome .welcome-nav .searchbar button {
+                position: absolute;
+                border-radius: 5px;
+                z-index: 2;
+                border: none;
+                top: 8px;
+                right: 4px;
+                cursor: pointer;
+                color: white;
+                background-color: transparent;
+            }
+
+    .welcome .welcome-name {
+        font-size: 2.4rem;
     }
 
-        .posts-content .card-footer .date {
-            display: block;
-            width: 50%;
-            text-align: right;
+    .welcome .welcome-nexttheme span {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+#posts-interests {
+    margin-top: 0px;
+    height: auto;
+}
+
+    #posts-interests .row-container {
+        width: 94%;
+        height: 100%;
+        margin: auto;
+    }
+
+        #posts-interests .row-container > div {
+            width: 30%;
+            height: 460px;
         }
 
-        .posts-content .card-footer .rate {
-            display: block;
-            width: 50%;
-            text-align: left;
+.item-holder {
+    align-content: end;
+}
+
+    .item-holder .item-holder-title {
+        color: white;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+        .item-holder .item-holder-title p {
+            margin-bottom: 0;
         }
 
-.interests-container {
-    width: 80%;
-    max-width: 400px;
+#today-theme {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    position: relative;
     border-radius: 30px;
-    height: 800px;
-    background-color: #B08AFA;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.navbar-expand-sm .navbar-nav {
-    justify-content: space-between;
-}
+    #today-theme .theme-image {
+        height: 76%;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 20px black;
+    }
 
-#profile-photo {
+        #today-theme .theme-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    #today-theme .theme-name-container {
+        align-items: flex-end;
+    }
+
+        #today-theme .theme-name-container .theme-name {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 0px 2px 20px #ff0000;
+        }
+
+    #today-theme .theme-back {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        z-index: 0;
+        position: absolute;
+        background-color: #BF9BFF;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.multiple-posts-top {
+    height: 90%;
     width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+    .multiple-posts-top .carousel-container {
+        border-radius: 20px;
+        height: 100%;
+        width: 96%;
+        top: 0;
+        right: 2%;
+        z-index: 1;
+        position: absolute;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .multiple-posts-top .carousel-container .custom-carousel-control {
+            height: 20%;
+            width: auto !important;
+            top: 120px;
+            color: #FFEDE0;
+        }
+
+        .multiple-posts-top .carousel-container .carousel-control-next {
+            right: -20px !important;
+        }
+
+    .multiple-posts-top .carousel-control-prev {
+        left: -20px !important;
+    }
+
+    .multiple-posts-top .multiple-posts-bg {
+        border-radius: 20px;
+        height: 90%;
+        width: 100%;
+        top: 15px;
+        z-index: 0;
+        position: absolute;
+        background-color: #9878D4;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+
+#posts-container {
+    margin-top: 0px;
+    height: auto;
+}
+
+    #posts-container .row-container {
+        width: 94%;
+        height: contain;
+        margin: auto;
+    }
+
+    #posts-container .posts-bg {
+        width: 100% !important;
+    }
+
+        #posts-container .posts-bg .posts-row {
+            width: 100% !important;
+            height: contain !important;
+        }
+
+            #posts-container .posts-bg .posts-row > div {
+                width: 30% !important;
+                height: 320px !important;
+            }
+
+#today-posts-title {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0px 2px 16px black;
+}
+
+.posts-card {
+    border-radius: 20px !important;
+    background-color: #BF9BFF !important;
+    overflow: hidden !important;
     height: 100%;
 }
 
+    .posts-card .card-header {
+        height: 40px;
+        background-color: #BF9BFF;
+        display: flex;
+        border-bottom: none !important;
+        padding: 0;
+        margin-top: 10px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+        .posts-card .card-header .post-profile {
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+            border-radius: 30px;
+            border: 3px solid #76ffbc;
+            overflow: hidden;
+            margin-right: 5px;
+        }
+
+        .posts-card .card-header img {
+            object-fit: cover !important;
+        }
+
+        .posts-card .card-header a {
+            color: white;
+            text-decoration: none;
+        }
+
+    .posts-card .card-body {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .posts-card .card-title {
+        color: #FFE482;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-align: left !important;
+    }
+
+    .posts-card .card-text {
+        color: #FFEDE0;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: left !important;
+    }
+
+
+@media (max-width: 1580px) {
+    .posts-card .card-title {
+        color: #FFE482;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: left !important;
+    }
+
+    .posts-card .card-text {
+        color: #FFEDE0;
+        font-weight: 500;
+        font-size: .9rem;
+        text-align: left !important;
+    }
+}
+
 @media (max-width: 992px) {
-    .posts-main {
-        display: flex !important;
-        flex-direction: column-reverse;
-    }
-
-    .posts-interests {
-        margin-bottom: 10px;
-    }
-
-    .posts-bg {
-        margin-bottom: 100px;
-    }
 }

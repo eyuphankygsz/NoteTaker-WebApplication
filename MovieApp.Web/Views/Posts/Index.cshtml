@@ -12,47 +12,147 @@
 }
 
 <div class="posts-main">
-	<div class="posts-container">
-		<div class="posts-bg">
-			<div class="posts-content">
-				<div id="today-posts-title" class="text-white mb-3">TOP POSTS</div>
-				<div id="today-posts-theme" class="text-white mb-3 text-align-center">Today's Theme: @Model.TodayThemeName</div>
-				@{
-					foreach (var note in Model.PostsToday)
-						@await Html.PartialAsync("_post", note)
-				}
+
+	<div class="welcome mx-4">
+		<div class="welcome-nav d-flex justify-content-between h-100">
+			<div class="breadcrumbs d-flex">
+				<span class="text-white fw-bold m-auto">Posts</span>
+			</div>
+			<div class="navigation d-flex">
+				<div class="searchbar m-auto">
+					<input class="form-control form-control-sm" type="search" />
+					<button><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+				</div>
+				<div class="user align-items-center">
+					<img class="h-100" src="/img/user/profile/def.jpg" alt="Alternate Text" />
+				</div>
+			</div>
+		</div>
+
+		<div class="welcome-greeting">
+			<div class="welcome-name d-flex">
+				<span class="text-white fw-bold">Hello, @Model.LoggedUserEntity.Username</span>
+			</div>
+			<div class="welcome-nexttheme d-block">
+				<span class="text-white">Next Theme will be announced in</span>
+				<p class="text-white welcome-nexttheme-time">18:09:53</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="posts-interests">
-		<div class="posts-content">
-			<div id="yesterday-posts-title" class="text-white">Yesterday's TOPS</div>
-			<div id="yesterday-posts-theme" class="text-white mb-3" style="font-size:1.2rem;">Yesterday's Theme was: @Model.YesterdayThemeName</div>
-
-			@if (Model.PostsYesterday.Count != 0)
-			{
-				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-					<div class="carousel-inner">
-						@foreach (var note in Model.PostsYesterday)
+	<div class="" id="posts-interests">
+		<div class="row-container d-flex justify-content-evenly">
+			<div class="item-holder">
+				<div class="d-flex  h-75" id="today-theme-container">
+					<div class="m-auto" id="today-theme">
+						<div class="theme-image"><img src="/img/theme/marstheme.jpg" alt="Alternate Text" /></div>
+						<div class="theme-name-container w-100 h-100 justify-content-center d-flex">
+							<p class="theme-name" style="z-index:2;">Mars</p>
+						</div>
+						<div class="theme-back"></div>
+					</div>
+				</div>
+			</div>
+			<div class="item-holder">
+				<div class="item-holder-title">
+					<p>Yesterday's Top Posts</p>
+				</div>
+				<div class="d-flex multiple-posts-container h-75" id="yesterdays-container">
+					<div class="m-auto multiple-posts-top" id="yesterdays-top">
+						<div class="carousel-container">
+							@if (Model.PostsYesterday.Count != 0)
 							{
-								<div class="carousel-item">
-									@await Html.PartialAsync("_post", note)
+								<div id="yesterday-posts" class="carousel slide h-100" data-bs-ride="false">
+									<div class="carousel-inner h-100">
+										@foreach (var note in Model.PostsYesterday)
+										{
+											<div class="carousel-item h-100">
+												@await Html.PartialAsync("_post", note)
+											</div>
+										}
+									</div>
+									<button class="carousel-control-prev custom-carousel-control " type="button" data-bs-target="#yesterday-posts" data-bs-slide="prev">
+										<span aria-hidden="true"><i class="fa-solid fa-angle-left fa-2xl"></i></span>
+										<span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#yesterday-posts" data-bs-slide="next">
+										<span aria-hidden="true"><i class="fa-solid fa-angle-right fa-2xl"></i></span>
+										<span class="visually-hidden">Next</span>
+									</button>
 								</div>
 							}
+
+						</div>
+						<div class="multiple-posts-bg"></div>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-						<span aria-hidden="true"><i class="fa-solid fa-angle-left fa-2xl" style="color: #B197FC;"></i></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-						<span aria-hidden="true"><i class="fa-solid fa-angle-right fa-2xl" style="color: #B197FC;"></i></span>
-						<span class="visually-hidden">Next</span>
-					</button>
 				</div>
-			}
+			</div>
+			<div class="item-holder">
+				<div class="item-holder-title">
+					<p>Check Out!</p>
+				</div>
+				<div class="d-flex multiple-posts-container h-75" id="checkout-container">
+					<div class="m-auto multiple-posts-top" id="checkout-top">
+						<div class="carousel-container">
+							@if (Model.PostsYesterday.Count != 0)
+							{
+								<div id="checkOut-posts" class="carousel slide h-100" data-bs-ride="false">
+									<div class="carousel-inner h-100">
+										@Model.PostsCheckOut.Count
+										@foreach (var note in Model.PostsCheckOut)
+										{
+											<div class="carousel-item h-100">
+												@await Html.PartialAsync("_post", note)
+											</div>
+										}
+									</div>
+									<button class="carousel-control-prev custom-carousel-control " type="button" data-bs-target="#checkOut-posts" data-bs-slide="prev">
+										<span aria-hidden="true"><i class="fa-solid fa-angle-left fa-2xl"></i></span>
+										<span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#checkOut-posts" data-bs-slide="next">
+										<span aria-hidden="true"><i class="fa-solid fa-angle-right fa-2xl"></i></span>
+										<span class="visually-hidden">Next</span>
+									</button>
+								</div>
+							}
+
+						</div>
+						<div class="multiple-posts-bg"></div>
+					</div>
+				</div>
+			</div>
+
+
+
+
 		</div>
 	</div>
+
+	<div class="" id="posts-container">
+		<div id="today-posts-title" class="text-white mb-3 mt-5 text-center">TOP POSTS</div>
+		<div class="row-container d-flex justify-content-evenly">
+			<div class="posts-bg">
+				@{
+					for (int i = 0; i <= (int)MathF.Ceiling(Model.PostsToday.Count / 3); i++)
+					{
+						int start = i * 3;
+
+						<div class="posts-row d-flex justify-content-evenly">
+							@for (int j = start; j < start + 3; j++)
+							{
+								if (j == Model.PostsToday.Count)
+									break;
+								@await Html.PartialAsync("_post", Model.PostsToday[j]);
+							}
+						</div>
+					}
+				}
+			</div>
+		</div>
+
+	</div>
+</div>
 
 
 </div>
