@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__bottombar), @"mvc.1.0.view", @"/Views/Shared/_bottombar.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,21 +16,29 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -39,8 +47,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"cbf3a7c1595d7b8cc17c6f9126dd7df874994b41b9bfba5d9167316b666ad262", @"/Views/Shared/_bottombar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"cbf3a7c1595d7b8cc17c6f9126dd7df874994b41b9bfba5d9167316b666ad262", @"/Views/Shared/_bottombar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__bottombar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<User>
     #nullable disable
@@ -50,45 +58,39 @@ using MemoMate.Web.Interfaces;
         {
             WriteLiteral("\r\n<nav class=\"navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark border-bottom-0\">\r\n\t<ul class=\"navbar-nav mr-auto\">\r\n\t\t<li class=\"nav-item active\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 174, "\"", 209, 1);
-            WriteAttributeValue("", 181, 
 #nullable restore
 #line 6 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_bottombar.cshtml"
-             Url.Action("Rates","Posts")
+WriteAttributeValue("", 181, Url.Action("Rates","Posts"), 181, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 181, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link border-bottom\" id=\"bottom-rate\"");
             BeginWriteAttribute("title", " title=\"", 258, "\"", 266, 0);
             EndWriteAttribute();
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Dashboard\">\r\n\t\t\t\t<i class=\"fa-solid fa-star-half-stroke fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 460, "\"", 495, 1);
-            WriteAttributeValue("", 467, 
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_bottombar.cshtml"
-             Url.Action("Index","Posts")
+WriteAttributeValue("", 467, Url.Action("Index","Posts"), 467, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 467, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link active border-bottom\" id=\"bottom-home\" aria-current=\"page\"");
             BeginWriteAttribute("title", " title=\"", 571, "\"", 579, 0);
             EndWriteAttribute();
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Home\">\r\n\t\t\t\t<i class=\"fa-solid fa-house fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 757, "\"", 793, 1);
-            WriteAttributeValue("", 764, 
 #nullable restore
 #line 16 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_bottombar.cshtml"
-             Url.Action("Create","Posts")
+WriteAttributeValue("", 764, Url.Action("Create","Posts"), 764, 29, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 764, 29, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link  border-bottom\" id=\"bottom-create\"");
             BeginWriteAttribute("title", " title=\"", 845, "\"", 853, 0);
@@ -102,15 +104,13 @@ using MemoMate.Web.Interfaces;
 				<img");
             BeginWriteAttribute("src", " src=\"", 1157, "\"", 1193, 2);
             WriteAttributeValue("", 1163, "/img/user/profile/", 1163, 18, true);
-            WriteAttributeValue("", 1181, 
 #nullable restore
 #line 22 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_bottombar.cshtml"
-                                 Model.Photo
+WriteAttributeValue("", 1181, Model.Photo, 1181, 12, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1181, 12, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"mdo\" width=\"24\" height=\"24\" class=\"rounded-circle\">\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t</ul>\r\n</nav>\r\n\r\n<script src=\"/js/sidebar.js\"></script>");
         }

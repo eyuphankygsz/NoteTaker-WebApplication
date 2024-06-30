@@ -32,7 +32,7 @@ namespace MemoMate.Web.Controllers
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
-			var postsToday = await GetPostsDetails(p => p.Date >= today && p.Date < today.AddDays(1), 18);
+			var postsToday = await GetPostsDetails(p => p.Date >= today , 18);
 			if (postsToday.Count == 0)
 				postsToday.Add(NoFoundPost("No new posts found.", "There is no new posts found today :( WHY DON'T YOU SHARE YOUR THOUGHTS !? :(((("));
 			
@@ -199,6 +199,48 @@ namespace MemoMate.Web.Controllers
 				Username = "admin",
 				UserPhoto = "admin.jpg"
 			};
+		}
+
+
+		[HttpGet]
+		public async Task<IActionResult> LoadMoreData(int skip, int take)
+		{
+			DateTime now = TimeHelpers.GetLocalDate();
+			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
+
+			var query = _context.Posts
+					.Include(p => p.UserEntity)
+					.Include(p => p.NoteEntity)
+					.Where(p.Date >= today)
+					.Select(p => new PostDetailModel
+					{
+						PostID = p.ID,
+						PostDate = p.Date,
+						PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
+						NoteContent = p.NoteEntity.Content,
+						NoteTitle = p.NoteEntity.Title,
+						Username = p.UserEntity.Username,
+						UserPhoto = p.UserEntity.Photo
+					});
+
+			var posts = await _context.Posts
+				.OrderByDescending(p => p.Postra)
+				.Skip(skip)
+				.Take(take)
+				.Select(p => new PostDetailModel
+				{
+					PostID = p.ID,
+					PostDate = p.Date,
+					PostRate = p.RateCount == 0 ? 0 : p.RateUps * 5 / (float)p.RateCount,
+					NoteContent = p.NoteEntity.Content,
+					NoteTitle = p.NoteEntity.Title,
+					Username = p.UserEntity.Username,
+					UserPhoto = p.UserEntity.Photo
+				})
+				.ToListAsync();
+
+			// HTML partial view ile dönülecek
+			return PartialView("_PostPartial", posts);
 		}
 
 	}
