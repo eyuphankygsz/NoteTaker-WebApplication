@@ -1,5 +1,7 @@
 ﻿using MemoMate.Data;
 using MemoMate.Web.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,10 +9,13 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace MemoMate.Web.Controllers
 {
-    public class UserController : Controller
+	[Authorize(Policy = "General")]
+	public class UserController : Controller
     {
         private readonly MemoMateContext _context;
 
@@ -33,15 +38,17 @@ namespace MemoMate.Web.Controllers
             return View(profile);
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
-        }
+			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+			HttpContext.Session.Clear();
+			return RedirectToAction("Index", "Home");
 
-        private async Task<UserProfileViewModel> GetProfileAsync(string username)
+		}
+
+		private async Task<UserProfileViewModel> GetProfileAsync(string username)
         {
-			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.Session.GetString("UserId")));
+			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
 
             var profile = await _context.Users
                 .Where(u => u.Username == username)

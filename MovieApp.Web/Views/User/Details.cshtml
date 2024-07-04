@@ -2,7 +2,8 @@
 @inject ISidebarService SidebarService
 
 @section Styles {
-	<link rel="stylesheet" href="~/css/posts.css" />
+    <link rel="stylesheet" href="~/css/posts.css" />
+    <link rel="stylesheet" href="~/css/details.css" />
 }
 @{
 	ViewData["Title"] = Model.Username + "'s Profile";
@@ -60,10 +61,18 @@
     </div>
 </div>
 
+@{
+    if (MessageHelpers.PostBack)
+    {
+        @await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+    }
+}
+
 @section BottomExtension {
-	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+    @await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
-	<script src="/js/Posts/posts.js"></script>
-	<script src="/js/Posts/posts-index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Posts/posts.js"></script>
+
 }

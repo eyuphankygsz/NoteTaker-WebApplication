@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__post), @"mvc.1.0.view", @"/Views/Shared/_post.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,29 +16,21 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -47,8 +39,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"000490291e2c1c2dd5c99b6711abe1a0f633448f12656e6dc78e4eb73b85bc84", @"/Views/Shared/_post.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"000490291e2c1c2dd5c99b6711abe1a0f633448f12656e6dc78e4eb73b85bc84", @"/Views/Shared/_post.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__post : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PostDetailModel>
     #nullable disable
@@ -58,65 +50,79 @@ using MemoMate.Web.Interfaces;
         {
             WriteLiteral("\r\n<div class=\"posts-card card text-center mb-3 h-100 shadow\">\r\n\t<div class=\"card-header \">\r\n\t\t<a class=\"d-flex align-items-center\"");
             BeginWriteAttribute("href", " href=\"", 154, "\"", 220, 1);
+            WriteAttributeValue("", 161, 
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue("", 161, Url.Action("Details", "User", new { id = Model.Username }), 161, 59, false);
+                                              Url.Action("Details", "User", new { id = Model.Username })
 
 #line default
 #line hidden
 #nullable disable
+            , 161, 59, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t<div class=\"post-profile d-flex justify-content-center\">\r\n\t\t\t\t<img class=\"h-100\"");
             BeginWriteAttribute("src", " src=\"", 307, "\"", 347, 2);
             WriteAttributeValue("", 313, "/img/user/profile/", 313, 18, true);
+            WriteAttributeValue("", 331, 
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue("", 331, Model.UserPhoto, 331, 16, false);
+                                               Model.UserPhoto
 
 #line default
 #line hidden
 #nullable disable
+            , 331, 16, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"Alternate Text\" />\r\n\t\t\t</div>\r\n\t\t\t");
+            Write(
 #nullable restore
 #line 9 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-       Write(Model.Username);
+    Model.Username
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t</a>\r\n\t</div>\r\n\t<div class=\"card-body\">\r\n\t\t<h5 class=\"card-title\">");
+            Write(
 #nullable restore
 #line 13 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                          Write(Model.NoteTitle);
+                          Model.NoteTitle
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h5>\r\n\t\t<p class=\"card-text\">");
+            Write(
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                        Write(Model.NoteContent);
+                        Model.NoteContent
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</p>\r\n\t</div>\r\n\t<div class=\"card-footer d-flex justify-content-between text-body-secondary\">\r\n\t\t<span class=\"rate text-white fw-bold\">★ ");
+            Write(
 #nullable restore
 #line 17 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                           Write(Model.PostRate.ToString("0.00"));
+                                           Model.PostRate.ToString("0.00")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n\t\t<span class=\"date text-white fw-bold\">");
+            Write(
 #nullable restore
 #line 18 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                         Write(GetTimeAgo(Model.PostDate));
+                                         GetTimeAgo(Model.PostDate)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n\r\n\t</div>\r\n</div>\r\n\r\n");
         }
         #pragma warning restore 1998
@@ -146,6 +152,7 @@ WriteAttributeValue("", 331, Model.UserPhoto, 331, 16, false);
 #line default
 #line hidden
 #nullable disable
+
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

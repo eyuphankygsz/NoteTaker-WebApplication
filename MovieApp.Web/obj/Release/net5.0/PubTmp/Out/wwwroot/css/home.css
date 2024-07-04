@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     transition: ease 1ms;
+    font-family: "Inter";
 }
 
 body {
@@ -22,76 +23,97 @@ body {
     padding: 10px;
 }
 
-.card1 {
-    background-color: #7E30E1 !important;
-}
-
-.card2 {
-    background-color: #864AF9 !important;
-}
-
-.card3 {
-    background-color: #711DB0 !important;
-}
-
-/*
-
-.step-container {
-    height: auto !important;
-}
-
-    .step-container .active {
-        color: #9272d5 !important;
-        font-weight: 600 !important;
+    .main .main-content {
+        margin-right: 30px;
+        margin-left: 30px;
     }
 
-    .step-container li button:hover {
-    }
-
-.step-container-color {
-    background-color: #7E30E1 !important;
+.custom-card {
+    background-color: #A7B8FF !important;
+    border: none;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.how-works .col {
-    margin: auto !important;
+#card1 {
+    border: none;
 }
 
-    .how-works .col div {
-        margin: auto !important;
-    }
+#card2 {
+    border: none;
+}
 
-*/
+#card3 {
+    border: none;
+}
+
 .cardImage {
     margin: auto;
     margin-top: 10px;
-    height: 4rem !important;
-    width: 4rem !important;
+    height: 6rem !important;
+    width: 6rem !important;
 }
 
 .welcome {
-    width: 60% !important;
+    width: 70% !important;
     line-height: 1.2rem;
 }
 
+#welcome-text {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+#name-text {
+    font-family: "Indie Flower", cursive;
+    font-size: 6rem;
+    font-weight: 600;
+}
+
 .login-section {
-    width: 50% !important;
+    width: 30% !important;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-extension .logbtn {
-    background-color: #9272d5;
-    border-color: #711DB0;
+.login-extension {
+    width: 50% !important;
 }
 
-    .login-extension .logbtn:hover {
-        background-color: #711DB0;
-        border-color: #9272d5;
+    .login-extension .card-background {
+        background-color: #BF9BFF;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .login-extension .card-background h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+    .login-extension .logbtn {
+        background-color: #9272d5;
+        border:none;
+        border-color: #711DB0;
+        font-size: 1rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+        .login-extension .logbtn:hover {
+            background-color: #711DB0;
+            border-color: #9272d5;
+        }
+
+    .login-extension .form-control {
+        height: 40px;
+        border: none;
+        border-radius: 16px;
     }
 
 .signother-buttons {
     width: 100%;
+
 }
 
     .signother-buttons button {
@@ -107,10 +129,34 @@ body {
 
 
 .step-container {
+    background-color: #A7B8FF;
+    border-radius: 20px;
     display: flex;
-    width: 100%;
-    height: 280px !important;
+    margin:auto;
+    width: 90%;
+    max-width:720px;
+    height: 460px !important;
     padding: 0;
+}
+
+.custom-card-header {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.card-body h5 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.card-body p {
+    font-size: 1rem;
+}
+
+.card-info {
+    width: 90%;
 }
 
 .choice {
@@ -124,7 +170,7 @@ body {
 }
 
 .expand {
-    width: 75%;
+    width: 80%;
     height: 100%;
 }
 
@@ -134,8 +180,12 @@ body {
         height: 100% !important;
     }
 
+    .expand .card-step {
+        display: none !important;
+    }
+
 .small {
-    width: 5%;
+    width: 10%;
     height: 100%;
 }
 
@@ -157,6 +207,8 @@ body {
     .small .card-step {
         width: 100% !important;
         height: 100%;
+        font-size: 2rem;
+        font-weight: 600;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -184,7 +236,9 @@ body {
     align-items: center;
     border-right: 2px solid white;
     padding-right: 10px;
-    margin-right: 5px;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: 10px;
 }
 
 .card-step {
@@ -213,8 +267,9 @@ body {
 
     .login-extension {
         width: 100% !important;
-        max-width:500px !important;
+        max-width: 500px !important;
     }
+
     #signupbuttonlink {
         display: none;
     }
@@ -222,7 +277,12 @@ body {
     #name-text {
         font-size: 3rem !important;
     }
-    .step-container{
-        height: 100% !important;
+
+    .step-container {
+        width: 100%;
+        max-width: 500px;
+    }
+    .welcome{
+        margin-bottom:30px;
     }
 }

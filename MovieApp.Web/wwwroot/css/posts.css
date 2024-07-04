@@ -268,6 +268,7 @@ body {
         color: #FFEDE0;
         font-weight: 500;
         font-size: 1rem;
+        line-height: 1rem;
         text-align: left !important;
     }
 
@@ -275,7 +276,7 @@ body {
 @media (max-width: 1580px) {
     .posts-card .card-title {
         color: #FFE482;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 600;
         text-align: left !important;
     }
@@ -283,10 +284,66 @@ body {
     .posts-card .card-text {
         color: #FFEDE0;
         font-weight: 500;
-        font-size: .9rem;
+        font-size: .8rem;
+        line-height: .9rem;
         text-align: left !important;
     }
 }
 
 @media (max-width: 992px) {
+
+
+    #posts-interests {
+        margin-top: 0px;
+        height: auto;
+    }
+
+        #posts-interests .row-container {
+            width: 94%;
+            flex-direction:column !important;
+            height: 100%;
+            margin: auto;
+        }
+
+            #posts-interests .row-container > div {
+                width: 90%;
+                max-width: 600px;
+                margin: auto;
+                height: 460px;
+            }
+            #posts-interests .row-container .multiple-posts-container, #today-theme-container {
+                height: 400px !important;
+            }
+    .welcome .welcome-nav .searchbar input {
+        width: 140px;
+        height: 30px;
+    }
+    .welcome .welcome-nav .searchbar button {
+        top: 4px;
+        right: 4px;
+    }
+
+
+    .posts-card .card-title {
+        font-size: 1.5rem !important;
+    }
+
+    .posts-card .card-text {
+        font-size: 1rem !important;
+        line-height: 1.1rem !important;
+    }
+
+
+
+    #today-posts-container .posts-row {
+        flex-direction: column;
+    }
+    #posts-container .posts-bg .posts-row > div {
+        margin:auto;
+        width: 90% !important;
+        height: 360px !important;
+    }
+    .posts-bg{
+        margin-bottom:100px;
+    }
 }

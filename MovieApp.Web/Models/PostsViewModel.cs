@@ -8,7 +8,6 @@ namespace MemoMate.Web.Models
 		public User LoggedUserEntity { get; set; }
 		public string TodayThemeName { get; set; }
 		public string YesterdayThemeName { get; set; }
-		public List<PostDetailModel> PostsToday { get; set; }
 		public List<PostDetailModel> PostsYesterday { get; set; }
 		public List<PostDetailModel> PostsCheckOut { get; set; }
 	}

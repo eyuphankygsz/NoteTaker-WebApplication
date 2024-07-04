@@ -16,7 +16,6 @@ let isLoading = false;
 $(document).ready(function () {
 
     loadMoreData();
-
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() >= $(document).height() && !isLoading) {
             skip += take;
@@ -28,15 +27,14 @@ $(document).ready(function () {
 function loadMoreData() {
     isLoading = true;
     $.ajax({
-        url: '/Home/LoadMoreData',
+        url: '/Posts/LoadMoreData',
         type: 'GET',
         data: { skip: skip, take: take },
         success: function (data) {
-            $('#content').append(data);
+            $('#today-posts-container').append(data);
             isLoading = false;
         },
         error: function () {
-            // Hata durumunda isLoading'i false yaparak yeniden istek yapılmasına izin ver
             isLoading = false;
         }
     });

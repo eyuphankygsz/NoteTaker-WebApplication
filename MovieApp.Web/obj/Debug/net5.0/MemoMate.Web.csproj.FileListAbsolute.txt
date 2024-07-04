@@ -138,7 +138,6 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.TagHelpers.input.cache
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.TagHelpers.output.cache
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.RazorCoreGenerate.cache
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
@@ -158,4 +157,6 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Create.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_message.cshtml.g.cs
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.csproj.CopyComplete
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.sourcelink.json
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_PostsPartial.cshtml.g.cs
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.371DA5FD.Up2Date

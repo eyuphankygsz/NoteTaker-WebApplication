@@ -1,57 +1,10 @@
-﻿nav {
-    border-bottom: 8px solid #8961d9;
-    z-index: 2 !important;
-    padding-left: 80px !important;
-}
-
-    nav .logo {
-        font-size: 1.5rem !important;
-        font-weight: 600 !important;
-    }
-
-    nav form {
-        align-items: center;
-    }
-
-.nav-background {
-    background-color: #9F70FD !important;
-}
-
-    .nav-background, .nav-background a, .nav-background .navbar-nav .nav-link, .nav-background {
-        color: white !important;
-    }
-
-        .nav-background .dropdown-menu .dropdown-item {
-            color: black !important;
-        }
-
-.logbtn {
-    outline: solid white 1px !important;
-    color: white !important;
-}
-
-    .logbtn:hover {
-        background-color: white !important;
-        color: #9F70FD !important;
-        font-weight: 500;
-    }
-
-    .logbtn:focus {
-        outline: solid white 1px !important;
-        color: white !important;
-    }
-
-
-
-
-.main-content {
+﻿.main-content {
     display: flex;
 }
 
 .afterlayout {
-    display: flex;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .custom-sidebar {

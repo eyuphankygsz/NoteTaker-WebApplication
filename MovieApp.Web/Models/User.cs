@@ -26,8 +26,8 @@ namespace MemoMate.Web.Models
 		public string Photo { get; set; }
 
 
-		[Column("user_permissions")]
-		public string Permissions { get; set; }
+		[Column("user_role")]
+		public string Role { get; set; }
 
 
 		[Column("user_create_date")]

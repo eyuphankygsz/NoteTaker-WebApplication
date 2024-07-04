@@ -5,10 +5,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MemoMate.Web.Controllers
 {
+	[AllowAnonymous]
 	public class HomeController : Controller
 	{
 		private readonly MemoMateContext _context;
@@ -17,12 +22,9 @@ namespace MemoMate.Web.Controllers
 		{
 			_context = context;
 		}
-
 		[HttpGet]
 		public IActionResult Index()
 		{
-			if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
-				return RedirectToAction("Index","Posts");
 			return View(new UserLoginModel());
 		}
 
@@ -35,10 +37,19 @@ namespace MemoMate.Web.Controllers
 
 				if (user != null)
 				{
-					HttpContext.Session.SetString("UserId", user.ID.ToString());
-					HttpContext.Session.SetString("Username", user.Username);
+					var claims = new List<Claim>
+					{
+						new Claim(ClaimTypes.NameIdentifier, user.ID.ToString()),
+						new Claim(ClaimTypes.Name, user.Username),
+						new Claim(ClaimTypes.Role, user.Role) //TODO: Düzenle
+					};
+					var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-					Debug.WriteLine(user.Username);
+					var authProperties = new AuthenticationProperties
+					{
+						// İsteğe bağlı özellikler
+					};
+					await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
 					return RedirectToAction("Index", "Posts");
 				}
 				else
@@ -64,5 +75,6 @@ namespace MemoMate.Web.Controllers
 		{
 			return View();
 		}
+		public IActionResult AccessDenied() => View();
 	}
 }

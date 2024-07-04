@@ -132,8 +132,10 @@ body {
     background-color: #A7B8FF;
     border-radius: 20px;
     display: flex;
+    margin:auto;
     width: 90%;
-    height: 400px !important;
+    max-width:720px;
+    height: 460px !important;
     padding: 0;
 }
 
@@ -277,6 +279,10 @@ body {
     }
 
     .step-container {
-        height: 100% !important;
+        width: 100%;
+        max-width: 500px;
+    }
+    .welcome{
+        margin-bottom:30px;
     }
 }

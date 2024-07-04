@@ -1,16 +1,21 @@
 ﻿using MemoMate.Data;
 using MemoMate.Web.GeneralHelpers;
 using MemoMate.Web.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MemoMate.Web.Controllers
 {
+	[AllowAnonymous]
 	public class RegisterController : Controller
 	{
 		private readonly MemoMateContext _context;
@@ -23,8 +28,8 @@ namespace MemoMate.Web.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
-				return RedirectToAction("Index", "Posts");
+			//if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
+			//   	return RedirectToAction("Index", "Posts");
 			return View(new UserRegisterModel());
 		}
 
@@ -47,21 +52,29 @@ namespace MemoMate.Web.Controllers
 					Username = model.Username,
 					Mail = model.Mail,
 					Password = model.Password,
-					Permissions = "g",
+					Role = "g",
 					Photo = "def.jpg",
 					CreateDate = TimeHelpers.GetLocalDate(),
 				};
 
 
-				// Kullanıcıyı veritabanına ekle
 				_context.Users.Add(user);
 				await _context.SaveChangesAsync();
 
-				// Oturum bilgilerini ayarla
-				HttpContext.Session.SetString("UserId", user.ID.ToString());
-				HttpContext.Session.SetString("Username", user.Username);
+				var claims = new List<Claim>
+					{
+						new Claim(ClaimTypes.NameIdentifier, user.ID.ToString()),
+						new Claim(ClaimTypes.Name, user.Username),
+						new Claim(ClaimTypes.Role, user.Role)
+					};
+				var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-				return RedirectToAction("Index", "Posts"); // Başarılı kayıt durumunda yönlendirme
+				var authProperties = new AuthenticationProperties
+				{
+					// İsteğe bağlı özellikler
+				};
+				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+				return RedirectToAction("Index", "Posts");
 			}
 			MessageHelpers.SetError("You have to fill everything correctly!");
 			return View();

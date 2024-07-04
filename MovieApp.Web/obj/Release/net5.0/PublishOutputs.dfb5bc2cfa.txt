@@ -12,7 +12,9 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\logo.png
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\navbar\home.png
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\navbar\user.png
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\marstheme.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\abcd.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\admin.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\ah1j3njad.jpeg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\anWxA13.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\asqwe1.png

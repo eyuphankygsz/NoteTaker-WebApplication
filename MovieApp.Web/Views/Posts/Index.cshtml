@@ -24,7 +24,7 @@
 					<button><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
 				</div>
 				<div class="user align-items-center">
-					<img class="h-100" src="/img/user/profile/def.jpg" alt="Alternate Text" />
+					<img class="h-100" src="/img/user/profile/@Model.LoggedUserEntity.Photo" alt="Alternate Text" />
 				</div>
 			</div>
 		</div>
@@ -98,7 +98,6 @@
 							{
 								<div id="checkOut-posts" class="carousel slide h-100" data-bs-ride="false">
 									<div class="carousel-inner h-100">
-										@Model.PostsCheckOut.Count
 										@foreach (var note in Model.PostsCheckOut)
 										{
 											<div class="carousel-item h-100">
@@ -132,29 +131,11 @@
 	<div class="" id="posts-container">
 		<div id="today-posts-title" class="text-white mb-3 mt-5 text-center">TOP POSTS</div>
 		<div class="row-container d-flex justify-content-evenly">
-			<div class="posts-bg">
-				@{
-					for (int i = 0; i <= (int)MathF.Ceiling(Model.PostsToday.Count / 3); i++)
-					{
-						int start = i * 3;
-
-						<div class="posts-row d-flex justify-content-evenly">
-							@for (int j = start; j < start + 3; j++)
-							{
-								if (j == Model.PostsToday.Count)
-									break;
-								@await Html.PartialAsync("_post", Model.PostsToday[j]);
-							}
-						</div>
-					}
-				}
+			<div class="posts-bg" id="today-posts-container">
 			</div>
 		</div>
 
 	</div>
-</div>
-
-
 </div>
 
 @{
@@ -168,6 +149,7 @@
 	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="/js/Posts/posts.js"></script>
 	<script src="/js/Posts/posts-index.js"></script>
 

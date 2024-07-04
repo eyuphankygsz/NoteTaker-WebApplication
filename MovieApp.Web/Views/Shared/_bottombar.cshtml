@@ -1,7 +1,7 @@
 ﻿@model User
 
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark border-bottom-0">
-	<ul class="navbar-nav mr-auto">
+	<ul class="navbar-nav mr-auto align-items-end justify-content-evenly w-100">
 		<li class="nav-item active">
 			<a href="@Url.Action("Rates","Posts")" class="nav-link border-bottom" id="bottom-rate" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 				<i class="fa-solid fa-star-half-stroke fa-xl"></i>
@@ -18,7 +18,7 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a href="#" class="nav-link border-bottom" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+			<a href="@Url.Action("Details", "User", new { id = Model.Username })" class="nav-link border-bottom" id="dropdownUser3">
 				<img src="/img/user/profile/@Model.Photo" alt="mdo" width="24" height="24" class="rounded-circle">
 			</a>
 		</li>

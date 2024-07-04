@@ -8,7 +8,7 @@ namespace MemoMate.Web.CustomMiddlewares
 	public class IndexRedirectMiddleware
 	{
 		private readonly RequestDelegate _next;
-		private readonly string[] paths = new string[]
+		private readonly string[] protectedPaths = new string[]
 		{
 			"/",
 			"/home",
@@ -19,6 +19,7 @@ namespace MemoMate.Web.CustomMiddlewares
 			"/user/usermailvalidation",
 			"/user/usernamevalidation",
 		};
+
 		public IndexRedirectMiddleware(RequestDelegate next)
 		{
 			_next = next;
@@ -26,18 +27,21 @@ namespace MemoMate.Web.CustomMiddlewares
 
 		public async Task InvokeAsync(HttpContext context)
 		{
-			Debug.WriteLine(context.Request.Path.Value.ToLower());
-            if (string.IsNullOrEmpty(context.Session.GetString("UserId")) && !paths.Contains(context.Request.Path.Value.ToLower()))
+			string requestPath = context.Request.Path.Value.ToLower();
+
+			if (context.User.Identity.IsAuthenticated && IsProtectedPath(requestPath))
 			{
-				Debug.WriteLine("ROUTING TO...");
-				context.Response.Redirect("/");
+				Debug.WriteLine($"Redirecting unauthorized access to {requestPath}");
+				context.Response.Redirect("/Posts");
 				return;
 			}
 
 			await _next(context);
 		}
 
-
-
+		private bool IsProtectedPath(string path)
+		{
+			return protectedPaths.Contains(path);
+		}
 	}
 }
