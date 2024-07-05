@@ -2,45 +2,88 @@
 @inject ISidebarService SidebarService
 
 @section Styles {
-        <link rel="stylesheet" href="~/css/posts.css" />
+	<link rel="stylesheet" href="~/css/posts.css" />
 }
 @{
-    Layout = "_LoggedLayout";
+	Layout = "_LoggedLayout";
 }
 @section SideExtension {
-    @await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
 
 <div class="posts-main">
-    <div class="posts-container">
-        <div class="posts-bg">
-            <div class="posts-content">
-                <div id="posts-title" class="text-white mb-3">CREATE</div>
+	<div class="welcome mx-4">
+		<div class="welcome-nav d-flex justify-content-between h-100">
+			<div class="breadcrumbs d-flex">
+				<span class="text-white fw-bold m-auto">Posts/Create</span>
+			</div>
+			<div class="navigation d-flex">
+				<div class="searchbar m-auto">
+					<input class="form-control form-control-sm" type="search" />
+					<button><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+				</div>
+				<div class="user align-items-center">
+					<img class="h-100" src="/img/user/profile/@Model.LoggedUserEntity.Photo" alt="Alternate Text" />
+				</div>
+			</div>
+		</div>
 
-                <div class="card text-center mb-3">
-                    <form asp-action="Create" method="post">
-                        <div class="card-header">
-                            <input type="text" name="Title" class="form-control" placeholder="Note Title" required />
-                            </div>
-                            <div class="card-body">
-                                <textarea name="Content" class="form-control" placeholder="Note Content" required></textarea>
-                            </div>
-                            <div class="card-footer text-body-secondary">
-                                <button type="submit" class="btn btn-primary">Create Note</button>
-                            </div>
-                    </form>
+		<div class="welcome-greeting">
+			<div class="welcome-name d-flex">
+				<span class="text-white fw-bold">Hello, @Model.LoggedUserEntity.Username</span>
+			</div>
+			<div class="welcome-nexttheme d-block">
+				<span class="text-white">Next Theme will be announced in</span>
+				<p class="text-white welcome-nexttheme-time">18:09:53</p>
+			</div>
+		</div>
+	</div>
+	<div id="create-container">
+		<div id="create-part">
+			<div class="posts-content">
+				<div class="card text-center mb-3">
+					<form asp-action="Create" method="post">
+						<div class="card-header">
+							<input id="titleInput" type="text" name="Title" class="form-control text-light fw-bolder" placeholder="Note Title" required />
+							<p id="titleMax">0/30</p>
+						</div>
+						<div class="card-body">
+							<textarea id="contentInput" name="Content" class="form-control text-light fw-bold" placeholder="Note Content" required></textarea>
+							<p id="contentMax">0/250</p>
+						</div>
+						<div class="card-footer text-body-secondary">
+							<span class="d-inline-block" id="createButton-span" tabindex="0" >
+								<button class="btn btn-danger" type="submit" disabled>Create Post</button>
+							</span>
+						</div>
+					</form>
 
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+		<div id="will-be-added">
+			<h1>Will be added soon.</h1>
+		</div>
+	</div>
 </div>
-
-@section BottomExtension {
-    @await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+@{
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+	}
 }
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
 @section Scripts {
-    <script src="/js/Posts/posts.js"></script>
-    <script src="/js/Posts/posts-create.js"></script>
+	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/Posts/posts-create.js"></script>
 }

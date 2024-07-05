@@ -139,8 +139,15 @@ namespace MemoMate.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Create(Note newNote)
 		{
-			if (!ModelState.IsValid)
-				return View(new CreateViewModel());
+			if (!ModelState.IsValid || !IsPostValid(newNote))
+			{
+				MessageHelpers.SetError("We can't accept your note, sorry :(");
+				return View(new CreateViewModel() 
+				{ 
+					LoggedUserEntity = await _context.Users
+					   .Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)).FirstOrDefaultAsync()
+				});
+			}
 
 			_context.Notes.Add(newNote);
 			await _context.SaveChangesAsync();
@@ -167,7 +174,7 @@ namespace MemoMate.Web.Controllers
 					.Where(whereCondition);
 
 			if (orderByRateDescending)
-				query = query.OrderByDescending(p => p.RateUps / (p.RateCount == 0 ? 1: p.RateCount));
+				query = query.OrderByDescending(p => p.RateUps / (p.RateCount == 0 ? 1 : p.RateCount));
 
 			if (skip.HasValue)
 				query = query.Skip(skip.Value);
@@ -213,5 +220,12 @@ namespace MemoMate.Web.Controllers
 			return PartialView("_PostsPartial", posts);
 		}
 
+		private bool IsPostValid(Note note)
+		{
+			if (note.Title.Length < 5 || note.Title.Length > 30 || note.Content.Length < 30 || note.Content.Length > 250)
+				return false;
+
+			return true;
+		}
 	}
 }

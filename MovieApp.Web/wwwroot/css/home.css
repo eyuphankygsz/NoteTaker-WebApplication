@@ -19,7 +19,7 @@ body {
 
 .main {
     width: 100%;
-    margin: 10px;
+    margin: 0 !important;
     padding: 10px;
 }
 
