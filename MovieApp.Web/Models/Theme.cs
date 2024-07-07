@@ -8,5 +8,7 @@ namespace MemoMate.Web.Models
 		public int Id { get; set; }
 		[Column("theme_name")]
 		public string Name { get; set; }
+		[Column("theme_photo")]
+		public string PhotoURL { get; set; }
 	}
 }

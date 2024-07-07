@@ -1,0 +1,30 @@
+﻿@model User
+
+<div class="welcome mx-4">
+	<div class="welcome-nav d-flex justify-content-between h-100">
+		<div class="breadcrumbs d-flex">
+			<span class="text-white fw-bold m-auto">Posts</span>
+		</div>
+		<div class="navigation d-flex">
+			<div class="searchbar m-auto">
+				<input class="form-control form-control-sm" type="search" />
+				<button><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
+			</div>
+			<div class="user align-items-center">
+				<img class="h-100" src="/img/user/profile/@Model.Photo" alt="Alternate Text" />
+			</div>
+		</div>
+	</div>
+
+	<div class="welcome-greeting">
+		<div class="welcome-name d-flex">
+			<span class="text-white fw-bold">Hello, @Model.Username</span>
+		</div>
+		<div class="welcome-nexttheme d-block">
+			<span class="text-white">Next Theme will be announced in</span>
+			<p class="text-white welcome-nexttheme-time"></p>
+		</div>
+	</div>
+</div>
+
+<script src="/js/welcome.js"></script>

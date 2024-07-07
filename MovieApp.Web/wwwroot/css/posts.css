@@ -257,6 +257,17 @@ body {
         padding-right: 30px;
     }
 
+        .posts-card .card-body .card-content {
+            height: 90%;
+        }
+        .posts-card .card-body .card-theme {
+            height: 10%;
+            font-size: 0.9rem;
+            text-align:left;
+            font-weight:600;
+            color:#711DB0;
+        }
+
     .posts-card .card-title {
         color: #FFE482;
         font-size: 1.6rem;
@@ -325,6 +336,7 @@ body {
                     font-size: 26px;
                     padding-right: 60px;
                 }
+
                     #create-part .posts-content .card .card-header input::placeholder {
                         color: #9272d5;
                     }
@@ -348,7 +360,7 @@ body {
                 border: none;
                 padding-left: 10%;
                 padding-right: 10%;
-                position:relative;
+                position: relative;
             }
 
                 #create-part .posts-content .card .card-body textarea {
@@ -362,9 +374,11 @@ body {
                     border: none;
                     border-radius: 16px;
                 }
-                #create-part .posts-content .card .card-body textarea::placeholder {
-                    color: #9272d5;
-                }
+
+                    #create-part .posts-content .card .card-body textarea::placeholder {
+                        color: #9272d5;
+                    }
+
                 #create-part .posts-content .card .card-body p {
                     position: absolute;
                     top: 85%;
@@ -419,7 +433,7 @@ body {
 
 .with-popover {
     white-space: normal !important;
-    display:block;
+    display: block;
 }
 
 .custom-popover {

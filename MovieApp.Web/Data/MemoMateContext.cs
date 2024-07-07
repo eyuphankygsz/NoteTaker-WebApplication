@@ -35,6 +35,10 @@ namespace MemoMate.Data
 				post.HasOne(p => p.UserEntity)
 					.WithMany(u => u.Posts)
 					.HasForeignKey(p => p.UserID);
+
+				post.HasOne(p => p.ThemeEntity)
+				    .WithMany()
+				    .HasForeignKey(p => p.ThemeID);
 			});
 
 			modelBuilder.Entity<Rate>(rate =>
@@ -58,5 +62,5 @@ namespace MemoMate.Data
 					sqlServerOptions => sqlServerOptions.EnableRetryOnFailure());
 			}
 		}
-	}	
+	}
 }

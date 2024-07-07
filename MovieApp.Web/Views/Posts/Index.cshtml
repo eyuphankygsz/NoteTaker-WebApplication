@@ -13,41 +13,16 @@
 
 <div class="posts-main">
 
-	<div class="welcome mx-4">
-		<div class="welcome-nav d-flex justify-content-between h-100">
-			<div class="breadcrumbs d-flex">
-				<span class="text-white fw-bold m-auto">Posts</span>
-			</div>
-			<div class="navigation d-flex">
-				<div class="searchbar m-auto">
-					<input class="form-control form-control-sm" type="search" />
-					<button><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></button>
-				</div>
-				<div class="user align-items-center">
-					<img class="h-100" src="/img/user/profile/@Model.LoggedUserEntity.Photo" alt="Alternate Text" />
-				</div>
-			</div>
-		</div>
-
-		<div class="welcome-greeting">
-			<div class="welcome-name d-flex">
-				<span class="text-white fw-bold">Hello, @Model.LoggedUserEntity.Username</span>
-			</div>
-			<div class="welcome-nexttheme d-block">
-				<span class="text-white">Next Theme will be announced in</span>
-				<p class="text-white welcome-nexttheme-time">18:09:53</p>
-			</div>
-		</div>
-	</div>
+	@await Html.PartialAsync("_welcome", Model.LoggedUserEntity)
 
 	<div class="" id="posts-interests">
 		<div class="row-container d-flex justify-content-evenly">
 			<div class="item-holder">
 				<div class="d-flex  h-75" id="today-theme-container">
 					<div class="m-auto" id="today-theme">
-						<div class="theme-image"><img src="/img/theme/marstheme.jpg" alt="Alternate Text" /></div>
+						<div class="theme-image"><img src="/img/theme/@Model.TodayTheme.PhotoURL" alt="Alternate Text" /></div>
 						<div class="theme-name-container w-100 h-100 justify-content-center d-flex">
-							<p class="theme-name" style="z-index:2;">Mars</p>
+							<p class="theme-name" style="z-index:2;">@Model.TodayTheme.Name</p>
 						</div>
 						<div class="theme-back"></div>
 					</div>
@@ -121,10 +96,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
 		</div>
 	</div>
 

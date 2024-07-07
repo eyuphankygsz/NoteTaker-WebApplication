@@ -47,7 +47,7 @@ namespace MemoMate.Web.Controllers
 
 					var authProperties = new AuthenticationProperties
 					{
-						// İsteğe bağlı özellikler
+
 					};
 					await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
 					return RedirectToAction("Index", "Posts");

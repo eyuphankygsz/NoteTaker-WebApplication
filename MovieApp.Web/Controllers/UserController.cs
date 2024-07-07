@@ -49,7 +49,7 @@ namespace MemoMate.Web.Controllers
 		private async Task<UserProfileViewModel> GetProfileAsync(string username)
         {
 			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
-
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAA" + username);
             var profile = await _context.Users
                 .Where(u => u.Username == username)
                 .Select(u => new UserProfileViewModel

@@ -48,7 +48,7 @@ namespace MemoMate.Web.Controllers
 			{
 				LoggedUserEntity = user,
 				PostsYesterday = postsYesterday,
-				TodayThemeName = themename[0].Name,
+				TodayTheme = themename[0],
 				YesterdayThemeName = themename[1].Name,
 				PostsCheckOut = postsCheckOut
 			};
@@ -158,7 +158,9 @@ namespace MemoMate.Web.Controllers
 				NoteID = newNote.Id,
 				Date = TimeHelpers.GetLocalDate(),
 				RateCount = 0,
-				RateUps = 0
+				RateUps = 0,
+				CheckOut = false,
+				ThemeID = await _context.Themes.OrderByDescending(t => t.Id).Select(t => t.Id).FirstAsync()
 			};
 			_context.Posts.Add(post);
 			await _context.SaveChangesAsync();
@@ -171,6 +173,7 @@ namespace MemoMate.Web.Controllers
 			var query = _context.Posts
 					.Include(p => p.UserEntity)
 					.Include(p => p.NoteEntity)
+					.Include(p => p.ThemeEntity)
 					.Where(whereCondition);
 
 			if (orderByRateDescending)
@@ -182,6 +185,7 @@ namespace MemoMate.Web.Controllers
 			if (take.HasValue)
 				query = query.Take(take.Value);
 
+
 			return await query
 					.Select(p => new PostDetailModel
 					{
@@ -191,7 +195,8 @@ namespace MemoMate.Web.Controllers
 						NoteContent = p.NoteEntity.Content,
 						NoteTitle = p.NoteEntity.Title,
 						Username = p.UserEntity.Username,
-						UserPhoto = p.UserEntity.Photo
+						UserPhoto = p.UserEntity.Photo,
+						ThemeName = p.ThemeEntity.Name
 					})
 				 .ToListAsync();
 		}

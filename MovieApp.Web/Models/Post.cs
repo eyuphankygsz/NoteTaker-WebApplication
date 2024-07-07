@@ -30,8 +30,11 @@ namespace MemoMate.Web.Models
 		[Column("check_out")]
 		public bool CheckOut { get; set; }
 
+		[Column("theme_id")]
+		public int ThemeID { get; set; }
 
 		public Note NoteEntity { get; set; }
 		public User UserEntity { get; set; }
+		public Theme ThemeEntity { get; set; }
 	}
 }

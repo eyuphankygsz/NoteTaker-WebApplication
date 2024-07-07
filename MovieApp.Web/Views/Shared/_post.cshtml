@@ -10,8 +10,11 @@
 		</a>
 	</div>
 	<div class="card-body">
-		<h5 class="card-title">@Model.NoteTitle</h5>
-		<p class="card-text">@Model.NoteContent</p>
+		<div class="card-content">
+			<h5 class="card-title">@Model.NoteTitle</h5>
+			<p class="card-text">@Model.NoteContent</p>
+		</div>
+		<div class="card-theme">@Model.ThemeName</div>
 	</div>
 	<div class="card-footer d-flex justify-content-between text-body-secondary">
 		<span class="rate text-white fw-bold">★ @Model.PostRate.ToString("0.00")</span>
