@@ -18,7 +18,7 @@ namespace MemoMate.Web.Controllers
 	public class PostsController : Controller
 	{
 		private readonly MemoMateContext _context;
-
+		private string[] themeNames;
 		public PostsController(MemoMateContext context)
 		{
 			_context = context;
@@ -42,7 +42,7 @@ namespace MemoMate.Web.Controllers
 			if (postsCheckOut.Count == 0)
 				postsCheckOut.Add(NoFoundPost("Nothing to check out.", "We tried to push our customers to give us money to show themselves up here but... we failed?"));
 
-			var themename = await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
+			var themename = await GetThemes();
 
 			PostsViewModel model = new PostsViewModel()
 			{
@@ -133,6 +133,7 @@ namespace MemoMate.Web.Controllers
 			CreateViewModel model = new CreateViewModel();
 			model.LoggedUserEntity = await _context.Users.Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)).FirstOrDefaultAsync();
 			model.NewNote = new Note();
+			model.ThemeName = (await GetThemes())[0].Name;
 			return View(model);
 		}
 
@@ -152,6 +153,7 @@ namespace MemoMate.Web.Controllers
 			_context.Notes.Add(newNote);
 			await _context.SaveChangesAsync();
 
+			int themeId = await _context.Themes.OrderByDescending(t => t.Id).Select(t => t.Id).FirstAsync();
 			Post post = new Post()
 			{
 				UserID = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value),
@@ -160,7 +162,7 @@ namespace MemoMate.Web.Controllers
 				RateCount = 0,
 				RateUps = 0,
 				CheckOut = false,
-				ThemeID = await _context.Themes.OrderByDescending(t => t.Id).Select(t => t.Id).FirstAsync()
+				ThemeID = themeId
 			};
 			_context.Posts.Add(post);
 			await _context.SaveChangesAsync();
@@ -199,6 +201,9 @@ namespace MemoMate.Web.Controllers
 						ThemeName = p.ThemeEntity.Name
 					})
 				 .ToListAsync();
+		}
+		private async Task<List<Theme>> GetThemes() {
+			return await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
 		}
 		private PostDetailModel NoFoundPost(string title, string message)
 		{

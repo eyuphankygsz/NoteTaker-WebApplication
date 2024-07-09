@@ -1,5 +1,6 @@
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\MemoMate.Web.exe
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\about.css
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\details.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\home.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\navbar.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\posts.css
@@ -12,7 +13,22 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\logo.png
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\navbar\home.png
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\navbar\user.png
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\alien.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\batman.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\bestcity.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\cartoons.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\convspc.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\crawlywiz.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\hunting.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\immo.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\lastman.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\marstheme.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\missedopp.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\onlinegames.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\steamcyber.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\timetravel.jpg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\villain.jpeg
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\theme\virtreal.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\abcd.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\admin.jpg
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\img\user\profile\ah1j3njad.jpeg
@@ -32,6 +48,7 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\register.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\sidebar.js
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\welcome.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\appsettings.json
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\MemoMate.Web.dll

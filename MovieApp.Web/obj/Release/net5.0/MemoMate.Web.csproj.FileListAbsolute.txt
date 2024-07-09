@@ -81,3 +81,4 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\Razor\Views\Shared\_message.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\Razor\Views\Shared\_PostsPartial.cshtml.g.cs
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\Razor\Views\Shared\_welcome.cshtml.g.cs

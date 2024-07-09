@@ -1,5 +1,6 @@
 ﻿const time = document.querySelector(".welcome-nexttheme-time");
 
+let reloadNewTheme = false;
 setInterval(function () {
     const userLocalDate = new Date();
 
@@ -10,14 +11,26 @@ setInterval(function () {
     const currentDate = new Date();
 
     let diffMilliseconds;
+
+
+    if (!reloadNewTheme && currentDate.getTime() > today_timezone.getTime() - 1000 && currentDate.getTime() < today_timezone.getTime() + 1000) {
+        reloadNewTheme = true;
+        setTimeout(function () {
+            window.location.reload();
+            console.log("BOMMM");
+        }, 1100);
+    }
     if (currentDate.getTime() < today_timezone.getTime()) {
         diffMilliseconds = today_timezone.getTime() - currentDate.getTime();
-    } else {
+    }
+    else {
         const tomorrow = new Date(today_timezone);
         tomorrow.setDate(tomorrow.getDate() + 1);
         const utcTomorrow = new Date(tomorrow.getTime());
         diffMilliseconds = utcTomorrow.getTime() - currentDate.getTime();
     }
+    console.log(currentDate.getTime());
+    console.log(today_timezone.getTime());
 
     let diffSeconds = Math.floor(diffMilliseconds / 1000);
     const diffHours = Math.floor(diffSeconds / 3600);
