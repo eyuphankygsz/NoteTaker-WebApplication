@@ -1,5 +1,6 @@
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\MemoMate.Web.exe
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\about.css
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\body-scrollbar.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\details.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\home.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\navbar.css
@@ -45,6 +46,7 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-create.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-index.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-rate.js
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-theme.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\register.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\sidebar.js

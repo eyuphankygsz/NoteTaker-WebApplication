@@ -17,7 +17,6 @@ setInterval(function () {
         reloadNewTheme = true;
         setTimeout(function () {
             window.location.reload();
-            console.log("BOMMM");
         }, 1100);
     }
     if (currentDate.getTime() < today_timezone.getTime()) {
@@ -29,8 +28,6 @@ setInterval(function () {
         const utcTomorrow = new Date(tomorrow.getTime());
         diffMilliseconds = utcTomorrow.getTime() - currentDate.getTime();
     }
-    console.log(currentDate.getTime());
-    console.log(today_timezone.getTime());
 
     let diffSeconds = Math.floor(diffMilliseconds / 1000);
     const diffHours = Math.floor(diffSeconds / 3600);
@@ -44,3 +41,62 @@ setInterval(function () {
 
     time.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }, 1000);
+
+let typing = false;
+let typeTimeout;
+
+const searchbarDiv = document.querySelector(".searchbar");
+const searchbar = searchbarDiv.children[0];
+const searchItems = document.querySelector("#search-items");
+
+searchbar.addEventListener('input', () => {
+    typing = true;
+    clearTimeout(typeTimeout);
+    typeTimeout = setTimeout(async () => {
+        typing = false;
+        await search(searchbar.value);
+    }, 500);
+});
+
+let isMouseOverItems = false;
+searchbar.addEventListener('focus', () => {
+    searchItems.style.display = 'block';
+});
+searchbar.addEventListener('focusout', () => {
+    if(!isMouseOverItems)
+    searchItems.style.display = 'none';
+});
+
+
+
+async function search(txt) {
+    while (searchItems.firstChild)
+        searchItems.removeChild(searchItems.firstChild);
+
+    isLoading = true;
+    $.ajax({
+        url: '/Search/Text',
+        type: 'GET',
+        data: { text: txt },
+        success: function (data) {
+            $('#search-items').append(data);
+            isLoading = false;
+            const linksInsideSearchItems = searchItems.querySelectorAll('a');
+            linksInsideSearchItems.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    isMouseOverItems = true;
+                });
+                link.addEventListener('mouseleave', () => {
+                    isMouseOverItems = false;
+                });
+            });
+        },
+        error: function (xhr, status, errorThrown) {
+            console.error("Ajax error:", errorThrown);
+            isLoading = false;
+        }
+    });
+
+
+
+}

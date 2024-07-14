@@ -1,0 +1,38 @@
+﻿@using MemoMate.Web.Models.Search
+@model SearchModel
+@{
+	if (Model.FoundUsers.Count != 0)
+	{
+		<div class="mt-2 mb-2 search-title">Users</div>
+		for (int i = 0; i < Model.FoundUsers.Count; i++)
+		{
+			<a class="search-row d-flex" href="/User/Details/@Model.FoundUsers[i].ItemName">
+				<div class="search-photo"><img src="/img/user/profile/@Model.FoundUsers[i].Photo" class="h-100" /></div>
+				<div class="search-name">@Model.FoundUsers[i].ItemName</div>
+			</a>
+		}
+	}
+
+	if (Model.FoundPosts.Count != 0)
+	{
+		<div class="mt-2 mb-2 search-title">Posts</div>
+		for (int i = 0; i < Model.FoundPosts.Count; i++)
+		{
+			<a class="search-row d-flex" href="/Posts/Post/@Model.FoundPosts[i].ID">
+				<div class="search-photo"><img src="/img/user/profile/@Model.FoundPosts[i].Photo" class="h-100" /></div>
+				<div class="search-name">@Model.FoundPosts[i].ItemName</div>
+			</a>
+		}
+	}
+	if (Model.FoundThemes.Count != 0)
+	{
+		<div class="mt-2 mb-2 search-title">Themes</div>
+		for (int i = 0; i < Model.FoundThemes.Count; i++)
+		{
+			<a class="search-row d-flex" href="/Posts/Theme/@Model.FoundThemes[i].ItemName">
+				<div class="search-photo"><img src="/img/theme/@Model.FoundThemes[i].Photo" class="h-100" /></div>
+				<div class="search-name">@Model.FoundThemes[i].ItemName</div>
+			</a>
+		}
+	}
+}

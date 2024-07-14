@@ -10,7 +10,7 @@ checkOutParent.querySelector(":scope .carousel-item").classList.add("active");
 
 
 let skip = 0;
-const take = 18;
+const skipCount = 18;
 let isLoading = false;
 
 $(document).ready(function () {
@@ -18,7 +18,7 @@ $(document).ready(function () {
     loadMoreData();
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() >= $(document).height() && !isLoading) {
-            skip += take;
+            skip += skipCount;
             loadMoreData();
         }
     });
@@ -27,9 +27,9 @@ $(document).ready(function () {
 function loadMoreData() {
     isLoading = true;
     $.ajax({
-        url: '/Posts/LoadMoreData',
+        url: '/Posts/LoadMoreData_Today',
         type: 'GET',
-        data: { skip: skip, take: take },
+        data: { skip: skip },
         success: function (data) {
             $('#today-posts-container').append(data);
             isLoading = false;

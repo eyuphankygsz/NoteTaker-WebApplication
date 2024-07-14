@@ -1,5 +1,6 @@
 ﻿const time = document.querySelector(".welcome-nexttheme-time");
 
+let reloadNewTheme = false;
 setInterval(function () {
     const userLocalDate = new Date();
 
@@ -10,9 +11,18 @@ setInterval(function () {
     const currentDate = new Date();
 
     let diffMilliseconds;
+
+
+    if (!reloadNewTheme && currentDate.getTime() > today_timezone.getTime() - 1000 && currentDate.getTime() < today_timezone.getTime() + 1000) {
+        reloadNewTheme = true;
+        setTimeout(function () {
+            window.location.reload();
+        }, 1100);
+    }
     if (currentDate.getTime() < today_timezone.getTime()) {
         diffMilliseconds = today_timezone.getTime() - currentDate.getTime();
-    } else {
+    }
+    else {
         const tomorrow = new Date(today_timezone);
         tomorrow.setDate(tomorrow.getDate() + 1);
         const utcTomorrow = new Date(tomorrow.getTime());
@@ -31,3 +41,62 @@ setInterval(function () {
 
     time.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }, 1000);
+
+let typing = false;
+let typeTimeout;
+
+const searchbarDiv = document.querySelector(".searchbar");
+const searchbar = searchbarDiv.children[0];
+const searchItems = document.querySelector("#search-items");
+
+searchbar.addEventListener('input', () => {
+    typing = true;
+    clearTimeout(typeTimeout);
+    typeTimeout = setTimeout(async () => {
+        typing = false;
+        await search(searchbar.value);
+    }, 500);
+});
+
+let isMouseOverItems = false;
+searchbar.addEventListener('focus', () => {
+    searchItems.style.display = 'block';
+});
+searchbar.addEventListener('focusout', () => {
+    if(!isMouseOverItems)
+    searchItems.style.display = 'none';
+});
+
+
+
+async function search(txt) {
+    while (searchItems.firstChild)
+        searchItems.removeChild(searchItems.firstChild);
+
+    isLoading = true;
+    $.ajax({
+        url: '/Search/Text',
+        type: 'GET',
+        data: { text: txt },
+        success: function (data) {
+            $('#search-items').append(data);
+            isLoading = false;
+            const linksInsideSearchItems = searchItems.querySelectorAll('a');
+            linksInsideSearchItems.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    isMouseOverItems = true;
+                });
+                link.addEventListener('mouseleave', () => {
+                    isMouseOverItems = false;
+                });
+            });
+        },
+        error: function (xhr, status, errorThrown) {
+            console.error("Ajax error:", errorThrown);
+            isLoading = false;
+        }
+    });
+
+
+
+}

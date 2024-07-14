@@ -113,4 +113,3 @@ inputs.forEach((element) => {
     element.addEventListener("input", async () => { await validation(element); });
 });
 
-document.getElementById("nav-signUpButton").classList.add("d-none");

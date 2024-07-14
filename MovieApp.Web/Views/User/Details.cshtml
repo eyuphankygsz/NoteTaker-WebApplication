@@ -37,7 +37,7 @@
                     <!-- Add other user details as needed -->
                 </div>
             </div>
-            <div class="card">
+            <div class="card custom-bottom">
                 <div class="card-header">
                     <h5>@Model.Username's Posts</h5>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="list-group">
                         @foreach (var post in Model.Posts)
                         {
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <a href="/Posts/Post/@post.PostID" class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1 w-75">@post.NoteTitle</h5>
                                     <small>@post.PostDate.ToShortDateString()</small>

@@ -1,4 +1,10 @@
-﻿async function validation(element) {
+﻿const MAIL_MAX = 50;
+const PASS_MAX = 50;
+const PASS_MIN = 8;
+const USER_MAX = 20;
+const USER_MIN = 5;
+
+async function validation(element) {
     if (element.id === "password1")
         passwordValidation(element, false);
     else if (element.id === "password2")
@@ -25,7 +31,6 @@ function isValid(element, valid) {
 
 const submitButton = document.getElementById("submitButton");
 submitButton.disabled = true;
-
 function checkAll() {
     let allValid = true;
     inputs.forEach(input => {
@@ -38,7 +43,7 @@ function checkAll() {
 
 function passwordValidation(element, again) {
     if (!again) {
-        if (element.value.length < 8)
+        if (element.value.length < PASS_MIN || element.value.length > PASS_MAX)
             isValid(element, false);
         else
             isValid(element, true);
@@ -54,53 +59,55 @@ async function mailValidation(element, again) {
     const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const isValidMail = mailRegex.test(String(element.value).toLowerCase());
 
-    if (!isValidMail) {
+    if (!isValidMail || element.value.length > MAIL_MAX) {
         isValid(element, false);
     } else {
         if (!again) {
-            try {
-                const response = await $.ajax({
-                    url: '/User/UserMailValidation',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: { mail: element.value }
-                });
-
-                if (response.isValid) {
-                    isValid(element, true);
-                } else {
-                    isValid(element, false);
+            $.ajax({
+                url: '/User/UserMailValidation',
+                type: 'Post',
+                data: { mail: element.value },
+                success: function (data) {
+                    if (data.isValid) {
+                        isValid(element, true);
+                        console.log("adasd");
+                    }
+                    else {
+                        isValid(element, false);
+                    }
+                },
+                error: function () {
+                    isLoading = false;
                 }
-            } catch (error) {
-                console.error('Mail validation error:', error);
-                isValid(element, false);
-            }
-        } else {
-            isValid(element, document.getElementById("mail1").value === element.value);
+            });
         }
+        else
+            isValid(element, document.getElementById("mail1").value === element.value);
     }
 }
 
 async function userValidation(element) {
-    if (element.value.length < 8) {
+    const usernamePattern = /^[a-zA-Z0-9]+$/;
+    if (element.value.length < USER_MIN || element.value.length > USER_MAX || !usernamePattern.test(element.value)) {
         isValid(element, false);
     } else {
-        try {
-            const response = await $.ajax({
-                url: '/User/UsernameValidation',
-                type: 'POST',
-                dataType: 'json',
-                data: { username: element.value }
-            });
-            if (response.isValid) {
-                isValid(element, true);
-            } else {
-                isValid(element, false);
+        $.ajax({
+            url: '/User/UsernameValidation',
+            type: 'POST',
+            data: { username: element.value },
+            success: function (data) {
+                if (data.isValid) {
+                    isValid(element, true);
+                    console.log("adasd");
+                }
+                else {
+                    isValid(element, false);
+                }
+            },
+            error: function () {
+                isLoading = false;
             }
-        } catch (error) {
-            console.error('Username validation error:', error);
-            isValid(element, false);
-        }
+        });
     }
 }
 
@@ -113,4 +120,3 @@ inputs.forEach((element) => {
     element.addEventListener("input", async () => { await validation(element); });
 });
 
-document.getElementById("nav-signUpButton").classList.add("d-none");

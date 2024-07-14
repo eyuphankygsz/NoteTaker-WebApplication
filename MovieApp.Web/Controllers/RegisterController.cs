@@ -20,6 +20,7 @@ namespace MemoMate.Web.Controllers
 	{
 		private readonly MemoMateContext _context;
 
+		private const byte MAIL_MAX = 50, PASS_MAX = 50, PASS_MIN = 8, USER_MAX = 20, USER_MIN = 5;
 		public RegisterController(MemoMateContext context)
 		{
 			_context = context;
@@ -52,7 +53,7 @@ namespace MemoMate.Web.Controllers
 					Username = model.Username,
 					Mail = model.Mail,
 					Password = model.Password,
-					Role = "g",
+					Role = "User",
 					Photo = "def.jpg",
 					CreateDate = TimeHelpers.GetLocalDate(),
 				};
@@ -81,10 +82,10 @@ namespace MemoMate.Web.Controllers
 		}
 		private async Task<bool> IsUsernameValid(string username)
 		{
-			if (username.Length > 20)
+			if (username.Length > USER_MAX)
 				MessageHelpers.SetWarning("Username cannot be more than 20 characters.");
 
-			if (username.Length < 5)
+			if (username.Length < USER_MIN)
 				MessageHelpers.SetWarning("Username must be at least 5 characters long.");
 
 			if (!Regex.IsMatch(username, @"^[a-zA-Z0-9]+$"))

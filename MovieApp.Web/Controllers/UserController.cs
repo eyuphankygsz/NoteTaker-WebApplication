@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -49,7 +48,6 @@ namespace MemoMate.Web.Controllers
 		private async Task<UserProfileViewModel> GetProfileAsync(string username)
         {
 			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
-            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAA" + username);
             var profile = await _context.Users
                 .Where(u => u.Username == username)
                 .Select(u => new UserProfileViewModel
@@ -75,7 +73,7 @@ namespace MemoMate.Web.Controllers
             return profile;
         }
 
-
+        [AllowAnonymous]
 		[HttpPost]
 		public async Task<IActionResult> UsernameValidation(string username)
 		{
@@ -91,6 +89,9 @@ namespace MemoMate.Web.Controllers
 				return Json(new { isValid = false });
 			}
 		}
+
+		[AllowAnonymous]
+
 		[HttpPost]
 		public async Task<IActionResult> UserMailValidation(string mail)
 		{

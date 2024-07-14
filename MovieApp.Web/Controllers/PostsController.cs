@@ -26,6 +26,7 @@ namespace MemoMate.Web.Controllers
 
 		public async Task<IActionResult> Index()
 		{
+			HttpContext.Session.SetString("moreposts", "yes");
 			//if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
 			//	  return RedirectToAction("Index", "Home");
 
@@ -43,6 +44,7 @@ namespace MemoMate.Web.Controllers
 				postsCheckOut.Add(NoFoundPost("Nothing to check out.", "We tried to push our customers to give us money to show themselves up here but... we failed?"));
 
 			var themename = await GetThemes();
+
 
 			PostsViewModel model = new PostsViewModel()
 			{
@@ -81,7 +83,8 @@ namespace MemoMate.Web.Controllers
 										NoteContent = p.NoteEntity.Content,
 										NoteTitle = p.NoteEntity.Title,
 										Username = p.UserEntity.Username,
-										UserPhoto = p.UserEntity.Photo
+										UserPhoto = p.UserEntity.Photo,
+										ThemeName = p.ThemeEntity.Name
 									})
 									.FirstOrDefaultAsync();
 
@@ -143,8 +146,8 @@ namespace MemoMate.Web.Controllers
 			if (!ModelState.IsValid || !IsPostValid(newNote))
 			{
 				MessageHelpers.SetError("We can't accept your note, sorry :(");
-				return View(new CreateViewModel() 
-				{ 
+				return View(new CreateViewModel()
+				{
 					LoggedUserEntity = await _context.Users
 					   .Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)).FirstOrDefaultAsync()
 				});
@@ -170,6 +173,25 @@ namespace MemoMate.Web.Controllers
 			return RedirectToAction("Index", "Posts");
 		}
 
+		[HttpGet("Posts/Theme/{theme}")]
+		public async Task<IActionResult> Theme(string theme)
+		{
+			if (string.IsNullOrEmpty(theme))
+				return RedirectToAction("Posts", "Index");
+
+			HttpContext.Session.SetString("moreposts", "yes");
+
+			string themeName = theme.Replace('-', ' ');
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+			var theme_entity = await _context.Themes.Where(t => t.Name == themeName).FirstAsync();
+
+			PostsViewModel model = new PostsViewModel()
+			{
+				LoggedUserEntity = user,
+				TodayTheme = theme_entity,
+			};
+			return View(model);
+		}
 		public async Task<List<PostDetailModel>> GetPostsDetails(Expression<Func<Post, bool>> whereCondition, int? take = null, int? skip = null, bool orderByRateDescending = true)
 		{
 			var query = _context.Posts
@@ -202,7 +224,8 @@ namespace MemoMate.Web.Controllers
 					})
 				 .ToListAsync();
 		}
-		private async Task<List<Theme>> GetThemes() {
+		private async Task<List<Theme>> GetThemes()
+		{
 			return await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
 		}
 		private PostDetailModel NoFoundPost(string title, string message)
@@ -220,12 +243,35 @@ namespace MemoMate.Web.Controllers
 
 
 		[HttpGet]
-		public async Task<IActionResult> LoadMoreData(int skip, int take)
+		public async Task<IActionResult> LoadMoreData_Today(int skip)
 		{
+			if (HttpContext.Session.GetString("moreposts") == "no") return NoContent();
+
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
-			var posts = await GetPostsDetails(p => p.Date >= today, take, skip);
+			var posts = await GetPostsDetails(p => p.Date >= today, 18, skip);
+			if (posts.Count == 0)
+			{
+				HttpContext.Session.SetString("moreposts", "no");
+				posts.Add(NoFoundPost("No posts about this title!", "Sorry, we could not find any new post :("));
+			}
+			return PartialView("_PostsPartial", posts);
+		}
+		[HttpGet]
+		public async Task<IActionResult> LoadMoreData_Theme(string theme, int skip)
+		{
+			if (HttpContext.Session.GetString("moreposts") == "no") return NoContent();
+			DateTime now = TimeHelpers.GetLocalDate();
+			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
+
+			var posts = await GetPostsDetails(p => p.ThemeEntity.Name == theme, 18, skip);
+
+			if (posts.Count == 0)
+			{
+				HttpContext.Session.SetString("moreposts", "no");
+				posts.Add(NoFoundPost("No more posts about this theme!", "Sorry, we could not find any new post :("));
+			}
 
 			return PartialView("_PostsPartial", posts);
 		}
@@ -236,6 +282,23 @@ namespace MemoMate.Web.Controllers
 				return false;
 
 			return true;
+		}
+
+		[HttpGet("Posts/Post/{id}")]
+		public async Task<IActionResult> Post(string id)
+		{
+			if (!int.TryParse(id, out int postId))
+				return RedirectToAction("Posts", "Index");
+
+			var post = await GetPostsDetails(p => p.ID == postId, 1);
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+			
+			PostsViewModel model = new PostsViewModel()
+			{
+				LoggedUserEntity = user,
+				PostsYesterday = post
+			};
+			return View(model);
 		}
 	}
 }

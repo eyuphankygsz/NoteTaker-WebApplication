@@ -1,0 +1,35 @@
+﻿@model PostsViewModel
+@inject ISidebarService SidebarService
+@section Styles {
+	<link rel="stylesheet" href="~/css/posts.css" />
+}
+@{
+	Layout = "_LoggedLayout";
+}
+@section SideExtension {
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+}
+<div class="posts-main single-post">
+	<div class="posts-container">
+		<div class="posts-bg">
+			<div class="posts-content">
+				@{
+					if (Model.PostsYesterday.Count != 0)
+					{
+						<div id="posts-title" class="text-white mb-3">Post by @Model.PostsYesterday[0].Username</div>
+						<div class="post-holder">
+						@await Html.PartialAsync("_post", Model.PostsYesterday[0])
+						</div>
+					}
+				}
+			</div>
+		</div>
+	</div>
+
+</div>
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+@section Scripts {
+	<script src="/js/Posts/posts.js"></script>
+}

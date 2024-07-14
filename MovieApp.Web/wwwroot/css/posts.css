@@ -36,18 +36,6 @@ body {
                 height: 40px;
             }
 
-            .welcome .welcome-nav .searchbar button {
-                position: absolute;
-                border-radius: 5px;
-                z-index: 2;
-                border: none;
-                top: 8px;
-                right: 4px;
-                cursor: pointer;
-                color: white;
-                background-color: transparent;
-            }
-
     .welcome .welcome-name {
         font-size: 2.4rem;
     }
@@ -56,6 +44,52 @@ body {
         font-size: 1rem;
         font-weight: 400;
     }
+
+#search-items {
+    position: absolute;
+    border-radius: 5px;
+    height: contain;
+    width: 100%;
+    z-index: 2;
+    border: none;
+    top: 100%;
+    cursor: pointer;
+    color: white;
+    background-color: #93b6ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+    #search-items .search-row {
+        height: 44px;
+        width: 100%;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+        #search-items .search-row:hover {
+            background-color: #BF9BFF;
+        }
+
+        #search-items .search-row .search-photo {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 2rem;
+            width: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+.search-title {
+    width: fit-content;
+    padding-left: 0.5rem;
+    padding-right: 1.2rem;
+    background-color: #6a9aff;
+}
 
 #posts-interests {
     margin-top: 0px;
@@ -95,7 +129,7 @@ body {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
     #today-theme .theme-image {
@@ -284,6 +318,35 @@ body {
         text-align: left !important;
     }
 
+#rates-page .posts-card {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+#rate-forms {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#rate-forms form{
+    display: flex;
+}
+#rates-page .rate-buttons {
+    background-color: #9272d5;
+    border: none;
+    border-color: #711DB0;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    width:75%;
+    max-width:500px;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+    #rates-page .rate-buttons:hover {
+        background-color: #711DB0;
+        border-color: #9272d5;
+    }
 /*Create*/
 #create-container {
     padding-left: 80px;
@@ -379,15 +442,19 @@ body {
                     #create-part .posts-content .card .card-body textarea::placeholder {
                         color: #9272d5;
                     }
+
                     #create-part .posts-content .card .card-body textarea::-webkit-scrollbar {
                         width: 6px;
                     }
+
                     #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-track {
                         background: #f1f1f1;
                     }
+
                     #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-thumb {
                         background: #888;
                     }
+
                         #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-thumb:hover {
                             background: #555;
                         }
@@ -415,7 +482,7 @@ body {
             }
 
                 #create-part .posts-content .card .card-footer div {
-                    display:flex;
+                    display: flex;
                 }
 
                 #create-part .posts-content .card .card-footer p {
@@ -424,6 +491,7 @@ body {
                     margin: auto;
                     font-weight: 600;
                 }
+
                 #create-part .posts-content .card .card-footer btn {
                     margin: auto;
                 }
@@ -472,6 +540,23 @@ body {
     --bs-popover-body-padding-x: 1rem !important;
     --bs-popover-body-padding-y: .5rem !important;
 }
+
+
+
+
+.single-post #posts-title {
+    text-align: center;
+}
+
+.single-post .post-holder {
+    max-width: 600px;
+    margin: auto;
+    width: 40%;
+}
+
+
+
+
 
 @media (max-width: 1580px) {
     .posts-card .card-title {
@@ -527,23 +612,24 @@ body {
     }
 
     #create-container {
-        flex-direction:column;
-        height:100%;
-        padding-left:10px;
-        padding-right:10px;
+        flex-direction: column;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
     #create-part {
         width: 90%;
         height: 400px;
         margin-right: 0;
-        margin-bottom:20px;
+        margin-bottom: 20px;
     }
 
         #create-part .posts-content {
             height: 100% !important;
         }
 
-                   
+
     .posts-card .card-title {
         font-size: 1.5rem !important;
     }
@@ -568,4 +654,14 @@ body {
     .posts-bg {
         margin-bottom: 100px;
     }
+
+    #will-be-added {
+        width: 90%;
+        max-width: 400px;
+        margin-bottom: 100px;
+    }
+
+        #will-be-added h1 {
+            font-size: 4em;
+        }
 }

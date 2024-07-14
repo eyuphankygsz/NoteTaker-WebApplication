@@ -36,18 +36,6 @@ body {
                 height: 40px;
             }
 
-            .welcome .welcome-nav .searchbar button {
-                position: absolute;
-                border-radius: 5px;
-                z-index: 2;
-                border: none;
-                top: 8px;
-                right: 4px;
-                cursor: pointer;
-                color: white;
-                background-color: transparent;
-            }
-
     .welcome .welcome-name {
         font-size: 2.4rem;
     }
@@ -56,6 +44,51 @@ body {
         font-size: 1rem;
         font-weight: 400;
     }
+
+#search-items {
+    position: absolute;
+    border-radius: 5px;
+    height: contain;
+    width: 100%;
+    z-index: 2;
+    border: none;
+    top: 100%;
+    cursor: pointer;
+    color: white;
+    background-color: #93b6ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+    #search-items .search-row {
+        height: 44px;
+        width: 100%;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+        #search-items .search-row:hover {
+            background-color: #BF9BFF;
+        }
+
+        #search-items .search-row .search-photo {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 2rem;
+            width: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+.search-title {
+    width: fit-content;
+    padding-left: 0.5rem;
+    padding-right: 1.2rem;
+    background-color: #6a9aff;
+}
 
 #posts-interests {
     margin-top: 0px;
@@ -95,7 +128,7 @@ body {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
     #today-theme .theme-image {
@@ -260,12 +293,13 @@ body {
         .posts-card .card-body .card-content {
             height: 90%;
         }
+
         .posts-card .card-body .card-theme {
             height: 10%;
             font-size: 0.9rem;
-            text-align:left;
-            font-weight:600;
-            color:#711DB0;
+            text-align: left;
+            font-weight: 600;
+            color: #711DB0;
         }
 
     .posts-card .card-title {
@@ -333,7 +367,7 @@ body {
                     width: 100%;
                     background-color: #BF9BFF;
                     border: none;
-                    font-size: 26px;
+                    font-size: 1.2rem;
                     padding-right: 60px;
                 }
 
@@ -365,7 +399,7 @@ body {
 
                 #create-part .posts-content .card .card-body textarea {
                     resize: none;
-                    font-size: 22px;
+                    font-size: 1rem;
                     height: 100%;
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
                     background-color: #BF9BFF;
@@ -378,6 +412,22 @@ body {
                     #create-part .posts-content .card .card-body textarea::placeholder {
                         color: #9272d5;
                     }
+
+                    #create-part .posts-content .card .card-body textarea::-webkit-scrollbar {
+                        width: 6px;
+                    }
+
+                    #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                    }
+
+                    #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-thumb {
+                        background: #888;
+                    }
+
+                        #create-part .posts-content .card .card-body textarea::-webkit-scrollbar-thumb:hover {
+                            background: #555;
+                        }
 
                 #create-part .posts-content .card .card-body p {
                     position: absolute;
@@ -396,10 +446,26 @@ body {
                 background: none;
                 border: none;
                 display: flex;
-                flex-direction: row-reverse;
+                justify-content: space-between;
                 padding-right: 10%;
                 padding-left: 10%;
             }
+
+                #create-part .posts-content .card .card-footer div {
+                    display: flex;
+                }
+
+                #create-part .posts-content .card .card-footer p {
+                    color: #FFE482;
+                    font-size: 1rem;
+                    margin: auto;
+                    font-weight: 600;
+                }
+
+                #create-part .posts-content .card .card-footer btn {
+                    margin: auto;
+                }
+
 
         #create-part .posts-content .logbtn {
             background-color: #9272d5;
@@ -444,6 +510,22 @@ body {
     --bs-popover-body-padding-x: 1rem !important;
     --bs-popover-body-padding-y: .5rem !important;
 }
+
+
+
+
+.single-post #posts-title{
+    text-align:center;
+}
+.single-post .post-holder {
+    max-width: 600px;
+    margin: auto;
+    width: 40%;
+}
+
+
+
+
 
 @media (max-width: 1580px) {
     .posts-card .card-title {
@@ -497,6 +579,24 @@ body {
         top: 4px;
         right: 4px;
     }
+
+    #create-container {
+        flex-direction: column;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #create-part {
+        width: 90%;
+        height: 400px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+        #create-part .posts-content {
+            height: 100% !important;
+        }
 
 
     .posts-card .card-title {

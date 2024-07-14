@@ -10,7 +10,6 @@ namespace MemoMate.Web.CustomMiddlewares
 		private readonly RequestDelegate _next;
 		private readonly string[] protectedPaths = new string[]
 		{
-			"/",
 			"/home",
 			"/home/index",
 			"/home/about",
@@ -41,7 +40,12 @@ namespace MemoMate.Web.CustomMiddlewares
 
 		private bool IsProtectedPath(string path)
 		{
-			return protectedPaths.Contains(path);
+
+            for (int i = 0; i < protectedPaths.Length; i++)
+				if (path.Contains(protectedPaths[i])) return true;
+			if (path == "/") return true;
+
+            return false;
 		}
 	}
 }

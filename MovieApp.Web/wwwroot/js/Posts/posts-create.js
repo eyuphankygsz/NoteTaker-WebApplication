@@ -1,6 +1,7 @@
 ﻿// DOM yüklendiğinde yapılacaklar
 document.addEventListener('DOMContentLoaded', function () {
 
+    sidebarActive(2); bottombarActive(2);
     const titleMax = document.querySelector('#titleMax');
     const titleInput = document.querySelector('#titleInput');
     titleInput.addEventListener("input", () => limitCharacter(30, titleInput, titleMax));

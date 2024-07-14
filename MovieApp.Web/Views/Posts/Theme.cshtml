@@ -1,0 +1,59 @@
+﻿@model PostsViewModel
+@inject ISidebarService SidebarService
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/posts.css" />
+}
+@{
+	Layout = "_LoggedLayout";
+}
+@section SideExtension {
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+}
+
+<div class="posts-main">
+
+	@await Html.PartialAsync("_welcome", Model.LoggedUserEntity)
+
+	<div class="" id="posts-interests">
+		<div class="row-container d-flex justify-content-evenly">
+			<div class="item-holder">
+				<div class="d-flex  h-75" id="today-theme-container">
+					<div class="m-auto" id="today-theme">
+						<div class="theme-image"><img src="/img/theme/@Model.TodayTheme.PhotoURL" alt="Alternate Text" /></div>
+						<div class="theme-name-container w-100 h-100 justify-content-center d-flex">
+							<p class="theme-name" style="z-index:2;">@Model.TodayTheme.Name</p>
+						</div>
+						<div class="theme-back"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="" id="posts-container">
+		<div id="today-posts-title" class="text-white mb-3 mt-5 text-center">POSTS</div>
+		<div class="row-container d-flex justify-content-evenly">
+			<div class="posts-bg" id="theme-posts-container">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+@{
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+	}
+}
+
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+@section Scripts {
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/Posts/posts-theme.js"></script>
+
+}
