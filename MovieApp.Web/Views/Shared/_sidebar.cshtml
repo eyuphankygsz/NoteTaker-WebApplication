@@ -1,10 +1,10 @@
 ﻿@model SidebarModel
 
 <div class="d-flex flex-column flex-shrink-0 custom-sidebar sticky-top" style="width: 4.5rem;">
-	<img src="/img/logo.png"/>
+	<img src="/img/logo.png" />
 	<ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
 		<li class="nav-item">
-			<a href="@Url.Action("Index","Posts")" class="nav-link active py-3 border-bottom" id="side-home" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+			<a href="@Url.Action("Index","Posts")" class="nav-link active py-3 border-bottom" id="side-home">
 				<i class="fa-solid fa-house fa-xl"></i>
 			</a>
 		</li>
@@ -17,16 +17,26 @@
 					{
 						<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
 							@count
-						</span>		
+						</span>
 					}
 				}
-				
-				
+
+
 			</a>
 		</li>
 		<li class="nav-item">
 			<a href="@Url.Action("Create","Posts")" class="nav-link py-3 border-bottom" id="side-create" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
 				<i class="fa-solid fa-square-plus fa-xl"></i>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="@Url.Action("Likes", "User")" class="nav-link active py-3 border-bottom" id="side-likes">
+				<i class="fa-solid fa-heart fa-xl"></i>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="@Url.Action("Messages", "User")" class="nav-link active py-3 border-bottom" id="side-likes">
+				<i class="fa-solid fa-message fa-xl"></i>
 			</a>
 		</li>
 	</ul>
@@ -43,7 +53,7 @@
 	</div>
 </div>
 
-		<script src="/js/sidebar.js"></script>
+<script src="/js/sidebar.js"></script>
 
 
 @{

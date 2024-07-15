@@ -1,0 +1,47 @@
+﻿@model UserLikesModel
+@inject ISidebarService SidebarService
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/posts.css" />
+	<link rel="stylesheet" href="~/css/details.css" />
+}
+@{
+	ViewData["Title"] = Model.LoggedUserEntity.Username + "'s Profile";
+	Layout = "_LoggedLayout";
+}
+
+@section SideExtension {
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+}
+<div id="likes-page">
+	<div class="card custom-container">
+		<div class="card-header">
+			<h5>@Model.LoggedUserEntity.Username's Likes</h5>
+		</div>
+		<div class="card-body">
+			<div class="list-group">
+				@foreach (var post in Model.Posts)
+				{
+					@await Html.PartialAsync("_post", post)
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+@{
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+	}
+}
+
+@section BottomExtension {
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+}
+@section Scripts {
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/Posts/posts-likes.js"></script>
+
+}

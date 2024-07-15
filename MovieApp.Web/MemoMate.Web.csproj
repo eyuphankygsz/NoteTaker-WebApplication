@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\search.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\body-scrollbar.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\search.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +27,10 @@
 
   <ItemGroup>
     <Folder Include="CustomMiddlewares\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\search.js" />
   </ItemGroup>
 
 </Project>

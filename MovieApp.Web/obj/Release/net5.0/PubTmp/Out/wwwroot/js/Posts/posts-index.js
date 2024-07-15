@@ -7,7 +7,7 @@ yesterdayPostsParent.querySelector(":scope .carousel-item").classList.add("activ
 const checkOutParent = document.getElementById("checkout-container");
 checkOutParent.querySelector(":scope .carousel-item").classList.add("active");
 
-
+const theme = document.querySelector('.theme-name').textContent;
 
 let skip = 0;
 const skipCount = 18;
@@ -27,12 +27,13 @@ $(document).ready(function () {
 function loadMoreData() {
     isLoading = true;
     $.ajax({
-        url: '/Posts/LoadMoreData_Today',
+        url: '/Posts/LoadMoreData',
         type: 'GET',
-        data: { skip: skip },
+        data: { theme:theme, skip: skip },
         success: function (data) {
             $('#today-posts-container').append(data);
             isLoading = false;
+            setLikeInteraction();
         },
         error: function () {
             isLoading = false;

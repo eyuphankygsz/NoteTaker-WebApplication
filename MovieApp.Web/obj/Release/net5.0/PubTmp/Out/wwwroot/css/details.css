@@ -2,3 +2,11 @@
     box-sizing: content-box;
     font-family: 'Inter';
 }
+.custom-bottom{
+    margin-bottom:100px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: #BF9BFF !important;
+    color:#f6f1ff !important;
+}

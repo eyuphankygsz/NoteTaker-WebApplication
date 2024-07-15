@@ -8,20 +8,22 @@ using Microsoft.AspNetCore.Http;
 using System;
 using MemoMate.Web.GeneralHelpers;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using MemoMate.Web.Services;
 
 namespace MemoMate.Web.Controllers
 {
 	[Authorize(Policy = "General")]
 	public class PostsController : Controller
 	{
+		private readonly PostServices _postServices;
 		private readonly MemoMateContext _context;
 		private string[] themeNames;
-		public PostsController(MemoMateContext context)
+		public PostsController(MemoMateContext context, PostServices postServices)
 		{
 			_context = context;
+			_postServices = postServices;
 		}
 
 		public async Task<IActionResult> Index()
@@ -34,11 +36,11 @@ namespace MemoMate.Web.Controllers
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
-			var postsYesterday = await GetPostsDetails(p => p.Date >= today.AddDays(-1) && p.Date < today, 3);
+			var postsYesterday = await _postServices.GetPostsDetails(p => p.Date >= today.AddDays(-1) && p.Date < today, 3);
 			if (postsYesterday.Count == 0)
 				postsYesterday.Add(NoFoundPost("No posts found...", "We couldn't find any posts shared yesterday... why..."));
 
-			var postsCheckOut = await GetPostsDetails(p => p.Date >= today && p.CheckOut, 3);
+			var postsCheckOut = await _postServices.GetPostsDetails(p => p.Date >= today && p.CheckOut, 3);
 
 			if (postsCheckOut.Count == 0)
 				postsCheckOut.Add(NoFoundPost("Nothing to check out.", "We tried to push our customers to give us money to show themselves up here but... we failed?"));
@@ -65,6 +67,7 @@ namespace MemoMate.Web.Controllers
 			//  	return RedirectToAction("Index", "Home");
 
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value));
+
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
@@ -84,7 +87,9 @@ namespace MemoMate.Web.Controllers
 										NoteTitle = p.NoteEntity.Title,
 										Username = p.UserEntity.Username,
 										UserPhoto = p.UserEntity.Photo,
-										ThemeName = p.ThemeEntity.Name
+										ThemeName = p.ThemeEntity.Name,
+										Liked = _context.Likes.Any(l => l.UserID == user.ID && l.PostID == p.ID) ? "liked" : "unliked",
+										CanInteract = true
 									})
 									.FirstOrDefaultAsync();
 
@@ -181,7 +186,8 @@ namespace MemoMate.Web.Controllers
 
 			HttpContext.Session.SetString("moreposts", "yes");
 
-			string themeName = theme.Replace('-', ' ');
+			string themeName = _postServices.ReplaceTheme(theme);
+
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
 			var theme_entity = await _context.Themes.Where(t => t.Name == themeName).FirstAsync();
 
@@ -192,38 +198,7 @@ namespace MemoMate.Web.Controllers
 			};
 			return View(model);
 		}
-		public async Task<List<PostDetailModel>> GetPostsDetails(Expression<Func<Post, bool>> whereCondition, int? take = null, int? skip = null, bool orderByRateDescending = true)
-		{
-			var query = _context.Posts
-					.Include(p => p.UserEntity)
-					.Include(p => p.NoteEntity)
-					.Include(p => p.ThemeEntity)
-					.Where(whereCondition);
 
-			if (orderByRateDescending)
-				query = query.OrderByDescending(p => p.RateUps / (p.RateCount == 0 ? 1 : p.RateCount));
-
-			if (skip.HasValue)
-				query = query.Skip(skip.Value);
-
-			if (take.HasValue)
-				query = query.Take(take.Value);
-
-
-			return await query
-					.Select(p => new PostDetailModel
-					{
-						PostID = p.ID,
-						PostDate = p.Date,
-						PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
-						NoteContent = p.NoteEntity.Content,
-						NoteTitle = p.NoteEntity.Title,
-						Username = p.UserEntity.Username,
-						UserPhoto = p.UserEntity.Photo,
-						ThemeName = p.ThemeEntity.Name
-					})
-				 .ToListAsync();
-		}
 		private async Task<List<Theme>> GetThemes()
 		{
 			return await _context.Themes.OrderByDescending(t => t.Id).Take(2).ToListAsync();
@@ -237,40 +212,31 @@ namespace MemoMate.Web.Controllers
 				PostDate = TimeHelpers.GetLocalDate(),
 				PostRate = 0,
 				Username = "admin",
-				UserPhoto = "admin.jpg"
+				UserPhoto = "admin.jpg",
+				Liked = "unliked",
+				CanInteract = false
 			};
 		}
 
 
 		[HttpGet]
-		public async Task<IActionResult> LoadMoreData_Today(int skip)
+		public async Task<IActionResult> LoadMoreData(string theme, int skip)
 		{
 			if (HttpContext.Session.GetString("moreposts") == "no") return NoContent();
 
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
 
-			var posts = await GetPostsDetails(p => p.Date >= today, 18, skip);
+			List<PostDetailModel> posts = new List<PostDetailModel>();
+
+			int? themeId = await _context.Themes.Where(t => t.Name == _postServices.ReplaceTheme(theme)).Select(t => t.Id).FirstAsync();
+			if (themeId != null)
+				posts = await _postServices.GetPostsDetails(p => p.ThemeID == themeId.Value, 18, skip);
+			
 			if (posts.Count == 0)
 			{
 				HttpContext.Session.SetString("moreposts", "no");
 				posts.Add(NoFoundPost("No posts about this title!", "Sorry, we could not find any new post :("));
-			}
-			return PartialView("_PostsPartial", posts);
-		}
-		[HttpGet]
-		public async Task<IActionResult> LoadMoreData_Theme(string theme, int skip)
-		{
-			if (HttpContext.Session.GetString("moreposts") == "no") return NoContent();
-			DateTime now = TimeHelpers.GetLocalDate();
-			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
-
-			var posts = await GetPostsDetails(p => p.ThemeEntity.Name == theme, 18, skip);
-
-			if (posts.Count == 0)
-			{
-				HttpContext.Session.SetString("moreposts", "no");
-				posts.Add(NoFoundPost("No more posts about this theme!", "Sorry, we could not find any new post :("));
 			}
 
 			return PartialView("_PostsPartial", posts);
@@ -290,15 +256,33 @@ namespace MemoMate.Web.Controllers
 			if (!int.TryParse(id, out int postId))
 				return RedirectToAction("Posts", "Index");
 
-			var post = await GetPostsDetails(p => p.ID == postId, 1);
+			var post = await _postServices.GetPostsDetails(p => p.ID == postId, 1);
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
-			
+
 			PostsViewModel model = new PostsViewModel()
 			{
 				LoggedUserEntity = user,
 				PostsYesterday = post
 			};
 			return View(model);
+		}
+		[HttpPost]
+		public async Task<IActionResult> LikePost(int? postId)
+		{
+			if (postId == null) return Json(new { isSuccess = false });
+			if (HttpContext.Session.GetString("LikeWait") == "wait") return Json(new { isSuccess = false });
+			HttpContext.Session.SetString("LikeWait", "wait");
+			var userId = (await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))).ID;
+			var like = await _context.Likes.FirstOrDefaultAsync(l => l.PostID == postId && l.UserID == userId);
+
+			if (like == null)
+				_context.Add(new Like { PostID = postId.Value, UserID = userId });
+			else
+				_context.Remove(like);
+
+			await _context.SaveChangesAsync();
+			HttpContext.Session.SetString("LikeWait", "");
+			return Json(new { isSuccess = true });
 		}
 	}
 }

@@ -2,8 +2,8 @@
 @inject ISidebarService SidebarService
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/posts.css" />
-    <link rel="stylesheet" href="~/css/details.css" />
+	<link rel="stylesheet" href="~/css/posts.css" />
+	<link rel="stylesheet" href="~/css/details.css" />
 }
 @{
 	ViewData["Title"] = Model.Username + "'s Profile";
@@ -11,68 +11,78 @@
 }
 
 @section SideExtension {
-    @await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="/img/user/profile/@Model.Photo" class="card-img-top rounded-circle mt-4" id="profile-photo" alt="User Photo">
-                <div class="card-body text-center">
-                    <h4 class="card-title">@Model.Username</h4>
-                    <p class="card-text">@Model.Username</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5>User Details</h5>
-                </div>
-                <div class="card-body">
-                    <p><strong>Email:</strong> @Model.Mail</p>
-                    <p><strong>Full Name:</strong> @Model.Username</p>
-                    <p><strong>Creation Date:</strong> @Model.CreationDate.ToShortDateString()</p>
-                    <!-- Add other user details as needed -->
-                </div>
-            </div>
-            <div class="card custom-bottom">
-                <div class="card-header">
-                    <h5>@Model.Username's Posts</h5>
-                </div>
-                <div class="card-body">
-                    <div class="list-group">
-                        @foreach (var post in Model.Posts)
-                        {
-                            <a href="/Posts/Post/@post.PostID" class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1 w-75">@post.NoteTitle</h5>
-                                    <small>@post.PostDate.ToShortDateString()</small>
-                                </div>
-                                <p class="mb-1">@post.NoteContent</p>
-                                <small>Rating: @post.PostRate</small>
-                            </a>
-                        }
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container mt-5" id="user-details">
+	<div class="row">
+
+		<div class="card mb-4 m-auto" id="user-interactions">
+			<div class="card-body d-flex justify-content-between align-items-center">
+				<a href="@Url.Action("Messages", "User")"><i class="fa-solid fa-message fa-xl" style="color: #FFE482;"></i></a>
+				<a href="@Url.Action("Friends", "User")"><i class="fa-solid fa-user-group fa-xl" style="color: #FFE482;"></i></a>
+				<a href="@Url.Action("Settings", "User")"><i class="fa-solid fa-gear fa-xl" style="color: #FFE482;"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+				<img src="/img/user/profile/@Model.Photo" class="card-img-top rounded-circle mt-4" id="profile-photo" alt="User Photo">
+				<div class="card-body text-center">
+					<h4 class="card-title">@Model.Username</h4>
+					<p class="card-text">@Model.Username</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="card mb-4">
+				<div class="card-header">
+					<h5>User Details</h5>
+				</div>
+				<div class="card-body">
+					<p><strong>Email:</strong> @Model.Mail</p>
+					<p><strong>Full Name:</strong> @Model.Username</p>
+					<p><strong>Creation Date:</strong> @Model.CreationDate.ToShortDateString()</p>
+					<!-- Add other user details as needed -->
+				</div>
+			</div>
+			<div class="card custom-bottom">
+				<div class="card-header">
+					<h5>@Model.Username's Posts</h5>
+				</div>
+				<div class="card-body">
+					<div class="list-group">
+						@foreach (var post in Model.Posts)
+						{
+							<a href="/Posts/Post/@post.PostID" class="list-group-item list-group-item-action flex-column align-items-start">
+								<div class="d-flex w-100 justify-content-between">
+									<h5 class="mb-1 w-75">@post.NoteTitle</h5>
+									<small>@post.PostDate.ToShortDateString()</small>
+								</div>
+								<p class="mb-1">@post.NoteContent</p>
+								<small>Rating: @post.PostRate</small>
+							</a>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 @{
-    if (MessageHelpers.PostBack)
-    {
-        @await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
-    }
+	if (MessageHelpers.PostBack)
+	{
+		@await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+	}
 }
 
 @section BottomExtension {
-    @await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+	@await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 }
 @section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/Posts/posts.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/Posts/posts.js"></script>
 
 }

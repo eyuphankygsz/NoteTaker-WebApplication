@@ -12,5 +12,7 @@ namespace MemoMate.Web.Models
 		public string Username { get; set; }
 		public string UserPhoto { get; set; }
 		public string ThemeName { get; set; }
+		public string Liked { get; set; }
+		public bool CanInteract { get; set; }
 	}
 }

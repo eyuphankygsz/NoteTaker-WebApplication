@@ -15,6 +15,7 @@ namespace MemoMate.Data
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Rate> Rates { get; set; }
 		public DbSet<Theme> Themes { get; set; }
+		public DbSet<Like> Likes { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -37,8 +38,9 @@ namespace MemoMate.Data
 					.HasForeignKey(p => p.UserID);
 
 				post.HasOne(p => p.ThemeEntity)
-				    .WithMany()
-				    .HasForeignKey(p => p.ThemeID);
+					.WithMany()
+					.HasForeignKey(p => p.ThemeID);
+
 			});
 
 			modelBuilder.Entity<Rate>(rate =>
@@ -53,6 +55,18 @@ namespace MemoMate.Data
 			});
 
 			base.OnModelCreating(modelBuilder);
+
+			modelBuilder.Entity<Like>(like =>
+			{
+				like.HasOne(l => l.UserEntity)
+				.WithMany()
+				.HasForeignKey(l => l.UserID);
+
+				like.HasOne(l => l.PostEntiy)
+				.WithMany()
+				.HasForeignKey(l => l.PostID);
+			});
+
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

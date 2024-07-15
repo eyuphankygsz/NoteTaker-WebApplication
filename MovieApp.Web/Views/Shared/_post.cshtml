@@ -18,6 +18,17 @@
 	</div>
 	<div class="card-footer d-flex justify-content-between text-body-secondary">
 		<span class="rate text-white fw-bold">★ @Model.PostRate.ToString("0.00")</span>
+		@{
+			if (Model.CanInteract)
+			{
+		<div class="post-interactions">
+			<button class="like-post" data-post-id="@Model.PostID"><i class="fa-solid fa-thumbs-up fa-xl @Model.Liked"></i></button>
+					<button class="share-post"><i class="fa-solid fa-share fa-xl" style="color: #ece1ff;"></i></button>
+			<button class="report-post"><i class="fa-solid fa-flag fa-xl" style="color: #FFE482;"></i></button>
+		</div>
+				
+			}
+		}
 		<span class="date text-white fw-bold">@GetTimeAgo(Model.PostDate)</span>
 
 	</div>
@@ -29,17 +40,17 @@
 		TimeSpan elapsedTime = DateTime.Now - date;
 
 		if (elapsedTime < TimeSpan.FromHours(1))
-			return elapsedTime.Minutes + " Minute" + (elapsedTime.Minutes == 1 ? "" : "(s)") + " Ago";
+			return elapsedTime.Minutes + "m" + " Ago";
 		if (elapsedTime < TimeSpan.FromHours(24))
-			return elapsedTime.Hours + " Hour" + (elapsedTime.Hours == 1 ? "" : "(s)") + " Ago";
+			return elapsedTime.Hours + "h" + " Ago";
 		if (elapsedTime < TimeSpan.FromDays(7))
-			return elapsedTime.Days + " Day" + (elapsedTime.Days == 1 ? "" : "(s)") + " Ago";
+			return elapsedTime.Days + "d" + " Ago";
 		if (elapsedTime < TimeSpan.FromDays(28))
-			return elapsedTime.Days / 7 + " Week" + (elapsedTime.Days / 7 == 1 ? "" : "(s)") + " Ago";
+			return elapsedTime.Days / 7 + "w" + " Ago";
 		if (elapsedTime < TimeSpan.FromDays(356))
-			return elapsedTime.Days / 28 + " Month" + (elapsedTime.Days / 28 == 1 ? "" : "(s)") + " Ago";
+			return elapsedTime.Days / 28 + "mo" + " Ago";
 
-		return elapsedTime.Days / 365 + " Year" + (elapsedTime.Days / 365 == 1 ? "" : "(s)") + " Ago";
+		return elapsedTime.Days / 365 + "y" + " Ago";
 
 
 	}

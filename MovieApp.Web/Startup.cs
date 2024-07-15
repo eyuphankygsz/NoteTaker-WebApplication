@@ -50,9 +50,12 @@ namespace MovieApp.Web
 			});
 			services.AddSingleton<IAuthorizationHandler, RolesAuthorizationHandler>();
 
-			services.AddScoped<ISidebarService, SidebarServices>();
+            services.AddControllersWithViews();
 
-			services.AddControllersWithViews();
+            services.AddHttpContextAccessor();
+            services.AddScoped<ISidebarService, SidebarServices>();
+			services.AddScoped<PostServices>();
+
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

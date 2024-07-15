@@ -22,6 +22,9 @@ namespace MemoMate.Web.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Text(string text)
 		{
+			if (string.IsNullOrEmpty(text))
+				return NoContent();
+
 			text = text.ToLower();
 			var users = await _context.Users.Where(u => u.Username.ToLower().StartsWith(text))
 				   .OrderBy(u => u.Username.StartsWith(text) ? 0 : 1)
@@ -30,7 +33,7 @@ namespace MemoMate.Web.Controllers
 						new SearchItemModel
 						{
 							ID = u.ID,
-							ItemName = u.Username,
+							ItemName = u.Username.Length > 15 ? u.Username.Substring(0, 15) + "..." : u.Username,
 							Photo = u.Photo
 						})
 				   .Take(3)
@@ -42,7 +45,7 @@ namespace MemoMate.Web.Controllers
 							new SearchItemModel
 							{
 								ID = p.ID,
-								ItemName = p.NoteEntity.Title,
+								ItemName = p.NoteEntity.Title.Length > 15 ? p.NoteEntity.Title.Substring(0, 15) + "..." : p.NoteEntity.Title,
 								Photo = p.UserEntity.Photo
 							})
 						.Take(3)
@@ -54,7 +57,7 @@ namespace MemoMate.Web.Controllers
 							new SearchItemModel
 							{
 								ID = t.Id,
-								ItemName = t.Name,
+								ItemName = t.Name.Length > 15 ? t.Name.Substring(0, 15) + "..." : t.Name,
 								Photo = t.PhotoURL
 							})
 						.Take(3)

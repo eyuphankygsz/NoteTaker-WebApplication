@@ -244,7 +244,6 @@ body {
 #today-posts-title {
     font-size: 3rem;
     font-weight: 600;
-    text-shadow: 0px 2px 16px black;
 }
 
 .posts-card {
@@ -347,6 +346,7 @@ body {
         background-color: #711DB0;
         border-color: #9272d5;
     }
+
 /*Create*/
 #create-container {
     padding-left: 80px;
@@ -551,12 +551,65 @@ body {
 .single-post .post-holder {
     max-width: 600px;
     margin: auto;
-    width: 40%;
+    width: 90%;
 }
 
 
+.post-interactions{
+    background: none;
+    outline: none;
+    border: none;
+}
+.post-interactions button {
+    background: none;
+    outline: none;
+    border: none;
+}
+.card-footer span{
+    width:25%;
+}
 
+.post-interactions .unliked {
+    color: #594861 !important;
+}
+.post-interactions button:hover {
+    color: #594861 !important;
+}
+    .post-interactions button:hover i {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
+.post-interactions .liked {
+    color: #FFE482 !important;
+}
 
+#likes-page {
+    padding-left:20px;
+    padding-right:20px;
+}
+    #likes-page .custom-container{
+        width:90%;
+        max-width:700px;
+        margin:auto;
+
+    }
+
+#user-details .card {
+    background-color: #ac85ff !important;
+}
+#user-details .list-group-item {
+    background-color: #f5f0ff !important;
+    border: none;
+}
+#user-details .list-group-item:hover {
+    box-sizing:border-box;
+    background-color: #f5f0ff !important;
+    border: 2px solid black;
+}
+#user-interactions{
+    width: 90%;
+    max-width:400px;
+}
 
 @media (max-width: 1580px) {
     .posts-card .card-title {
@@ -573,6 +626,25 @@ body {
         line-height: .9rem;
         text-align: left !important;
     }
+    .card .card-footer {
+        font-size: 0.8rem;
+    }
+        .card .card-footer button {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+
+    #search-items .search-row {
+        height: 30px;
+    }
+
+        #search-items .search-row .search-photo {
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+        #search-items .search-row .search-name {
+            font-size:0.8rem;
+        }
 }
 
 @media (max-width: 992px) {
@@ -602,7 +674,7 @@ body {
             }
 
     .welcome .welcome-nav .searchbar input {
-        width: 140px;
+        width: 200px;
         height: 30px;
     }
 

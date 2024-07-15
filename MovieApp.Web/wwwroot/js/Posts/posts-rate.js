@@ -1,1 +1,1 @@
-﻿sidebarActive(1); bottombarActive(0);
+﻿sidebarActive(1); bottombarActive(0); setLikeInteraction();

@@ -63,8 +63,8 @@ searchbar.addEventListener('focus', () => {
     searchItems.style.display = 'block';
 });
 searchbar.addEventListener('focusout', () => {
-    if(!isMouseOverItems)
-    searchItems.style.display = 'none';
+    if (!isMouseOverItems)
+        searchItems.style.display = 'none';
 });
 
 
@@ -74,28 +74,29 @@ async function search(txt) {
         searchItems.removeChild(searchItems.firstChild);
 
     isLoading = true;
-    $.ajax({
-        url: '/Search/Text',
-        type: 'GET',
-        data: { text: txt },
-        success: function (data) {
-            $('#search-items').append(data);
-            isLoading = false;
-            const linksInsideSearchItems = searchItems.querySelectorAll('a');
-            linksInsideSearchItems.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    isMouseOverItems = true;
+    if (txt.length > 0)
+        $.ajax({
+            url: '/Search/Text',
+            type: 'GET',
+            data: { text: txt },
+            success: function (data) {
+                $('#search-items').append(data);
+                isLoading = false;
+                const linksInsideSearchItems = searchItems.querySelectorAll('a');
+                linksInsideSearchItems.forEach(link => {
+                    link.addEventListener('mouseenter', () => {
+                        isMouseOverItems = true;
+                    });
+                    link.addEventListener('mouseleave', () => {
+                        isMouseOverItems = false;
+                    });
                 });
-                link.addEventListener('mouseleave', () => {
-                    isMouseOverItems = false;
-                });
-            });
-        },
-        error: function (xhr, status, errorThrown) {
-            console.error("Ajax error:", errorThrown);
-            isLoading = false;
-        }
-    });
+            },
+            error: function (xhr, status, errorThrown) {
+                console.error("Ajax error:", errorThrown);
+                isLoading = false;
+            }
+        });
 
 
 
