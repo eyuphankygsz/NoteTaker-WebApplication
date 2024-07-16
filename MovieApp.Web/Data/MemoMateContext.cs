@@ -16,6 +16,7 @@ namespace MemoMate.Data
 		public DbSet<Rate> Rates { get; set; }
 		public DbSet<Theme> Themes { get; set; }
 		public DbSet<Like> Likes { get; set; }
+		public DbSet<Friend> Friends { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

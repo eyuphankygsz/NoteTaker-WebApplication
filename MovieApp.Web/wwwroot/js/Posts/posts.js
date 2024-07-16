@@ -41,3 +41,28 @@ function setLikeInteraction() {
     });
 }
 
+
+
+function setFollowInteraction() {
+    $('.follow-user').off('click');
+    $('.follow-user').click(function () {
+        var postId = $(this).data('post-id');
+        var button = $(this);
+
+        $.ajax({
+            url: '/User/Follow',
+            type: 'POST',
+            data: { postId: postId },
+            success: function (response) {
+                if (response.isSuccess) {
+                    button.find('i').toggleClass('fa-check');
+                    button.find('i').toggleClass('fa-plus');
+                }
+            },
+            error: function () {
+                alert('There were some errors. Please try again after few minutes.');
+            }
+        });
+    });
+}
+

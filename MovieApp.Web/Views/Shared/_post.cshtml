@@ -8,6 +8,12 @@
 			</div>
 			@Model.Username
 		</a>
+		@{
+			if (Model.CanInteract && !Model.IsOwned)
+			{
+				<button class="follow-user ms-2" data-post-id="@Model.PostID"><i class="fa-solid @Model.IsFriend fa-lg"></i></button>
+			}
+		}
 	</div>
 	<div class="card-body">
 		<div class="card-content">
@@ -21,12 +27,12 @@
 		@{
 			if (Model.CanInteract)
 			{
-		<div class="post-interactions">
-			<button class="like-post" data-post-id="@Model.PostID"><i class="fa-solid fa-thumbs-up fa-xl @Model.Liked"></i></button>
+				<div class="post-interactions">
+					<button class="like-post" data-post-id="@Model.PostID"><i class="fa-solid fa-thumbs-up fa-xl @Model.Liked"></i></button>
 					<button class="share-post"><i class="fa-solid fa-share fa-xl" style="color: #ece1ff;"></i></button>
-			<button class="report-post"><i class="fa-solid fa-flag fa-xl" style="color: #FFE482;"></i></button>
-		</div>
-				
+					<button class="report-post"><i class="fa-solid fa-flag fa-xl" style="color: #FFE482;"></i></button>
+				</div>
+
 			}
 		}
 		<span class="date text-white fw-bold">@GetTimeAgo(Model.PostDate)</span>

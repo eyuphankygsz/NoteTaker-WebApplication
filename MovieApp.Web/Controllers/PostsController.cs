@@ -66,7 +66,7 @@ namespace MemoMate.Web.Controllers
 			//if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
 			//  	return RedirectToAction("Index", "Home");
 
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value));
+			var loggedUser = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value));
 
 			DateTime now = TimeHelpers.GetLocalDate();
 			DateTime today = new DateTime(now.Year, now.Month, now.Day, 0, 0, 0);
@@ -74,9 +74,9 @@ namespace MemoMate.Web.Controllers
 			var randomPostToRate = await _context.Posts
 									.Include(p => p.UserEntity)
 									.Include(p => p.NoteEntity)
-									.Where(p => p.UserID != user.ID &&
+									.Where(p => p.UserID != loggedUser.ID &&
 													p.Date >= today &&
-														!_context.Rates.Any(r => r.PostID == p.ID && r.UserID == user.ID))
+														!_context.Rates.Any(r => r.PostID == p.ID && r.UserID == loggedUser.ID))
 									.OrderBy(p => Guid.NewGuid()) //Random sıralama
 									.Select(p => new PostDetailModel
 									{
@@ -88,7 +88,10 @@ namespace MemoMate.Web.Controllers
 										Username = p.UserEntity.Username,
 										UserPhoto = p.UserEntity.Photo,
 										ThemeName = p.ThemeEntity.Name,
-										Liked = _context.Likes.Any(l => l.UserID == user.ID && l.PostID == p.ID) ? "liked" : "unliked",
+										Liked = _context.Likes.Any(l => l.UserID == loggedUser.ID && l.PostID == p.ID) ? "liked" : "unliked",
+										IsFriend = _context.Friends.Any(f => (f.FirstUserID == loggedUser.ID && f.SecondUserID == p.UserID)
+										                            || (f.FirstUserID == p.UserID && f.SecondUserID == loggedUser.ID)) ? "fa-check" : "fa-plus",
+										IsOwned = p.UserID == loggedUser.ID,
 										CanInteract = true
 									})
 									.FirstOrDefaultAsync();
@@ -96,7 +99,7 @@ namespace MemoMate.Web.Controllers
 
 			if (randomPostToRate != null)
 			{
-				RateViewModel model = new RateViewModel() { LoggedUserEntity = user, RatePost = randomPostToRate };
+				RateViewModel model = new RateViewModel() { LoggedUserEntity = loggedUser, RatePost = randomPostToRate };
 				return View(model);
 			}
 			else
@@ -232,7 +235,7 @@ namespace MemoMate.Web.Controllers
 			int? themeId = await _context.Themes.Where(t => t.Name == _postServices.ReplaceTheme(theme)).Select(t => t.Id).FirstAsync();
 			if (themeId != null)
 				posts = await _postServices.GetPostsDetails(p => p.ThemeID == themeId.Value, 18, skip);
-			
+
 			if (posts.Count == 0)
 			{
 				HttpContext.Session.SetString("moreposts", "no");

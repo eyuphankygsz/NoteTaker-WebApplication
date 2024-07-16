@@ -1,5 +1,5 @@
-﻿sidebarActive(0); bottombarActive(1);
-
+﻿sidebarActive(0);
+bottombarActive(1);
 
 const yesterdayPostsParent = document.getElementById("yesterdays-container");
 yesterdayPostsParent.querySelector(":scope .carousel-item").classList.add("active");
@@ -34,6 +34,7 @@ function loadMoreData() {
             $('#today-posts-container').append(data);
             isLoading = false;
             setLikeInteraction();
+            setFollowInteraction();
         },
         error: function () {
             isLoading = false;
