@@ -59,8 +59,8 @@ namespace MemoMate.Web.Controllers
 									   UserPhoto = l.PostEntiy.UserEntity.Photo,
 									   ThemeName = l.PostEntiy.ThemeEntity.Name,
 									   Liked = _context.Likes.Any(l => l.UserID == loggedUser.ID && l.PostID == l.PostEntiy.ID) ? "liked" : "unliked",
-									   IsFriend = _context.Friends.Any(f => (f.FirstUserID == loggedUser.ID && f.SecondUserID == l.PostEntiy.UserID)
-																		 || (f.FirstUserID == l.PostEntiy.UserID && f.SecondUserID == l.PostEntiy.ID)) ? "fa-check" : "fa-plus",
+									   FriendStatus = _context.Friends.Any(f => (f.UserFromID == loggedUser.ID && f.UserTargetID == l.PostEntiy.UserID)
+																		 || (f.UserFromID == l.PostEntiy.UserID && f.UserTargetID == l.PostEntiy.ID)) ? "fa-check" : "fa-plus",
 									   IsOwned = l.PostEntiy.UserID == loggedUser.ID,
 									   CanInteract = true
 								   })
@@ -117,46 +117,59 @@ namespace MemoMate.Web.Controllers
 			return profile;
 		}
 
-		public async Task<IActionResult> Follow(string postId)
+		public async Task<IActionResult> FriendRequest(string username)
 		{
-			if (string.IsNullOrEmpty(postId))
-				return Json(new { isSuccess = false });
+			if (string.IsNullOrEmpty(username) || HttpContext.Session.GetString("FollowWait") == "wait")
+				return FollowError();
+			HttpContext.Session.SetString("FollowWait", "wait");
 
-			if (int.TryParse(postId, out var id))
-			{
-				HttpContext.Session.SetString("FollowWait", "false");
-				if (HttpContext.Session.GetString("FollowWait") == "wait")
-					return FollowError();
-				HttpContext.Session.SetString("FollowWait", "wait");
+			var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+			var targetId = await _context.Users
+				   .Where(u => u.Username == username)
+				   .Select(u => u.ID)
+				   .FirstAsync();
 
-				var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-				var followedUser = await _context.Posts
-					   .Where(p => p.ID == id)
-					   .Select(p => p.UserID)
-					   .FirstAsync();
+			if (userId == targetId)
+				return FollowError();
 
-				if (userId == followedUser)
-					return FollowError();
+			var friend = await _context.Friends.Where(f => (f.UserFromID == userId && f.UserTargetID == targetId)
+															|| (f.UserFromID == targetId && f.UserTargetID == userId)).FirstOrDefaultAsync();
 
-				var friend = await _context.Friends.Where(f => (f.FirstUserID == userId && f.SecondUserID == followedUser)
-																|| (f.FirstUserID == followedUser && f.SecondUserID == userId)).FirstOrDefaultAsync();
-
-				if (friend == null)
-					_context.Add(new Friend { FirstUserID = userId, SecondUserID = followedUser });
-				else
-					_context.Remove(friend);
-
-				await _context.SaveChangesAsync();
-				HttpContext.Session.SetString("LikeWait", "");
-				return Json(new { isSuccess = true });
-			}
+			JsonResult result = Json(new { isSuccess = true, isAccepted = false, isWaiting = true }); 
+			if (friend == null)
+				_context.Add(new Friend { UserFromID = userId, UserTargetID = targetId, IsAccepted = false });
 			else
-			{
-				MessageHelpers.SetWarning("No User Found.");
-				return RedirectToAction("Index", "Posts");
-			}
+				result = ManageFriendship(friend, userId, targetId);
+
+			await _context.SaveChangesAsync();
+			HttpContext.Session.SetString("LikeWait", "");
+			return result;
 		}
 
+		private JsonResult ManageFriendship(Friend friend, int userId, int targetId)
+		{
+			if (friend.UserFromID == userId)
+			{
+				HttpContext.Session.SetString("LikeWait", "");
+
+				_context.Remove(friend);
+				return Json(new { isSuccess = true, isAccepted = false, isWaiting = false}); 
+			}
+			else
+				if (friend.IsAccepted)
+				{
+					_context.Remove(friend);
+					return Json(new { isSuccess = true, isAccepted = false, isWaiting = false });
+				}
+				else
+				{
+					friend.IsAccepted = true;
+					_context.Update(friend);
+
+					_context.Remove(friend);
+					return Json(new { isSuccess = true, isAccepted = true, isWaiting = false });
+				}
+		}
 		private JsonResult FollowError()
 		{
 			HttpContext.Session.SetString("LikeWait", "");

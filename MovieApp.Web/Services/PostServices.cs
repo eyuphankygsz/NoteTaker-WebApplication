@@ -55,8 +55,8 @@ namespace MemoMate.Web.Services
 						UserPhoto = p.UserEntity.Photo,
 						ThemeName = p.ThemeEntity.Name,
 						Liked = _context.Likes.Any(l => l.UserID == user.ID && l.PostID == p.ID) ? "liked" : "unliked",
-						IsFriend = _context.Friends.Any(f => (f.FirstUserID == user.ID && f.SecondUserID == p.UserID)
-														 || (f.FirstUserID == p.UserID && f.SecondUserID == user.ID)) ? "fa-check" : "fa-plus",
+						FriendStatus = _context.Friends.Any(f => (f.UserFromID == user.ID && f.UserTargetID == p.UserID)
+														 || (f.UserFromID == p.UserID && f.UserTargetID == user.ID)) ? "fa-check" : "fa-plus",
 						IsOwned = p.UserID == user.ID,
 						CanInteract = true
 					})

@@ -46,17 +46,30 @@ function setLikeInteraction() {
 function setFollowInteraction() {
     $('.follow-user').off('click');
     $('.follow-user').click(function () {
-        var postId = $(this).data('post-id');
+        var user_name = $(this).data('username');
         var button = $(this);
 
         $.ajax({
-            url: '/User/Follow',
+            url: '/User/FriendRequest',
             type: 'POST',
-            data: { postId: postId },
+            data: { username: user_name },
             success: function (response) {
                 if (response.isSuccess) {
-                    button.find('i').toggleClass('fa-check');
-                    button.find('i').toggleClass('fa-plus');
+                    if (response.isWaiting) {
+                        button.find('i').addClass('fa-envelope');
+                        button.find('i').removeClass('fa-plus');
+                        button.find('i').removeClass('fa-check');
+                    }
+                    else if (response.isAccepted) {
+                        button.find('i').removeClass('fa-envelope');
+                        button.find('i').removeClass('fa-plus');
+                        button.find('i').addClass('fa-check');
+                    }
+                }
+                else {
+                    button.find('i').removeClass('fa-envelope');
+                    button.find('i').addClass('fa-plus');
+                    button.find('i').removeClass('fa-check');
                 }
             },
             error: function () {

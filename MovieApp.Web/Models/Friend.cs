@@ -6,9 +6,11 @@ namespace MemoMate.Web.Models
 	{
 		[Column("friendship_id")]
 		public int ID { get; set; }
-		[Column("first_user_id")]
-		public int FirstUserID { get; set; }
-		[Column("second_user_id")]
-		public int SecondUserID { get; set; }
+		[Column("user_from_id")]
+		public int UserFromID { get; set; }
+		[Column("user_target_id")]
+		public int UserTargetID { get; set; }
+		[Column("is_accepted")]
+		public bool IsAccepted { get; set; }
 	}
 }
