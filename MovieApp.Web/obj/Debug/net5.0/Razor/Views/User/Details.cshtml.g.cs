@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_User_Details), @"mvc.1.0.view", @"/Views/User/Details.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,21 +16,29 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -39,8 +47,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d4", @"/Views/User/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d4", @"/Views/User/Details.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_User_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<UserProfileViewModel>
     #nullable disable
@@ -75,7 +83,7 @@ using MemoMate.Web.Interfaces;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d45050", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d45165", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -90,7 +98,7 @@ using MemoMate.Web.Interfaces;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d46250", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "348e66ffdafc491139013346717c464c36d6db12d5d40627e6b22d0173e208d46365", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -116,194 +124,160 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\r\n");
             DefineSection("SideExtension", async() => {
                 WriteLiteral("\r\n\t");
-                Write(
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-  await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity)));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n");
             }
             );
             WriteLiteral("\r\n<div class=\"container mt-5\" id=\"user-details\">\r\n\t<div class=\"row\">\r\n\r\n\t\t<div class=\"card mb-4 m-auto\" id=\"user-interactions\">\r\n\t\t\t<div class=\"card-body d-flex justify-content-between align-items-center\">\r\n\t\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 635, "\"", 673, 1);
-            WriteAttributeValue("", 642, 
 #nullable restore
 #line 22 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-              Url.Action("Messages", "User")
+WriteAttributeValue("", 642, Url.Action("Messages", "User"), 642, 31, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 642, 31, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\"fa-solid fa-message fa-xl\" style=\"color: #FFE482;\"></i></a>\r\n\t\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 752, "\"", 789, 1);
-            WriteAttributeValue("", 759, 
 #nullable restore
 #line 23 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-              Url.Action("Friends", "User")
+WriteAttributeValue("", 759, Url.Action("Friends", "User"), 759, 30, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 759, 30, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\"fa-solid fa-user-group fa-xl\" style=\"color: #FFE482;\"></i></a>\r\n\t\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 871, "\"", 909, 1);
-            WriteAttributeValue("", 878, 
 #nullable restore
 #line 24 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-              Url.Action("Settings", "User")
+WriteAttributeValue("", 878, Url.Action("Settings", "User"), 878, 31, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 878, 31, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\"fa-solid fa-gear fa-xl\" style=\"color: #FFE482;\"></i></a>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-md-4\">\r\n\t\t\t<div class=\"card\">\r\n\t\t\t\t<img");
             BeginWriteAttribute("src", " src=\"", 1086, "\"", 1122, 2);
             WriteAttributeValue("", 1092, "/img/user/profile/", 1092, 18, true);
-            WriteAttributeValue("", 1110, 
 #nullable restore
 #line 31 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                 Model.Photo
+WriteAttributeValue("", 1110, Model.Photo, 1110, 12, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1110, 12, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"card-img-top rounded-circle mt-4\" id=\"profile-photo\" alt=\"User Photo\">\r\n\t\t\t\t<div class=\"card-body text-center\">\r\n\t\t\t\t\t<h4 class=\"card-title\">");
-            Write(
 #nullable restore
 #line 33 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                             Model.Username
+                                      Write(Model.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</h4>\r\n\t\t\t\t\t<p class=\"card-text\">");
-            Write(
 #nullable restore
 #line 34 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                           Model.Username
+                                    Write(Model.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</p>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-8\">\r\n\t\t\t<div class=\"card mb-4\">\r\n\t\t\t\t<div class=\"card-header\">\r\n\t\t\t\t\t<h5>User Details</h5>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"card-body\">\r\n\t\t\t\t\t<p><strong>Email:</strong> ");
-            Write(
 #nullable restore
 #line 44 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                 Model.Mail
+                                          Write(Model.Mail);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</p>\r\n\t\t\t\t\t<p><strong>Full Name:</strong> ");
-            Write(
 #nullable restore
 #line 45 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                     Model.Username
+                                              Write(Model.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</p>\r\n\t\t\t\t\t<p><strong>Creation Date:</strong> ");
-            Write(
 #nullable restore
 #line 46 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                         Model.CreationDate.ToShortDateString()
+                                                  Write(Model.CreationDate.ToShortDateString());
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</p>\r\n\t\t\t\t\t<!-- Add other user details as needed -->\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"card custom-bottom\">\r\n\t\t\t\t<div class=\"card-header\">\r\n\t\t\t\t\t<h5>");
-            Write(
 #nullable restore
 #line 52 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-          Model.Username
+                   Write(Model.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("\'s Posts</h5>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"card-body\">\r\n\t\t\t\t\t<div class=\"list-group\">\r\n");
 #nullable restore
 #line 56 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-       foreach (var post in Model.Posts)
+                         foreach (var post in Model.Posts)
 						{
 
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\t\t\t\t\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 2029, "\"", 2060, 2);
             WriteAttributeValue("", 2036, "/Posts/Post/", 2036, 12, true);
-            WriteAttributeValue("", 2048, 
 #nullable restore
 #line 58 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                             post.PostID
+WriteAttributeValue("", 2048, post.PostID, 2048, 12, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 2048, 12, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"list-group-item list-group-item-action flex-column align-items-start\">\r\n\t\t\t\t\t\t\t\t<div class=\"d-flex w-100 justify-content-between\">\r\n\t\t\t\t\t\t\t\t\t<h5 class=\"mb-1 w-75\">");
-            Write(
 #nullable restore
 #line 60 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                post.NoteTitle
+                                                     Write(post.NoteTitle);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</h5>\r\n\t\t\t\t\t\t\t\t\t<small>");
-            Write(
 #nullable restore
 #line 61 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                 post.PostDate.ToShortDateString()
+                                      Write(post.PostDate.ToShortDateString());
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</small>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<p class=\"mb-1\">");
-            Write(
 #nullable restore
 #line 63 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                         post.NoteContent
+                                           Write(post.NoteContent);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</p>\r\n\t\t\t\t\t\t\t\t<small>Rating: ");
-            Write(
 #nullable restore
 #line 64 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                        post.PostRate
+                                          Write(post.PostRate);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</small>\r\n\t\t\t\t\t\t\t</a>\r\n");
 #nullable restore
 #line 66 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
@@ -312,7 +286,6 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n");
 #nullable restore
 #line 74 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
@@ -324,37 +297,31 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-
-            Write(
 #nullable restore
 #line 77 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-   await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
+   Write(await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel()));
 
 #line default
 #line hidden
 #nullable disable
-            );
 #nullable restore
 #line 77 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                                                                           
+                                                                                 
 	}
 
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\r\n");
             DefineSection("BottomExtension", async() => {
                 WriteLiteral("\r\n\t");
-                Write(
 #nullable restore
 #line 82 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-  await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
+Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
 
 #line default
 #line hidden
 #nullable disable
-                );
                 WriteLiteral("\r\n");
             }
             );
@@ -364,25 +331,10 @@ using MemoMate.Web.Interfaces;
             );
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public 
-#nullable restore
-#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-        ISidebarService
-
-#line default
-#line hidden
-#nullable disable
-         
-#nullable restore
-#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\User\Details.cshtml"
-                        SidebarService
-
-#line default
-#line hidden
-#nullable disable
-         { get; private set; }
-         = default!;
+        public ISidebarService SidebarService { get; private set; } = default!;
+        #nullable disable
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

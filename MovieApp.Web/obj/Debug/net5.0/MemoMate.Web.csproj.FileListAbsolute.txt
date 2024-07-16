@@ -157,12 +157,11 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Create.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_message.cshtml.g.cs
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.sourcelink.json
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_PostsPartial.cshtml.g.cs
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.371DA5FD.Up2Date
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_welcome.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Theme.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Shared\_SearchPartial.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Search\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Post.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\User\Likes.cshtml.g.cs
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.csproj.CopyComplete

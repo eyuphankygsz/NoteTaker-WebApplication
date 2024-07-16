@@ -70,10 +70,10 @@ namespace MemoMate.Web.Controllers
 				MessageHelpers.SetWarning("You haven't liked any posts.");
 				return RedirectToAction("Index", "Posts");
 			}
-            foreach (var item in likedPosts)
-                item.FriendStatus = await _postServices.GetFriendStatus(loggedUser.ID, item.UserID);
+			foreach (var item in likedPosts)
+				item.FriendStatus = await _postServices.GetFriendStatus(loggedUser.ID, item.UserID);
 
-            UserLikesModel model = new UserLikesModel()
+			UserLikesModel model = new UserLikesModel()
 			{
 				Posts = likedPosts,
 				LoggedUserEntity = loggedUser
@@ -137,7 +137,7 @@ namespace MemoMate.Web.Controllers
 			var friend = await _context.Friends.Where(f => (f.UserFromID == userId && f.UserTargetID == targetId)
 															|| (f.UserFromID == targetId && f.UserTargetID == userId)).FirstOrDefaultAsync();
 
-			JsonResult result = Json(new { isSuccess = true, isAccepted = false, isWaiting = true }); 
+			JsonResult result = Json(new { isSuccess = true, isAccepted = false, isWaiting = true });
 			if (friend == null)
 				_context.Add(new Friend { UserFromID = userId, UserTargetID = targetId, IsAccepted = false });
 			else
@@ -155,30 +155,27 @@ namespace MemoMate.Web.Controllers
 				HttpContext.Session.SetString("FollowWait", "");
 
 				_context.Remove(friend);
-				return Json(new { isSuccess = true, isAccepted = false, isWaiting = false}); 
+				return Json(new { isSuccess = true, isAccepted = false, isWaiting = false });
 			}
-			else
-				if (friend.IsAccepted)
+			else if (friend.IsAccepted)
 			{
 				HttpContext.Session.SetString("FollowWait", "");
 
 				_context.Remove(friend);
-					return Json(new { isSuccess = true, isAccepted = false, isWaiting = false });
-				}
-				else
+				return Json(new { isSuccess = true, isAccepted = false, isWaiting = false });
+			}
+			else
 			{
 				HttpContext.Session.SetString("FollowWait", "");
 
 				friend.IsAccepted = true;
-					_context.Update(friend);
-
-					_context.Remove(friend);
-					return Json(new { isSuccess = true, isAccepted = true, isWaiting = false });
-				}
+				_context.Update(friend);
+				return Json(new { isSuccess = true, isAccepted = true, isWaiting = false });
+			}
 		}
 		private JsonResult FollowError()
 		{
-			HttpContext.Session.SetString("LikeWait", "");
+			HttpContext.Session.SetString("FollowWait", "");
 			return Json(new { isSuccess = false });
 		}
 		[AllowAnonymous]

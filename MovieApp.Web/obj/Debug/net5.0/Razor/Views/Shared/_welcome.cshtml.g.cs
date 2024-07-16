@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__welcome), @"mvc.1.0.view", @"/Views/Shared/_welcome.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,21 +16,29 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -39,8 +47,8 @@ using MemoMate.Web.Interfaces;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"77b842dc157a29dd152e2473a58685f7da953458fab1c32f449842da2d3226c6", @"/Views/Shared/_welcome.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"77b842dc157a29dd152e2473a58685f7da953458fab1c32f449842da2d3226c6", @"/Views/Shared/_welcome.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__welcome : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<User>
     #nullable disable
@@ -64,26 +72,22 @@ using MemoMate.Web.Interfaces;
 				<img class=""h-100""");
             BeginWriteAttribute("src", " src=\"", 484, "\"", 520, 2);
             WriteAttributeValue("", 490, "/img/user/profile/", 490, 18, true);
-            WriteAttributeValue("", 508, 
 #nullable restore
 #line 15 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_welcome.cshtml"
-                                               Model.Photo
+WriteAttributeValue("", 508, Model.Photo, 508, 12, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 508, 12, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"Alternate Text\" />\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"welcome-greeting\">\r\n\t\t<div class=\"welcome-name d-flex\">\r\n\t\t\t<span class=\"text-white fw-bold\">Hello, ");
-            Write(
 #nullable restore
 #line 22 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_welcome.cshtml"
-                                            Model.Username
+                                               Write(Model.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</span>\r\n\t\t</div>\r\n\t\t<div class=\"welcome-nexttheme d-block\">\r\n\t\t\t<span class=\"text-white\">Next Theme will be announced in</span>\r\n\t\t\t<p class=\"text-white welcome-nexttheme-time\"></p>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<script src=\"/js/welcome.js\"></script>");
         }
         #pragma warning restore 1998
