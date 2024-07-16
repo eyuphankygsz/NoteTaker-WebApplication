@@ -64,6 +64,10 @@ function setFollowInteraction() {
                         button.find('i').removeClass('fa-envelope');
                         button.find('i').removeClass('fa-plus');
                         button.find('i').addClass('fa-check');
+                    } else {
+                        button.find('i').removeClass('fa-envelope');
+                        button.find('i').addClass('fa-plus');
+                        button.find('i').removeClass('fa-check');
                     }
                 }
                 else {

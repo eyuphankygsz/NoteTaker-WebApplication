@@ -51,6 +51,7 @@ namespace MemoMate.Web.Controllers
 								   .Select(l => new PostDetailModel
 								   {
 									   PostID = l.PostEntiy.ID,
+									   UserID = l.PostEntiy.UserID,
 									   PostDate = l.PostEntiy.Date,
 									   PostRate = l.PostEntiy.RateUps * 5f / (l.PostEntiy.RateCount == 0 ? 1 : l.PostEntiy.RateCount),
 									   NoteContent = l.PostEntiy.NoteEntity.Content,
@@ -59,19 +60,20 @@ namespace MemoMate.Web.Controllers
 									   UserPhoto = l.PostEntiy.UserEntity.Photo,
 									   ThemeName = l.PostEntiy.ThemeEntity.Name,
 									   Liked = _context.Likes.Any(l => l.UserID == loggedUser.ID && l.PostID == l.PostEntiy.ID) ? "liked" : "unliked",
-									   FriendStatus = _context.Friends.Any(f => (f.UserFromID == loggedUser.ID && f.UserTargetID == l.PostEntiy.UserID)
-																		 || (f.UserFromID == l.PostEntiy.UserID && f.UserTargetID == l.PostEntiy.ID)) ? "fa-check" : "fa-plus",
 									   IsOwned = l.PostEntiy.UserID == loggedUser.ID,
 									   CanInteract = true
 								   })
 								   .ToListAsync();
+
 			if (likedPosts == null || likedPosts.Count == 0)
 			{
 				MessageHelpers.SetWarning("You haven't liked any posts.");
 				return RedirectToAction("Index", "Posts");
 			}
+            foreach (var item in likedPosts)
+                item.FriendStatus = await _postServices.GetFriendStatus(loggedUser.ID, item.UserID);
 
-			UserLikesModel model = new UserLikesModel()
+            UserLikesModel model = new UserLikesModel()
 			{
 				Posts = likedPosts,
 				LoggedUserEntity = loggedUser
@@ -142,7 +144,7 @@ namespace MemoMate.Web.Controllers
 				result = ManageFriendship(friend, userId, targetId);
 
 			await _context.SaveChangesAsync();
-			HttpContext.Session.SetString("LikeWait", "");
+			HttpContext.Session.SetString("FollowWait", "");
 			return result;
 		}
 
@@ -150,20 +152,24 @@ namespace MemoMate.Web.Controllers
 		{
 			if (friend.UserFromID == userId)
 			{
-				HttpContext.Session.SetString("LikeWait", "");
+				HttpContext.Session.SetString("FollowWait", "");
 
 				_context.Remove(friend);
 				return Json(new { isSuccess = true, isAccepted = false, isWaiting = false}); 
 			}
 			else
 				if (friend.IsAccepted)
-				{
-					_context.Remove(friend);
+			{
+				HttpContext.Session.SetString("FollowWait", "");
+
+				_context.Remove(friend);
 					return Json(new { isSuccess = true, isAccepted = false, isWaiting = false });
 				}
 				else
-				{
-					friend.IsAccepted = true;
+			{
+				HttpContext.Session.SetString("FollowWait", "");
+
+				friend.IsAccepted = true;
 					_context.Update(friend);
 
 					_context.Remove(friend);

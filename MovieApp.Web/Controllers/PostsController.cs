@@ -81,6 +81,7 @@ namespace MemoMate.Web.Controllers
 									.Select(p => new PostDetailModel
 									{
 										PostID = p.ID,
+										UserID = p.UserID,
 										PostDate = p.Date,
 										PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
 										NoteContent = p.NoteEntity.Content,
@@ -89,16 +90,14 @@ namespace MemoMate.Web.Controllers
 										UserPhoto = p.UserEntity.Photo,
 										ThemeName = p.ThemeEntity.Name,
 										Liked = _context.Likes.Any(l => l.UserID == loggedUser.ID && l.PostID == p.ID) ? "liked" : "unliked",
-										FriendStatus = _context.Friends.Any(f => (f.UserFromID == loggedUser.ID && f.UserTargetID == p.UserID)
-										                            || (f.UserFromID == p.UserID && f.UserTargetID == loggedUser.ID)) ? "fa-check" : "fa-plus",
 										IsOwned = p.UserID == loggedUser.ID,
 										CanInteract = true
 									})
 									.FirstOrDefaultAsync();
 
-
 			if (randomPostToRate != null)
 			{
+				randomPostToRate.FriendStatus = await _postServices.GetFriendStatus(loggedUser.ID, randomPostToRate.UserID);
 				RateViewModel model = new RateViewModel() { LoggedUserEntity = loggedUser, RatePost = randomPostToRate };
 				return View(model);
 			}

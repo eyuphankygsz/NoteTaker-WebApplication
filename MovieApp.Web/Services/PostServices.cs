@@ -43,10 +43,11 @@ namespace MemoMate.Web.Services
 			var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(userId));
 
-			return await query
+			var posts =  await query
 					.Select(p => new PostDetailModel
 					{
 						PostID = p.ID,
+						UserID = p.UserID,
 						PostDate = p.Date,
 						PostRate = p.RateUps * 5f / (p.RateCount == 0 ? 1 : p.RateCount),
 						NoteContent = p.NoteEntity.Content,
@@ -55,13 +56,25 @@ namespace MemoMate.Web.Services
 						UserPhoto = p.UserEntity.Photo,
 						ThemeName = p.ThemeEntity.Name,
 						Liked = _context.Likes.Any(l => l.UserID == user.ID && l.PostID == p.ID) ? "liked" : "unliked",
-						FriendStatus = _context.Friends.Any(f => (f.UserFromID == user.ID && f.UserTargetID == p.UserID)
-														 || (f.UserFromID == p.UserID && f.UserTargetID == user.ID)) ? "fa-check" : "fa-plus",
 						IsOwned = p.UserID == user.ID,
 						CanInteract = true
 					})
 				 .ToListAsync();
+
+			foreach (var item in posts)
+				item.FriendStatus = await GetFriendStatus(user.ID, item.UserID);
+
+			return posts;
 		}
+		public async Task<string> GetFriendStatus(int userID, int targetID)
+		{
+			var friendship = await _context.Friends.Where(f => (f.UserFromID == userID && f.UserTargetID == targetID)
+												   || (f.UserFromID == targetID && f.UserTargetID == userID)).FirstOrDefaultAsync();
+
+			if (friendship == null) return "fa-plus";
+			else if (friendship.IsAccepted) return "fa-check";
+			else return "fa-envelope";
+		} 
 		public string ReplaceTheme(string theme)
 		{
 			string newTheme = theme.Replace('-', ' ');
