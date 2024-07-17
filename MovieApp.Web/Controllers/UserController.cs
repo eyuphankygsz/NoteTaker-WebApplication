@@ -1,22 +1,25 @@
 ﻿using MemoMate.Data;
 using MemoMate.Web.Models;
+using MemoMate.Web.Services;
+using MemoMate.Web.Models.Posts;
+using MemoMate.Web.GeneralHelpers;
+
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using MemoMate.Web.Services;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using MemoMate.Web.GeneralHelpers;
+using MemoMate.Web.Models.Users;
 
 namespace MemoMate.Web.Controllers
 {
-	[Authorize(Policy = "General")]
+    [Authorize(Policy = "General")]
 	public class UserController : Controller
 	{
 		private readonly MemoMateContext _context;
@@ -98,6 +101,7 @@ namespace MemoMate.Web.Controllers
 				.Select(u => new UserProfileViewModel
 				{
 					LoggedUserEntity = loggedUser,
+					UserID = u.ID,
 					Username = u.Username,
 					CreationDate = u.CreateDate,
 					Mail = u.Mail,
@@ -112,10 +116,13 @@ namespace MemoMate.Web.Controllers
 						Username = u.Username,
 						UserPhoto = u.Photo,
 
-					}).ToList()
+					}).ToList(),
+					IsOwn = loggedUser.ID == u.ID,
 				})
 				.FirstOrDefaultAsync();
 
+			profile.FriendStatus = await _postServices.GetFriendStatus(loggedUser.ID, profile.UserID);
+            
 			return profile;
 		}
 

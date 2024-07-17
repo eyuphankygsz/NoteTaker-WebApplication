@@ -164,4 +164,6 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Search\Index.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Posts\Post.cshtml.g.cs
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\User\Likes.cshtml.g.cs
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.csproj.CopyComplete
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.Web.sourcelink.json
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\MemoMate.371DA5FD.Up2Date
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Debug\net5.0\Razor\Views\Messages\Index.cshtml.g.cs

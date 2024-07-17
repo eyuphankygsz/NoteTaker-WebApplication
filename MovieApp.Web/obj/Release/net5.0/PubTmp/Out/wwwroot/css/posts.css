@@ -610,7 +610,16 @@ body {
     width: 90%;
     max-width:400px;
 }
-
+.follow-user {
+    background: none;
+    border: none;
+}
+    .follow-user .fa-plus {
+        color: #711DB0;
+    }
+    .follow-user .fa-check {
+        color: #711DB0;
+    }
 @media (max-width: 1580px) {
     .posts-card .card-title {
         color: #FFE482;

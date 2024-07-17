@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MemoMate.Data;
-using MemoMate.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -10,10 +9,11 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using MemoMate.Web.Models.Users;
 
 namespace MemoMate.Web.Controllers
 {
-	[AllowAnonymous]
+    [AllowAnonymous]
 	public class HomeController : Controller
 	{
 		private readonly MemoMateContext _context;

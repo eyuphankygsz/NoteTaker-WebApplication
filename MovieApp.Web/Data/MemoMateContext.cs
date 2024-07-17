@@ -3,7 +3,7 @@ using MemoMate.Web.Models;
 
 namespace MemoMate.Data
 {
-	public class MemoMateContext : DbContext
+    public class MemoMateContext : DbContext
 	{
 		public MemoMateContext(DbContextOptions<MemoMateContext> options)
 			: base(options)
@@ -17,6 +17,7 @@ namespace MemoMate.Data
 		public DbSet<Theme> Themes { get; set; }
 		public DbSet<Like> Likes { get; set; }
 		public DbSet<Friend> Friends { get; set; }
+		public DbSet<Message> Messages { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

@@ -1,5 +1,6 @@
 ﻿using MemoMate.Data;
 using MemoMate.Web.Models;
+using MemoMate.Web.Models.Posts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace MemoMate.Web.Services
 {
-	public class PostServices
+    public class PostServices
 	{
 		private readonly MemoMateContext _context;
 		private readonly IHttpContextAccessor _httpContextAccessor;

@@ -31,6 +31,7 @@ function loadMoreData() {
             $('#theme-posts-container').append(data);
             isLoading = false;
             setLikeInteraction();
+            setFollowInteraction();
         },
         error: function () {
             isLoading = false;

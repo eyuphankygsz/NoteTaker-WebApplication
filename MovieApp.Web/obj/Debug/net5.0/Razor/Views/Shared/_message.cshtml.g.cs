@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__message), @"mvc.1.0.view", @"/Views/Shared/_message.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,41 +14,48 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Controllers;
+
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.GeneralHelpers;
+
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Interfaces;
+
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Models;
+
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Models.Posts;
+
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Models.Search;
+
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Models.Users;
+
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Data;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Controllers;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.GeneralHelpers;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Interfaces;
-
-#line default
-#line hidden
-#nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"6ee447285f6adfe48a82b659c2d930357bfed001b0d768089e8253c806d0389b", @"/Views/Shared/_message.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"6ee447285f6adfe48a82b659c2d930357bfed001b0d768089e8253c806d0389b", @"/Views/Shared/_message.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__message : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MessageModel>
     #nullable disable
@@ -69,22 +76,26 @@ using MemoMate.Web.Interfaces;
             BeginWriteAttribute("class", " class=\"", 592, "\"", 628, 3);
             WriteAttributeValue("", 600, "alert", 600, 5, true);
             WriteAttributeValue(" ", 605, "alert-", 606, 7, true);
+            WriteAttributeValue("", 612, 
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_message.cshtml"
-WriteAttributeValue("", 612, Model.ColorName, 612, 16, false);
+                                         Model.ColorName
 
 #line default
 #line hidden
 #nullable disable
+            , 612, 16, false);
             EndWriteAttribute();
             WriteLiteral(" role=\"alert\">\r\n                    ");
+            Write(
 #nullable restore
 #line 12 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_message.cshtml"
-               Write(Model.Message);
+                     Model.Message
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
                 </div>
             </div>

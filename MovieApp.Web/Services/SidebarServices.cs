@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MemoMate.Web.Services
 {
-	public class SidebarServices : ISidebarService
+    public class SidebarServices : ISidebarService
 	{
 		private readonly MemoMateContext _context;
 

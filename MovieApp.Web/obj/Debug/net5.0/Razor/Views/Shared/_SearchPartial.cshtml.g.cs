@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__SearchPartial), @"mvc.1.0.view", @"/Views/Shared/_SearchPartial.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,48 +14,49 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Data;
+using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Controllers;
+using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Models;
+using MemoMate.Web.Interfaces;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.GeneralHelpers;
+using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
-using MemoMate.Web.Interfaces;
+using MemoMate.Web.Models.Posts;
 
-#line default
-#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Web.Models.Users;
+
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
+using MemoMate.Data;
+
 #nullable disable
 #nullable restore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-using MemoMate.Web.Models.Search;
+ using MemoMate.Web.Models.Search
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"6c93f8f354191085d4ca50ee40caafd8e54db7dc991290e992a1469a6c0e0733", @"/Views/Shared/_SearchPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b31008db680e9423da7e6b4d478e42b926181cc1143b5eadf66e1636d591bfbb", @"/Views/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"6c93f8f354191085d4ca50ee40caafd8e54db7dc991290e992a1469a6c0e0733", @"/Views/Shared/_SearchPartial.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__SearchPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SearchModel>
     #nullable disable
@@ -72,6 +73,7 @@ using MemoMate.Web.Models.Search;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t<div class=\"mt-2 mb-2 search-title\">Users</div>\r\n");
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -81,36 +83,43 @@ using MemoMate.Web.Models.Search;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t<a class=\"search-row d-flex\"");
             BeginWriteAttribute("href", " href=\"", 237, "\"", 287, 2);
             WriteAttributeValue("", 244, "/User/Details/", 244, 14, true);
+            WriteAttributeValue("", 258, 
 #nullable restore
 #line 9 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 258, Model.FoundUsers[i].ItemName, 258, 29, false);
+                                                     Model.FoundUsers[i].ItemName
 
 #line default
 #line hidden
 #nullable disable
+            , 258, 29, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t\t<div class=\"search-photo\"><img");
             BeginWriteAttribute("src", " src=\"", 325, "\"", 375, 2);
             WriteAttributeValue("", 331, "/img/user/profile/", 331, 18, true);
+            WriteAttributeValue("", 349, 
 #nullable restore
 #line 10 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 349, Model.FoundUsers[i].Photo, 349, 26, false);
+                                                           Model.FoundUsers[i].Photo
 
 #line default
 #line hidden
 #nullable disable
+            , 349, 26, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"h-100\" /></div>\r\n\t\t\t\t<div class=\"search-name\">");
+            Write(
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-                                    Write(Model.FoundUsers[i].ItemName);
+                              Model.FoundUsers[i].ItemName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n\t\t\t</a>\r\n");
 #nullable restore
 #line 13 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -123,6 +132,7 @@ WriteAttributeValue("", 349, Model.FoundUsers[i].Photo, 349, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t<div class=\"mt-2 mb-2 search-title\">Posts</div>\r\n");
 #nullable restore
 #line 19 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -132,36 +142,43 @@ WriteAttributeValue("", 349, Model.FoundUsers[i].Photo, 349, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t<a class=\"search-row d-flex\"");
             BeginWriteAttribute("href", " href=\"", 665, "\"", 707, 2);
             WriteAttributeValue("", 672, "/Posts/Post/", 672, 12, true);
+            WriteAttributeValue("", 684, 
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 684, Model.FoundPosts[i].ID, 684, 23, false);
+                                                   Model.FoundPosts[i].ID
 
 #line default
 #line hidden
 #nullable disable
+            , 684, 23, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t\t<div class=\"search-photo\"><img");
             BeginWriteAttribute("src", " src=\"", 745, "\"", 795, 2);
             WriteAttributeValue("", 751, "/img/user/profile/", 751, 18, true);
+            WriteAttributeValue("", 769, 
 #nullable restore
 #line 22 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 769, Model.FoundPosts[i].Photo, 769, 26, false);
+                                                           Model.FoundPosts[i].Photo
 
 #line default
 #line hidden
 #nullable disable
+            , 769, 26, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"h-100\" /></div>\r\n\t\t\t\t<div class=\"search-name\">");
+            Write(
 #nullable restore
 #line 23 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-                                    Write(Model.FoundPosts[i].ItemName);
+                              Model.FoundPosts[i].ItemName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n\t\t\t</a>\r\n");
 #nullable restore
 #line 25 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -173,6 +190,7 @@ WriteAttributeValue("", 769, Model.FoundPosts[i].Photo, 769, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t<div class=\"mt-2 mb-2 search-title\">Themes</div>\r\n");
 #nullable restore
 #line 30 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -182,36 +200,43 @@ WriteAttributeValue("", 769, Model.FoundPosts[i].Photo, 769, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t<a class=\"search-row d-flex\"");
             BeginWriteAttribute("href", " href=\"", 1086, "\"", 1136, 2);
             WriteAttributeValue("", 1093, "/Posts/Theme/", 1093, 13, true);
+            WriteAttributeValue("", 1106, 
 #nullable restore
 #line 32 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 1106, Model.FoundThemes[i].ItemName, 1106, 30, false);
+                                                    Model.FoundThemes[i].ItemName
 
 #line default
 #line hidden
 #nullable disable
+            , 1106, 30, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t\t<div class=\"search-photo\"><img");
             BeginWriteAttribute("src", " src=\"", 1174, "\"", 1218, 2);
             WriteAttributeValue("", 1180, "/img/theme/", 1180, 11, true);
+            WriteAttributeValue("", 1191, 
 #nullable restore
 #line 33 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-WriteAttributeValue("", 1191, Model.FoundThemes[i].Photo, 1191, 27, false);
+                                                    Model.FoundThemes[i].Photo
 
 #line default
 #line hidden
 #nullable disable
+            , 1191, 27, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"h-100\" /></div>\r\n\t\t\t\t<div class=\"search-name\">");
+            Write(
 #nullable restore
 #line 34 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
-                                    Write(Model.FoundThemes[i].ItemName);
+                              Model.FoundThemes[i].ItemName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n\t\t\t</a>\r\n");
 #nullable restore
 #line 36 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_SearchPartial.cshtml"
@@ -221,6 +246,7 @@ WriteAttributeValue("", 1191, Model.FoundThemes[i].Photo, 1191, 27, false);
 #line default
 #line hidden
 #nullable disable
+
         }
         #pragma warning restore 1998
         #nullable restore

@@ -11,10 +11,11 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using MemoMate.Web.Services;
+using MemoMate.Web.Models.Posts;
 
 namespace MemoMate.Web.Controllers
 {
-	[Authorize(Policy = "General")]
+    [Authorize(Policy = "General")]
 	public class PostsController : Controller
 	{
 		private readonly PostServices _postServices;

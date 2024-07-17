@@ -1,6 +1,5 @@
 ﻿using MemoMate.Data;
 using MemoMate.Web.GeneralHelpers;
-using MemoMate.Web.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
@@ -12,10 +11,12 @@ using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using MemoMate.Web.Models;
+using MemoMate.Web.Models.Users;
 
 namespace MemoMate.Web.Controllers
 {
-	[AllowAnonymous]
+    [AllowAnonymous]
 	public class RegisterController : Controller
 	{
 		private readonly MemoMateContext _context;

@@ -1,4 +1,4 @@
 ﻿sidebarActive(3);
 bottombarActive(4);
 setLikeInteraction();
-setFollowInteraction();
+setFollowInteraction(); //from friendship.js

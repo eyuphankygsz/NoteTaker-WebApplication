@@ -614,10 +614,7 @@ body {
     background: none;
     border: none;
 }
-    .follow-user .fa-plus {
-        color: #711DB0;
-    }
-    .follow-user .fa-check {
+    .follow-user i {
         color: #711DB0;
     }
 @media (max-width: 1580px) {

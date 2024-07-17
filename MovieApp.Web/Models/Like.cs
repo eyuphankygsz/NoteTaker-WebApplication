@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MemoMate.Web.Models
 {
-	public class Like
+    public class Like
 	{
 		[Column("like_id")]
 		public int ID { get; set; }

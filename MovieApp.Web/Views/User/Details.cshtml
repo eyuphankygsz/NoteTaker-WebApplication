@@ -33,6 +33,14 @@
 					<h4 class="card-title">@Model.Username</h4>
 					<p class="card-text">@Model.Username</p>
 				</div>
+				@{
+					if (!Model.IsOwn)
+					{
+						<div class="card-footer d-flex">
+							<button class="follow-user m-auto" data-username="@Model.Username"><i class="fa-solid @Model.FriendStatus fa-xl"></i></button>
+						</div>
+					}
+				}
 			</div>
 		</div>
 		<div class="col-md-8">
@@ -83,6 +91,8 @@
 }
 @section Scripts {
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/js/friendship.js"></script>
 	<script src="/js/Posts/posts.js"></script>
+	<script src="/js/User/user-details.js"></script>
 
 }

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-using System;
+using MemoMate.Web.Models;
+using MemoMate.Web.Models.Posts;
 
-namespace MemoMate.Web.Models
+namespace MemoMate.Web.Models.Users
 {
     public class UserLikesModel
     {
