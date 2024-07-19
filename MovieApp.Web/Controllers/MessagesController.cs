@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using MemoMate.Web.GeneralHelpers;
 using Microsoft.AspNetCore.Http;
+using System;
 
 namespace MemoMate.Web.Controllers
 {
@@ -87,6 +88,48 @@ namespace MemoMate.Web.Controllers
 						 .Skip(skip)
 						 .Take(20)
 						 .ToListAsync();
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> SendMessage(string username, string message)
+		{
+			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(message))
+				return NoContent();
+
+			var targetUser = await _context.Users
+								   .Where(u => u.Username == username)
+								   .FirstOrDefaultAsync();
+			if (targetUser == null)
+				return NoContent();
+
+
+			var fromUser = await _context.Users
+								   .Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+								   .FirstOrDefaultAsync();
+
+			Message newMessage = new Message()
+			{
+				SentDate = DateTime.Now,
+				UserFromID = fromUser.ID,
+				UserTargetID = targetUser.ID,
+				Content = message
+			};
+
+			await _context.Messages.AddAsync(newMessage);
+			await _context.SaveChangesAsync();
+
+			SelectedUserMessages model = new SelectedUserMessages()
+			{
+				LoggedUser = await _context.Users.Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)).FirstOrDefaultAsync(),
+				User = targetUser,
+				Messages =
+				new List<Message>
+				{
+					newMessage
+				}
+			};
+
+			return PartialView("_UserMessagesPartial", model);
 		}
 	}
 }

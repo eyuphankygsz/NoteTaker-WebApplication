@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__sidebar), @"mvc.1.0.view", @"/Views/Shared/_sidebar.cshtml")]
 namespace AspNetCore
 {
-    #line default
+    #line hidden
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,36 +16,50 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Interfaces;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Posts;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Search;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Users;
 
+#line default
+#line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -54,8 +68,8 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"a0fcbc9c626c236d462959077afbe5d90a856b93d9beeeb9c048f3931b8a0cdb", @"/Views/Shared/_sidebar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"a0fcbc9c626c236d462959077afbe5d90a856b93d9beeeb9c048f3931b8a0cdb", @"/Views/Shared/_sidebar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__sidebar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SidebarModel>
     #nullable disable
@@ -65,27 +79,23 @@ using MemoMate.Data;
         {
             WriteLiteral("\r\n<div class=\"d-flex flex-column flex-shrink-0 custom-sidebar sticky-top\" style=\"width: 4.5rem;\">\r\n\t<img src=\"/img/logo.png\" />\r\n\t<ul class=\"nav nav-pills nav-flush flex-column mb-auto text-center\">\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 251, "\"", 286, 1);
-            WriteAttributeValue("", 258, 
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-             Url.Action("Index","Posts")
+WriteAttributeValue("", 258, Url.Action("Index","Posts"), 258, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 258, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link active py-3 border-bottom\" id=\"side-home\">\r\n\t\t\t\t<i class=\"fa-solid fa-house fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 441, "\"", 476, 1);
-            WriteAttributeValue("", 448, 
 #nullable restore
 #line 12 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-             Url.Action("Rates","Posts")
+WriteAttributeValue("", 448, Url.Action("Rates","Posts"), 448, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 448, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link py-3 border-bottom position-relative\" id=\"side-rate\"");
             BeginWriteAttribute("title", " title=\"", 546, "\"", 554, 0);
@@ -93,7 +103,7 @@ using MemoMate.Data;
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Dashboard\">\r\n\t\t\t\t<i class=\"fa-solid fa-star-half-stroke fa-xl\"></i>\r\n");
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-      
+                  
 					string count = GetNewPostCount();
 					if (!string.IsNullOrEmpty(count))
 					{
@@ -101,17 +111,14 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\t\t\t\t\t\t<span class=\"position-absolute badge rounded-pill bg-danger\" style=\"top:10%; left: 65%; font-size: 0.6rem;\">\r\n\t\t\t\t\t\t\t");
-            Write(
 #nullable restore
 #line 19 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-        count
+                       Write(count);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("\r\n\t\t\t\t\t\t</span>\r\n");
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
@@ -121,45 +128,38 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-
             WriteLiteral("\r\n\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 1009, "\"", 1045, 1);
-            WriteAttributeValue("", 1016, 
 #nullable restore
 #line 28 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-             Url.Action("Create","Posts")
+WriteAttributeValue("", 1016, Url.Action("Create","Posts"), 1016, 29, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1016, 29, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link py-3 border-bottom\" id=\"side-create\"");
             BeginWriteAttribute("title", " title=\"", 1099, "\"", 1107, 0);
             EndWriteAttribute();
             WriteLiteral(" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" data-bs-original-title=\"Orders\">\r\n\t\t\t\t<i class=\"fa-solid fa-square-plus fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 1293, "\"", 1328, 1);
-            WriteAttributeValue("", 1300, 
 #nullable restore
 #line 33 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-             Url.Action("Likes", "User")
+WriteAttributeValue("", 1300, Url.Action("Likes", "User"), 1300, 28, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1300, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"nav-link active py-3 border-bottom\" id=\"side-likes\">\r\n\t\t\t\t<i class=\"fa-solid fa-heart fa-xl\"></i>\r\n\t\t\t</a>\r\n\t\t</li>\r\n\t\t<li class=\"nav-item\">\r\n\t\t\t<a");
             BeginWriteAttribute("href", " href=\"", 1484, "\"", 1523, 1);
-            WriteAttributeValue("", 1491, 
 #nullable restore
 #line 38 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-             Url.Action("Inbox", "Messages")
+WriteAttributeValue("", 1491, Url.Action("Inbox", "Messages"), 1491, 32, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1491, 32, false);
             EndWriteAttribute();
             WriteLiteral(@" class=""nav-link active py-3 border-bottom"" id=""side-likes"">
 				<i class=""fa-solid fa-message fa-xl""></i>
@@ -171,61 +171,51 @@ using MemoMate.Data;
 			<img");
             BeginWriteAttribute("src", " src=\"", 1893, "\"", 1946, 2);
             WriteAttributeValue("", 1899, "/img/user/profile/", 1899, 18, true);
-            WriteAttributeValue("", 1917, 
 #nullable restore
 #line 45 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                Model.LoggedUserEntity.Photo
+WriteAttributeValue("", 1917, Model.LoggedUserEntity.Photo, 1917, 29, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 1917, 29, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"mdo\" width=\"24\" height=\"24\" class=\"rounded-circle\">\r\n\t\t</a>\r\n\t\t<ul class=\"dropdown-menu text-small shadow\" aria-labelledby=\"dropdownUser3\">\r\n\t\t\t<li><a class=\"dropdown-item\"");
             BeginWriteAttribute("href", " href=\"", 2125, "\"", 2209, 1);
-            WriteAttributeValue("", 2132, 
 #nullable restore
 #line 48 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                       Url.Action("Settings", "User", new { id = Model.LoggedUserEntity.Username })
+WriteAttributeValue("", 2132, Url.Action("Settings", "User", new { id = Model.LoggedUserEntity.Username }), 2132, 77, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 2132, 77, false);
             EndWriteAttribute();
             WriteLiteral(">Settings</a></li>\r\n\t\t\t<li><a class=\"dropdown-item\"");
             BeginWriteAttribute("href", " href=\"", 2261, "\"", 2344, 1);
-            WriteAttributeValue("", 2268, 
 #nullable restore
 #line 49 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                       Url.Action("Details", "User", new { id = Model.LoggedUserEntity.Username })
+WriteAttributeValue("", 2268, Url.Action("Details", "User", new { id = Model.LoggedUserEntity.Username }), 2268, 76, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 2268, 76, false);
             EndWriteAttribute();
             WriteLiteral(">Profile - ");
-            Write(
 #nullable restore
 #line 49 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                                                                                                               Model.LoggedUserEntity.Username
+                                                                                                                                  Write(Model.LoggedUserEntity.Username);
 
 #line default
 #line hidden
 #nullable disable
-            );
             WriteLiteral("</a></li>\r\n\t\t\t<li><hr class=\"dropdown-divider\"></li>\r\n\t\t\t<li><a class=\"dropdown-item\" id=\"signout\"");
             BeginWriteAttribute("href", " href=\"", 2486, "\"", 2522, 1);
-            WriteAttributeValue("", 2493, 
 #nullable restore
 #line 51 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_sidebar.cshtml"
-                                                    Url.Action("Logout", "User")
+WriteAttributeValue("", 2493, Url.Action("Logout", "User"), 2493, 29, false);
 
 #line default
 #line hidden
 #nullable disable
-            , 2493, 29, false);
             EndWriteAttribute();
             WriteLiteral(">Sign out</a></li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>\r\n\r\n<script src=\"/js/sidebar.js\"></script>\r\n\r\n\r\n");
 #nullable restore
@@ -241,7 +231,6 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-
         }
         #pragma warning restore 1998
         #nullable restore

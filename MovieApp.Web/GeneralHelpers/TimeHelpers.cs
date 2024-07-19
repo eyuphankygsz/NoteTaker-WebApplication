@@ -32,6 +32,7 @@ namespace MemoMate.Web.GeneralHelpers
 		}
 		public static string GetOnlyTime(DateTime date)
 		{
+			Console.WriteLine(date.ToString());
 			return date.ToString("HH:mm");
 		}
 	}
