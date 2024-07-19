@@ -49,7 +49,7 @@ namespace MemoMate.Web.Controllers
 
 
 				// New User
-				var user = new User
+				var user = new UserEntity
 				{
 					Username = model.Username,
 					Mail = model.Mail,

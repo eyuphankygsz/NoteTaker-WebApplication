@@ -617,8 +617,9 @@ body {
     .follow-user i {
         color: #711DB0;
     }
-@media (max-width: 1580px) {
-    .posts-card .card-title {
+
+    @media (max-width: 1580px) {
+        .posts-card .card-title {
         color: #FFE482;
         font-size: 1.2rem;
         font-weight: 600;

@@ -1,0 +1,32 @@
+﻿@using MemoMate.Web.Models.Messages
+@model Dictionary<UserEntity, Message>
+
+@{
+	foreach (var item in Model)
+	{
+		<button class="get-messages" data-username="@item.Key.Username">
+			<div class="user-with-message d-flex align-items-center">
+				<div class="profile-pic">
+					<img src="/img/user/profile/@item.Key.Photo" alt="Alternate Text" />
+				</div>
+				<div class="user-content">
+					<p class="user-name">@item.Key.Username</p>
+					<p class="last-message" style="color: @GetMessageColor(item.Value, item.Key);">@item.Value.Content</p>
+				</div>
+				<div class="d-flex align-items-center">
+					<p style="margin:0; color:#FFE482">@TimeHelpers.GetTimeAgo(item.Value.SentDate)</p>
+				</div>
+			</div>
+		</button>
+	}
+}
+
+
+@{
+	string GetMessageColor(Message message, UserEntity user)
+	{
+		if (message.UserFromID != user.ID)
+			return "#8DFFC0";
+		return "#FFFAEF";
+	}
+}

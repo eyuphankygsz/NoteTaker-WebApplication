@@ -13,7 +13,7 @@ namespace MemoMate.Web.Models
 		[Column("post_id")]
 		public int PostID{ get; set; }
 		
-		public User UserEntity { get; set; }
+		public UserEntity UserEntity { get; set; }
 		public Post PostEntiy { get; set; }
 	}
 }

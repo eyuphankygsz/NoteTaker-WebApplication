@@ -7,7 +7,7 @@ namespace MemoMate.Web.Models.Users
 {
     public class UserProfileViewModel
     {
-        public User LoggedUserEntity { get; set; }
+        public UserEntity LoggedUserEntity { get; set; }
         public int UserID { get; set; }
         public string Username { get; set; }
         public string Mail { get; set; }

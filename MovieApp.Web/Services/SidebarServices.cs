@@ -18,7 +18,7 @@ namespace MemoMate.Web.Services
 			_context = context;
 		}
 
-		public async Task<SidebarModel> GetSidebarModelAsync(User user)
+		public async Task<SidebarModel> GetSidebarModelAsync(UserEntity user)
 		{
 			DateTime now = TimeHelpers.GetLocalDate();
 			var sidebarModel = new SidebarModel

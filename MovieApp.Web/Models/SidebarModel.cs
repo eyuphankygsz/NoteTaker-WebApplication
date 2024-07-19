@@ -2,7 +2,7 @@
 {
     public class SidebarModel
 	{
-		public User LoggedUserEntity { get; set; }
+		public UserEntity LoggedUserEntity { get; set; }
 		public int NewPostCount { get; set; }
 	}
 }

@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\js\\message\\message.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\js\\message\\message.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\data\\memomatecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\data\\memomatecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_bottombar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_bottombar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\js\\posts\\posts-index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\js\\posts\\posts-index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\models\\messages\\usermessagesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\models\\messages\\usermessagesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\messages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\messages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\messages\\inbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\messages\\inbox.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\messages\\_usermessagespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\messages\\_usermessagespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\css\\messages.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\css\\messages.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\js\\posts\\posts-create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\js\\posts\\posts-create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,106 +55,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PostsController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\PostsController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\PostsController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\PostsController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\PostsController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T08:36:48.149Z",
+              "Title": "posts-index.js",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Posts\\posts-index.js",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\js\\Posts\\posts-index.js",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Posts\\posts-index.js",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\js\\Posts\\posts-index.js",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-19T08:01:42.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "message.js",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\message.js",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\js\\Message\\message.js",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\message.js",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\js\\Message\\message.js",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCoAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-18T17:13:57.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MessagesController.cs",
               "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\MessagesController.cs",
               "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "MovieApp.Web\\Controllers\\MessagesController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAtAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAADAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-17T08:09:53.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MemoMateContext.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Data\\MemoMateContext.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Data\\MemoMateContext.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Data\\MemoMateContext.cs",
-              "RelativeToolTip": "MovieApp.Web\\Data\\MemoMateContext.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAlwEoAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T08:19:37.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UserMessagesModel.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
-              "RelativeToolTip": "MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T08:17:49.913Z",
+              "Title": "Inbox.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\Inbox.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Messages\\Inbox.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\Inbox.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Messages\\Inbox.cshtml",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAMwBkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T18:26:17.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "_bottombar.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_bottombar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T08:13:14.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_sidebar.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T08:12:52.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\UserController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "UserMessagesModel.cs",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
+              "RelativeToolTip": "MovieApp.Web\\Models\\Messages\\UserMessagesModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAgwBUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T08:09:33.072Z",
+              "WhenOpened": "2024-07-18T18:15:46.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\Index.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Messages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\Index.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Messages\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
+              "Title": "_UserMessagesPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
+              "RelativeToolTip": "MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T07:46:50.937Z",
+              "WhenOpened": "2024-07-18T17:21:35.885Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "messages.css",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\messages.css",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\css\\messages.css",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\css\\messages.css",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\css\\messages.css",
+              "ViewState": "AQIAALUAAAAAAAAAAAAAwMEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-07-18T10:40:37.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "posts-create.js",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Posts\\posts-create.js",
+              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\js\\Posts\\posts-create.js",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Posts\\posts-create.js",
+              "RelativeToolTip": "MovieApp.Web\\wwwroot\\js\\Posts\\posts-create.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-18T17:14:09.086Z"
             },
             {
               "$type": "Document",
@@ -170,16 +169,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\_ViewImports.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T07:41:38.974Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\PostsController.cs",
+              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\PostsController.cs",
+              "RelativeToolTip": "MovieApp.Web\\Controllers\\PostsController.cs",
+              "ViewState": "AQIAAN8AAAAAAAAAAAAYwPQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T08:36:48.149Z"
             }
           ]
         }

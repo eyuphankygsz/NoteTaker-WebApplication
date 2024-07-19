@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MemoMate.Web.Models
 {
-    public class User
+    public class UserEntity
     {
         [Column("user_id")]
         public int ID { get; set; }

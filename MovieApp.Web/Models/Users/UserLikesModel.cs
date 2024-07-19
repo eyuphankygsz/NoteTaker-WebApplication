@@ -6,7 +6,7 @@ namespace MemoMate.Web.Models.Users
 {
     public class UserLikesModel
     {
-        public User LoggedUserEntity { get; set; }
+        public UserEntity LoggedUserEntity { get; set; }
         public List<PostDetailModel> Posts { get; set; }
     }
 }

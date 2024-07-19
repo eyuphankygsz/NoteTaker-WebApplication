@@ -16,6 +16,6 @@ namespace MemoMate.Web.Models
         public int UserID { get; set; }
 
         public Post PostEntity { get; private set; }
-        public User UserEntity { get; private set; }
+        public UserEntity UserEntity { get; private set; }
     }
 }

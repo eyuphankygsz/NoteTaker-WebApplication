@@ -4,7 +4,7 @@
 
 @section Styles {
 	<link rel="stylesheet" href="~/css/posts.css" />
-	<link rel="stylesheet" href="~/css/details.css" />
+	<link rel="stylesheet" href="~/css/messages.css" />
 }
 @{
 	ViewData["Title"] = Model.LoggedUserEntity.Username + "'s Messages";
@@ -14,17 +14,24 @@
 @section SideExtension {
 	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
+
+@await Html.PartialAsync("_welcome", Model.LoggedUserEntity)
+
 <div id="messages-page">
 	<div class="custom-container m-auto">
-		<div class="card-header">
-			<h5>@Model.LoggedUserEntity.Username's Likes</h5>
+		<div class="users-part">
+			<div id="top-part">
+				<button><i class="fa-solid fa-plus fa-xl"></i></button>
+			</div>
+			<div id="users-bottom-part">
+				@await Html.PartialAsync("_userwithmessages", Model.Messages)
+			</div>
 		</div>
-		<div class="card-body">
-			<div class="list-group">
-				@foreach (var post in Model.Messages)
-				{
-					@await Html.PartialAsync("_post", post)
-				}
+		<div id="messages-part">
+			<div class="message-container"></div>
+			<div class="message-interactions">
+				<input id="text-input"></input>
+				<button id="send-text"><i class="fa-solid fa-paper-plane"></i></button>
 			</div>
 		</div>
 	</div>
@@ -44,6 +51,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="/js/friendship.js"></script>
 	<script src="/js/Posts/posts.js"></script>
-	<script src="/js/Posts/posts-likes.js"></script>
+	<script src="/js/Message/message.js" defer></script>
 
 }

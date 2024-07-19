@@ -11,7 +11,7 @@ namespace MemoMate.Data
 		}
 
 		public DbSet<Note> Notes { get; set; }
-		public DbSet<User> Users { get; set; }
+		public DbSet<UserEntity> Users { get; set; }
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Rate> Rates { get; set; }
 		public DbSet<Theme> Themes { get; set; }
@@ -23,7 +23,7 @@ namespace MemoMate.Data
 		{
 			modelBuilder.Entity<Note>();
 
-			modelBuilder.Entity<User>()
+			modelBuilder.Entity<UserEntity>()
 				.HasMany(u => u.Posts)
 				.WithOne(p => p.UserEntity)
 				.HasForeignKey(u => u.UserID);

@@ -35,29 +35,7 @@
 
 			}
 		}
-		<span class="date text-white fw-bold">@GetTimeAgo(Model.PostDate)</span>
+		<span class="date text-white fw-bold">@TimeHelpers.GetTimeAgo(Model.PostDate)</span>
 
 	</div>
 </div>
-
-@functions {
-	public string GetTimeAgo(DateTime date)
-	{
-		TimeSpan elapsedTime = DateTime.Now - date;
-
-		if (elapsedTime < TimeSpan.FromHours(1))
-			return elapsedTime.Minutes + "m" + " Ago";
-		if (elapsedTime < TimeSpan.FromHours(24))
-			return elapsedTime.Hours + "h" + " Ago";
-		if (elapsedTime < TimeSpan.FromDays(7))
-			return elapsedTime.Days + "d" + " Ago";
-		if (elapsedTime < TimeSpan.FromDays(28))
-			return elapsedTime.Days / 7 + "w" + " Ago";
-		if (elapsedTime < TimeSpan.FromDays(356))
-			return elapsedTime.Days / 28 + "mo" + " Ago";
-
-		return elapsedTime.Days / 365 + "y" + " Ago";
-
-
-	}
-}

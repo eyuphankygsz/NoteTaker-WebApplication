@@ -1,9 +1,22 @@
 ﻿using System.Collections.Generic;
 namespace MemoMate.Web.Models.Messages
 {
-    public class UserMessagesModel
-    {
-        public User LoggedUserEntity { get; set; }
-        public Dictionary<User, List<Message>> Messages { get; set; }
-    }
+	public class UserMessagesModel
+	{
+		public UserEntity LoggedUserEntity { get; set; }
+		public Dictionary<UserEntity, Message> Messages { get; set; }
+	}
+
+	public class SelectedUserMessages
+	{
+		public UserEntity LoggedUser { get; set; }
+		public UserEntity User { get; set; }
+		public List<Message> Messages { get; set; }
+	}
+	public class OneUserMessage
+	{
+		public int LoggedID { get; set; }
+		public UserEntity User { get; set; }
+		public Message MessageEntity { get; set; }
+	}
 }

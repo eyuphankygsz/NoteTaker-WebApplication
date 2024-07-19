@@ -34,7 +34,7 @@ namespace MemoMate.Web.Models
         public int ThemeID { get; set; }
 
         public Note NoteEntity { get; set; }
-        public User UserEntity { get; set; }
+        public UserEntity UserEntity { get; set; }
         public Theme ThemeEntity { get; set; }
     }
 }

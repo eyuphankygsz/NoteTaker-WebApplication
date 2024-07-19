@@ -1,0 +1,34 @@
+﻿@using MemoMate.Web.Models.Messages
+@model SelectedUserMessages
+
+
+@foreach (var message in Model.Messages)
+{
+	<div class="message-in @GetMessageOwnerClass(message.UserFromID)">
+		<div class="message-photo">
+			<img src="/img/user/profile/@GetMessageOwnerPhoto(message.UserFromID)" alt="Alternate Text" />
+		</div>
+		<div class="message-content">
+			<p>@message.Content</p>
+		</div>		
+		<div class="message-details">
+			<p>@TimeHelpers.GetTimeAgo(message.SentDate)</p>
+		</div>
+	</div>
+}
+
+
+@{
+	string GetMessageOwnerClass(int id)
+	{
+		if (id == Model.User.ID)
+			return "op";
+		return "us";
+	}
+	string GetMessageOwnerPhoto(int id)
+	{
+		if (id == Model.User.ID)
+			return Model.User.Photo;
+		return Model.LoggedUser.Photo;
+	}
+}
