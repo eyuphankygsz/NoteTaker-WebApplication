@@ -32,6 +32,7 @@ namespace MemoMate.Web.Controllers
 			HttpContext.Session.SetString("moreposts", "yes");
 			//if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")))
 			//	  return RedirectToAction("Index", "Home");
+			var x = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
 			DateTime now = TimeHelpers.GetLocalDate();

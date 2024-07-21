@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using MemoMate.Web.Models.Users;
+using System.Linq;
 
 namespace MemoMate.Web.Controllers
 {
@@ -33,7 +34,16 @@ namespace MemoMate.Web.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == model.Username && u.Password == model.Password);
+				try
+				{
+					var userfix = await _context.Users.Where(u => u.Username == model.Username && u.Password == model.Password).FirstOrDefaultAsync();
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+					throw;
+				}
+				var user = await _context.Users.Where(u => u.Username == model.Username && u.Password == model.Password).FirstOrDefaultAsync();
 
 				if (user != null)
 				{
