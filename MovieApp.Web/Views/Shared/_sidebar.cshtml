@@ -15,9 +15,7 @@
 					string rateCount = GetCount(Model.NewPostCount);
 					if (!string.IsNullOrEmpty(rateCount))
 					{
-						<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
-							@rateCount
-						</span>
+						<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">@rateCount</span>
 					}
 				}
 
@@ -39,12 +37,7 @@
 				<i class="fa-solid fa-message fa-xl"></i>
 				@{
 					string messageCount = GetCount(Model.NewMessagesCount);
-					<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
-						@if (messageCount != null)
-						{
-							@messageCount
-						}
-					</span>
+					<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">@if (messageCount != null){@messageCount}</span>
 				}
 			</a>
 		</li>
@@ -69,7 +62,7 @@
 	string GetCount(int count)
 	{
 		return count > 99 ? "99+" :
-						count == 0 ? null :
+						count == 0 ? "" :
 						count.ToString();
 	}
 }

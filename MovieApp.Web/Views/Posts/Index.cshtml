@@ -10,7 +10,6 @@
 @section SideExtension {
 	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
-
 <div class="posts-main">
 
 	@await Html.PartialAsync("_welcome", Model.LoggedUserEntity)

@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="main-content">
-        @await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync())
+        @RenderSection("SideExtension", required: false)
         <div class="afterlayout">
             @RenderBody()
         </div>

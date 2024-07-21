@@ -10,9 +10,6 @@
 	Layout = "_LoggedLayout";
 }
 
-@section SideExtension {
-	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync())
-}
 
 <div class="container mt-5" id="user-details">
 	<div class="row">

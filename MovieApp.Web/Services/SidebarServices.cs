@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MemoMate.Web.Services
 {
-    public class SidebarServices : Controller, ISidebarService
+    public class SidebarServices : ISidebarService
     {
         private readonly MemoMateContext _context;
 
@@ -20,11 +20,8 @@ namespace MemoMate.Web.Services
             _context = context;
         }
 
-        public async Task<SidebarModel> GetSidebarModelAsync()
+        public async Task<SidebarModel> GetSidebarModelAsync(UserEntity user)
         {
-            var user = await _context.Users
-                             .Where(u => u.ID == int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                             .FirstOrDefaultAsync();
             DateTime now = TimeHelpers.GetLocalDate();
             var sidebarModel = new SidebarModel
             {

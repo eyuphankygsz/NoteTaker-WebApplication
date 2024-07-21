@@ -10,9 +10,6 @@
 	Layout = "_LoggedLayout";
 }
 
-@section SideExtension {
-	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
-}
 <div id="likes-page">
 	<div class="card custom-container">
 		<div class="card-header">

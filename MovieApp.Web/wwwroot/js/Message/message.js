@@ -46,8 +46,25 @@ function loadMoreMessages() {
             alert('There were some errors. Please try again after few minutes.');
         }
     });
+    getNewMessages();
 }
+function getNewMessages() {
 
+    $.ajax({
+        url: '/Messages/GetMessageCount',
+        type: 'GET',
+        success: function (count) {
+            setSideBarMessage(count);
+        },
+        error: function () {
+            alert('There were some errors. Please try again after few minutes.');
+        }
+    });
+}
+function setSideBarMessage(count) {
+    const span = $('#side-likes span');
+    span.text(count == 0 ? "" : count);
+}
 function getLastMessage(fromUser) {
 
     try {

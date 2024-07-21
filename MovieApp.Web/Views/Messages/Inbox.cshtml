@@ -10,11 +10,9 @@
 	ViewData["Title"] = Model.LoggedUserEntity.Username + "'s Messages";
 	Layout = "_LoggedLayout";
 }
-
 @section SideExtension {
 	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 }
-
 @await Html.PartialAsync("_welcome", Model.LoggedUserEntity)
 
 <div id="messages-page">
