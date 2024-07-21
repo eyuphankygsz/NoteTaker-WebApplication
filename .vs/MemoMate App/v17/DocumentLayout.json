@@ -1,122 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\js\\message\\message.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\js\\message\\message.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\messages\\_usermessagespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\messages\\_usermessagespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\models\\messages\\chatread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\models\\messages\\chatread.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|c:\\users\\amiralsincap\\documents\\github\\notetaker-webapplication\\movieapp.web\\wwwroot\\js\\message\\messagehub.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{64145A6C-59E3-4DC4-9C48-69962D9DEC2D}|MovieApp.Web\\MemoMate.Web.csproj|solutionrelative:movieapp.web\\wwwroot\\js\\message\\messagehub.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedHeight": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_UserMessagesPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Messages\\_UserMessagesPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-21T11:56:13.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChatRead.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\ChatRead.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Models\\Messages\\ChatRead.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Models\\Messages\\ChatRead.cs",
-              "RelativeToolTip": "MovieApp.Web\\Models\\Messages\\ChatRead.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T11:18:52.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MessagesController.cs",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\MessagesController.cs",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Controllers\\MessagesController.cs",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Controllers\\MessagesController.cs",
-              "RelativeToolTip": "MovieApp.Web\\Controllers\\MessagesController.cs",
-              "ViewState": "AQIAALMAAAAAAAAAAAAAAMYAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T03:50:01.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "message.js",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\message.js",
-              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\js\\Message\\message.js",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\message.js",
-              "RelativeToolTip": "MovieApp.Web\\wwwroot\\js\\Message\\message.js",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAQwEEAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-21T11:07:39.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "messagehub.js",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\messagehub.js",
-              "RelativeDocumentMoniker": "MovieApp.Web\\wwwroot\\js\\Message\\messagehub.js",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\wwwroot\\js\\Message\\messagehub.js",
-              "RelativeToolTip": "MovieApp.Web\\wwwroot\\js\\Message\\messagehub.js",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAYwCEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-21T11:06:57.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_sidebar.cshtml",
-              "DocumentMoniker": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeDocumentMoniker": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ToolTip": "C:\\Users\\AmiralSincap\\Documents\\GitHub\\NoteTaker-WebApplication\\MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "RelativeToolTip": "MovieApp.Web\\Views\\Shared\\_sidebar.cshtml",
-              "ViewState": "AQIAACsAAAAAAAAAAAAUwCQAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-21T03:42:42.418Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
