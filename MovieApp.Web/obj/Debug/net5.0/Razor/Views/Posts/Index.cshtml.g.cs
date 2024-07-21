@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Posts_Index), @"mvc.1.0.view", @"/Views/Posts/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,50 +16,36 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Interfaces;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Posts;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Search;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Users;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -68,8 +54,8 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"16f239d0213c00b2a789283b73cccf5b4b6a9073967c537be221e8213675f966", @"/Views/Posts/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"16f239d0213c00b2a789283b73cccf5b4b6a9073967c537be221e8213675f966", @"/Views/Posts/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Posts_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PostsViewModel>
     #nullable disable
@@ -103,7 +89,7 @@ using MemoMate.Data;
             WriteLiteral("\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n\t");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "16f239d0213c00b2a789283b73cccf5b4b6a9073967c537be221e8213675f9665450", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "16f239d0213c00b2a789283b73cccf5b4b6a9073967c537be221e8213675f9665248", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -128,48 +114,57 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
+
             DefineSection("SideExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-Write(await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity)));
+  await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
             WriteLiteral("\r\n<div class=\"posts-main\">\r\n\r\n\t");
+            Write(
 #nullable restore
 #line 16 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-Write(await Html.PartialAsync("_welcome", Model.LoggedUserEntity));
+  await Html.PartialAsync("_welcome", Model.LoggedUserEntity)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\r\n\t<div");
             BeginWriteAttribute("class", " class=\"", 408, "\"", 416, 0);
             EndWriteAttribute();
             WriteLiteral(" id=\"posts-interests\">\r\n\t\t<div class=\"row-container d-flex justify-content-evenly\">\r\n\t\t\t<div class=\"item-holder\">\r\n\t\t\t\t<div class=\"d-flex  h-75\" id=\"today-theme-container\">\r\n\t\t\t\t\t<div class=\"m-auto\" id=\"today-theme\">\r\n\t\t\t\t\t\t<div class=\"theme-image\"><img");
             BeginWriteAttribute("src", " src=\"", 670, "\"", 713, 2);
             WriteAttributeValue("", 676, "/img/theme/", 676, 11, true);
+            WriteAttributeValue("", 687, 
 #nullable restore
 #line 23 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
+                                                     Model.TodayTheme.PhotoURL
 
 #line default
 #line hidden
 #nullable disable
+            , 687, 26, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"Alternate Text\" /></div>\r\n\t\t\t\t\t\t<div class=\"theme-name-container w-100 h-100 justify-content-center d-flex\">\r\n\t\t\t\t\t\t\t<p class=\"theme-name\" style=\"z-index:2;\">");
+            Write(
 #nullable restore
 #line 25 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                                                Write(Model.TodayTheme.Name);
+                                                 Model.TodayTheme.Name
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</p>
 						</div>
 						<div class=""theme-back""></div>
@@ -186,29 +181,33 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 ");
 #nullable restore
 #line 38 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                             if (Model.PostsYesterday.Count != 0)
+        if (Model.PostsYesterday.Count != 0)
 							{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t\t\t<div id=\"yesterday-posts\" class=\"carousel slide h-100\" data-bs-ride=\"false\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"carousel-inner h-100\">\r\n");
 #nullable restore
 #line 42 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                         foreach (var note in Model.PostsYesterday)
+           foreach (var note in Model.PostsYesterday)
 										{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<div class=\"carousel-item h-100\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 45 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                           Write(await Html.PartialAsync("_post", note));
+             await Html.PartialAsync("_post", note)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n");
 #nullable restore
 #line 47 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
@@ -217,6 +216,7 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"									</div>
 									<button class=""carousel-control-prev custom-carousel-control "" type=""button"" data-bs-target=""#yesterday-posts"" data-bs-slide=""prev"">
 										<span aria-hidden=""true""><i class=""fa-solid fa-angle-left fa-2xl""></i></span>
@@ -235,6 +235,7 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 						</div>
 						<div class=""multiple-posts-bg""></div>
@@ -251,29 +252,33 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 ");
 #nullable restore
 #line 72 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                             if (Model.PostsYesterday.Count != 0)
+        if (Model.PostsYesterday.Count != 0)
 							{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t\t\t<div id=\"checkOut-posts\" class=\"carousel slide h-100\" data-bs-ride=\"false\">\r\n\t\t\t\t\t\t\t\t\t<div class=\"carousel-inner h-100\">\r\n");
 #nullable restore
 #line 76 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                         foreach (var note in Model.PostsCheckOut)
+           foreach (var note in Model.PostsCheckOut)
 										{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t\t\t\t\t\t\t<div class=\"carousel-item h-100\">\r\n\t\t\t\t\t\t\t\t\t\t\t\t");
+            Write(
 #nullable restore
 #line 79 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                           Write(await Html.PartialAsync("_post", note));
+             await Html.PartialAsync("_post", note)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t\t\t\t\t\t\t\t\t\t</div>\r\n");
 #nullable restore
 #line 81 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
@@ -282,6 +287,7 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"									</div>
 									<button class=""carousel-control-prev custom-carousel-control "" type=""button"" data-bs-target=""#checkOut-posts"" data-bs-slide=""prev"">
 										<span aria-hidden=""true""><i class=""fa-solid fa-angle-left fa-2xl""></i></span>
@@ -300,6 +306,7 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"multiple-posts-bg\"></div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div");
             BeginWriteAttribute("class", " class=\"", 3885, "\"", 3893, 0);
             EndWriteAttribute();
@@ -324,31 +331,37 @@ WriteAttributeValue("", 687, Model.TodayTheme.PhotoURL, 687, 26, false);
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 115 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-   Write(await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel()));
+   await Html.PartialAsync("_message", MessageHelpers.TryGetMessageModel())
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 115 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-                                                                                 
+                                                                           
 	}
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n");
             DefineSection("BottomExtension", async() => {
                 WriteLiteral("\r\n\t");
+                Write(
 #nullable restore
 #line 120 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
-Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
+  await Html.PartialAsync("_bottombar", Model.LoggedUserEntity)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n");
             }
             );
@@ -358,10 +371,25 @@ Write(await Html.PartialAsync("_bottombar", Model.LoggedUserEntity));
             );
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public ISidebarService SidebarService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
+        ISidebarService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Posts\Index.cshtml"
+                        SidebarService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

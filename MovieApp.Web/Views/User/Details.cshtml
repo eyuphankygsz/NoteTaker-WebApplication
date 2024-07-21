@@ -11,7 +11,7 @@
 }
 
 @section SideExtension {
-	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync(Model.LoggedUserEntity))
+	@await Html.PartialAsync("_sidebar", await SidebarService.GetSidebarModelAsync())
 }
 
 <div class="container mt-5" id="user-details">

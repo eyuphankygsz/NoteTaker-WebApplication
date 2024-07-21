@@ -4,5 +4,6 @@
 	{
 		public UserEntity LoggedUserEntity { get; set; }
 		public int NewPostCount { get; set; }
-	}
+		public int NewMessagesCount { get; set; }
+    }
 }

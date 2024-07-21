@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MemoMate.Web.Models;
+using MemoMate.Web.Models.Messages;
 
 namespace MemoMate.Data
 {
@@ -18,8 +19,9 @@ namespace MemoMate.Data
 		public DbSet<Like> Likes { get; set; }
 		public DbSet<Friend> Friends { get; set; }
 		public DbSet<Message> Messages { get; set; }
+		public DbSet<ChatRead> ChatReads { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Note>();
 

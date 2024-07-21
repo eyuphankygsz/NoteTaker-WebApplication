@@ -13,10 +13,4 @@ namespace MemoMate.Web.Models.Messages
 		public UserEntity User { get; set; }
 		public List<Message> Messages { get; set; }
 	}
-	public class OneUserMessage
-	{
-		public int LoggedID { get; set; }
-		public UserEntity User { get; set; }
-		public Message MessageEntity { get; set; }
-	}
 }

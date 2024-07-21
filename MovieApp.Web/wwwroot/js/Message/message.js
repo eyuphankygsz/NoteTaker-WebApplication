@@ -6,7 +6,8 @@ let username = "";
 let isLoading = false;
 const skipCount = 20;
 const messageInput = document.querySelector("#text-input");
-const messageContainer = document.querySelector(".message-container");
+const messageContainer = $('.message-container');
+const messageNotification = new Audio('/audio/message_notification.m4a');
 $(document).ready(function () {
 
     getMessages();
@@ -37,7 +38,6 @@ function loadMoreMessages() {
         type: 'GET',
         data: { username: username, skip: skip },
         success: function (response) {
-            const messageContainer = $('.message-container');
             messageContainer.empty();
             messageContainer.html(response);
             isLoading = false;
@@ -48,6 +48,27 @@ function loadMoreMessages() {
     });
 }
 
+function getLastMessage(fromUser) {
+
+    try {
+        $.ajax({
+            url: '/Messages/GetLastMessage',
+            type: 'GET',
+            data: { username: fromUser },
+            success: function (response) {
+                messageContainer.prepend(response);
+                isLoading = false;
+                messageNotification.play();
+            },
+            error: function () {
+                alert('There were some errors. Please try again after few minutes.');
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 function sendMessage() {
 
     $.ajax({
@@ -55,7 +76,6 @@ function sendMessage() {
         type: 'GET',
         data: { username: username, message: messageInput.value },
         success: function (response) {
-            const messageContainer = $('.message-container');
             messageInput.value = "";
             messageContainer.prepend(response);
             isLoading = false;
@@ -65,3 +85,4 @@ function sendMessage() {
         }
     });
 }
+

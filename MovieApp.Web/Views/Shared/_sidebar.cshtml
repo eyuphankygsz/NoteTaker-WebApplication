@@ -12,11 +12,11 @@
 			<a href="@Url.Action("Rates","Posts")" class="nav-link py-3 border-bottom position-relative" id="side-rate" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 				<i class="fa-solid fa-star-half-stroke fa-xl"></i>
 				@{
-					string count = GetNewPostCount();
-					if (!string.IsNullOrEmpty(count))
+					string rateCount = GetCount(Model.NewPostCount);
+					if (!string.IsNullOrEmpty(rateCount))
 					{
 						<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
-							@count
+							@rateCount
 						</span>
 					}
 				}
@@ -35,8 +35,17 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a href="@Url.Action("Inbox", "Messages")" class="nav-link active py-3 border-bottom" id="side-likes">
+			<a href="@Url.Action("Inbox", "Messages")" class="nav-link active py-3 border-bottom position-relative" id="side-likes">
 				<i class="fa-solid fa-message fa-xl"></i>
+				@{
+					string messageCount = GetCount(Model.NewMessagesCount);
+					<span class="position-absolute badge rounded-pill bg-danger" style="top:10%; left: 65%; font-size: 0.6rem;">
+						@if (messageCount != null)
+						{
+							@messageCount
+						}
+					</span>
+				}
 			</a>
 		</li>
 	</ul>
@@ -57,10 +66,10 @@
 
 
 @{
-	string GetNewPostCount()
+	string GetCount(int count)
 	{
-		return Model.NewPostCount > 99 ? "99+" :
-						Model.NewPostCount == 0 ? null :
-						Model.NewPostCount.ToString();
+		return count > 99 ? "99+" :
+						count == 0 ? null :
+						count.ToString();
 	}
 }

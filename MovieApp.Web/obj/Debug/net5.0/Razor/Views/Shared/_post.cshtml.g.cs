@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__post), @"mvc.1.0.view", @"/Views/Shared/_post.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -16,50 +16,36 @@ namespace AspNetCore
 #line 1 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Controllers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.GeneralHelpers;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Interfaces;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Posts;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Search;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
 using MemoMate.Web.Models.Users;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\_ViewImports.cshtml"
@@ -68,8 +54,8 @@ using MemoMate.Data;
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"13b0c71e875ad611e1b1675c570a7cccf85ef856cf1bdc51bf32cf965118d4ba", @"/Views/Shared/_post.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"13b0c71e875ad611e1b1675c570a7cccf85ef856cf1bdc51bf32cf965118d4ba", @"/Views/Shared/_post.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"551a3915c97d0c6e79dc14e84bc521a5b2e0c70180d8746e3ad102c5321891b5", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__post : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PostDetailModel>
     #nullable disable
@@ -79,61 +65,72 @@ using MemoMate.Data;
         {
             WriteLiteral("\r\n<div class=\"posts-card card text-center mb-3 h-100 shadow\">\r\n\t<div class=\"card-header \">\r\n\t\t<a class=\"d-flex align-items-center\"");
             BeginWriteAttribute("href", " href=\"", 154, "\"", 220, 1);
+            WriteAttributeValue("", 161, 
 #nullable restore
 #line 5 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue("", 161, Url.Action("Details", "User", new { id = Model.Username }), 161, 59, false);
+                                              Url.Action("Details", "User", new { id = Model.Username })
 
 #line default
 #line hidden
 #nullable disable
+            , 161, 59, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n\t\t\t<div class=\"post-profile d-flex justify-content-center\">\r\n\t\t\t\t<img class=\"h-100\"");
             BeginWriteAttribute("src", " src=\"", 307, "\"", 347, 2);
             WriteAttributeValue("", 313, "/img/user/profile/", 313, 18, true);
+            WriteAttributeValue("", 331, 
 #nullable restore
 #line 7 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue("", 331, Model.UserPhoto, 331, 16, false);
+                                               Model.UserPhoto
 
 #line default
 #line hidden
 #nullable disable
+            , 331, 16, false);
             EndWriteAttribute();
             WriteLiteral(" alt=\"Alternate Text\" />\r\n\t\t\t</div>\r\n\t\t\t");
+            Write(
 #nullable restore
 #line 9 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-       Write(Model.Username);
+    Model.Username
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n\t\t</a>\r\n");
 #nullable restore
 #line 11 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-          
+    
 			if (Model.CanInteract && !Model.IsOwned)
 			{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t<button class=\"follow-user ms-2\" data-username=\"");
+            Write(
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                                           Write(Model.Username);
+                                                     Model.Username
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"><i");
             BeginWriteAttribute("class", " class=\"", 541, "\"", 583, 3);
             WriteAttributeValue("", 549, "fa-solid", 549, 8, true);
+            WriteAttributeValue(" ", 557, 
 #nullable restore
 #line 14 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue(" ", 557, Model.FriendStatus, 558, 19, false);
+                                                                                         Model.FriendStatus
 
 #line default
 #line hidden
 #nullable disable
+            , 558, 19, false);
             WriteAttributeValue(" ", 577, "fa-lg", 578, 6, true);
             EndWriteAttribute();
             WriteLiteral("></i></button>\r\n");
@@ -145,68 +142,82 @@ WriteAttributeValue(" ", 557, Model.FriendStatus, 558, 19, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t</div>\r\n\t<div class=\"card-body\">\r\n\t\t<div class=\"card-content\">\r\n\t\t\t<h5 class=\"card-title\">");
+            Write(
 #nullable restore
 #line 20 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                              Write(Model.NoteTitle);
+                           Model.NoteTitle
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h5>\r\n\t\t\t<p class=\"card-text\">");
+            Write(
 #nullable restore
 #line 21 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                            Write(Model.NoteContent);
+                         Model.NoteContent
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</p>\r\n\t\t</div>\r\n\t\t<div class=\"card-theme\">");
+            Write(
 #nullable restore
 #line 23 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                           Write(Model.ThemeName);
+                           Model.ThemeName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n\t</div>\r\n\t<div class=\"card-footer d-flex justify-content-between text-body-secondary\">\r\n\t\t<span class=\"rate text-white fw-bold\">★ ");
+            Write(
 #nullable restore
 #line 26 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                           Write(Model.PostRate.ToString("0.00"));
+                                           Model.PostRate.ToString("0.00")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 27 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-          
+    
 			if (Model.CanInteract)
 			{
 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t<div class=\"post-interactions\">\r\n\t\t\t\t\t<button class=\"like-post\" data-post-id=\"");
+            Write(
 #nullable restore
 #line 31 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                                       Write(Model.PostID);
+                                              Model.PostID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"><i");
             BeginWriteAttribute("class", " class=\"", 1142, "\"", 1190, 4);
             WriteAttributeValue("", 1150, "fa-solid", 1150, 8, true);
             WriteAttributeValue(" ", 1158, "fa-thumbs-up", 1159, 13, true);
             WriteAttributeValue(" ", 1171, "fa-xl", 1172, 6, true);
+            WriteAttributeValue(" ", 1177, 
 #nullable restore
 #line 31 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-WriteAttributeValue(" ", 1177, Model.Liked, 1178, 12, false);
+                                                                                                   Model.Liked
 
 #line default
 #line hidden
 #nullable disable
+            , 1178, 12, false);
             EndWriteAttribute();
             WriteLiteral("></i></button>\r\n\t\t\t\t\t<button class=\"share-post\"><i class=\"fa-solid fa-share fa-xl\" style=\"color: #ece1ff;\"></i></button>\r\n\t\t\t\t\t<button class=\"report-post\"><i class=\"fa-solid fa-flag fa-xl\" style=\"color: #FFE482;\"></i></button>\r\n\t\t\t\t</div>\r\n");
 #nullable restore
@@ -218,14 +229,17 @@ WriteAttributeValue(" ", 1177, Model.Liked, 1178, 12, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t<span class=\"date text-white fw-bold\">");
+            Write(
 #nullable restore
 #line 38 "C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\Views\Shared\_post.cshtml"
-                                         Write(TimeHelpers.GetTimeAgo(Model.PostDate));
+                                         TimeHelpers.GetTimeAgo(Model.PostDate)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n\r\n\t</div>\r\n</div>\r\n");
         }
         #pragma warning restore 1998

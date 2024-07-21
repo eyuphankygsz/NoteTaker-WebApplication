@@ -4,6 +4,6 @@ namespace MemoMate.Web.Interfaces
 {
     public interface ISidebarService
 	{
-		Task<SidebarModel> GetSidebarModelAsync(UserEntity user);
+		Task<SidebarModel> GetSidebarModelAsync();
 	}
 }

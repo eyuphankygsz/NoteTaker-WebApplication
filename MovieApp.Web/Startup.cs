@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using MemoMate.Web.Security;
 using Microsoft.AspNetCore.Authorization;
 using MemoMate.Web.CustomMiddlewares;
+using MemoMate.Web.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace MovieApp.Web
 {
@@ -55,7 +57,8 @@ namespace MovieApp.Web
             services.AddHttpContextAccessor();
             services.AddScoped<ISidebarService, SidebarServices>();
 			services.AddScoped<PostServices>();
-
+			services.AddSignalR();
+			services.AddSingleton<IUserIdProvider, CustomUserIdProvider>();
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -80,6 +83,8 @@ namespace MovieApp.Web
 					pattern: "{controller}/{action}/{id?}",
 					defaults: new { controller = "Home", action = "Index" }
 					);
+				endpoints.MapControllers();
+				endpoints.MapHub<ChatHub>("/chathub");
 			});
 		}
 	}
