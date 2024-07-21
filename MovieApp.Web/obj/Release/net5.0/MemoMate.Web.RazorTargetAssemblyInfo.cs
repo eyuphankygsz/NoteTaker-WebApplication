@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyProductAttribute("MemoMate.Web")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dea5f123f0269586f5733184ebe24cb4496c28c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35b81bae054c8850d1a1a3614a708e16b69ae5b9")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MemoMate.Web.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

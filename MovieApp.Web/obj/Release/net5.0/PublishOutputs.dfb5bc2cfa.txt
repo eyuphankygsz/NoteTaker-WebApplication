@@ -1,4 +1,5 @@
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\MemoMate.Web.exe
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\audio\message_notification.m4a
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\about.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\body-scrollbar.css
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\css\details.css
@@ -45,7 +46,7 @@ C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\friendship.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\homeindex.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Message\message.js
-C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\navbar.js
+C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Message\messagehub.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-create.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-index.js
 C:\Users\AmiralSincap\Documents\GitHub\NoteTaker-WebApplication\MovieApp.Web\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Posts\posts-likes.js

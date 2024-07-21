@@ -7,6 +7,7 @@ let isLoading = false;
 const skipCount = 20;
 const messageInput = document.querySelector("#text-input");
 const messageContainer = $('.message-container');
+const messageNotification = new Audio('/audio/message_notification.m4a');
 $(document).ready(function () {
 
     getMessages();
@@ -45,22 +46,28 @@ function loadMoreMessages() {
             alert('There were some errors. Please try again after few minutes.');
         }
     });
+    getNewMessages();
 }
+function getNewMessages() {
 
+    $.ajax({
+        url: '/Messages/GetMessageCount',
+        type: 'GET',
+        success: function (count) {
+            setSideBarMessage(count);
+        },
+        error: function () {
+            alert('There were some errors. Please try again after few minutes.');
+        }
+    });
+}
+function setSideBarMessage(count) {
+    const span = $('#side-likes span');
+    span.text(count == 0 ? "" : count);
+}
+function getLastMessage(fromUser) {
 
-const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/chatHub")
-    .build();
-connection.start().then(function () {
-    console.log("SignalR connected.");
-}).catch(function (err) {
-    return console.error(err.toString());
-});
-connection.on("ReceiveMessage", function (fromUser) {
-
-    if (username != fromUser)
-        return;
-    else
+    try {
         $.ajax({
             url: '/Messages/GetLastMessage',
             type: 'GET',
@@ -68,12 +75,16 @@ connection.on("ReceiveMessage", function (fromUser) {
             success: function (response) {
                 messageContainer.prepend(response);
                 isLoading = false;
+                messageNotification.play();
             },
             error: function () {
                 alert('There were some errors. Please try again after few minutes.');
             }
         });
-});
+    } catch (e) {
+        console.log(e);
+    }
+}
 
 function sendMessage() {
 
@@ -82,7 +93,6 @@ function sendMessage() {
         type: 'GET',
         data: { username: username, message: messageInput.value },
         success: function (response) {
-            console.log(response);
             messageInput.value = "";
             messageContainer.prepend(response);
             isLoading = false;
